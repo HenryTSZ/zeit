@@ -7,11 +7,11 @@ tags: [Vscode]
 
 1. 找到自动操作(小机器人), 点击新建文稿或 `cmd + n`, 选择快速操作, 点击选取. 如图：
 
-    ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/018.png)
+    ![](/img/vscode/018.png)
 
 2. 修改右上为下图:
 
-    ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/019.png)
+    ![](/img/vscode/019.png)
 
 3. 在左侧面板选择 `实用工具`, 然后找到 `运行 Shell 脚本`, 把它拽到右侧面板里
 
@@ -26,7 +26,7 @@ tags: [Vscode]
 
     如下图:
 
-    ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/020.png)
+    ![](/img/vscode/020.png)
 
 5. 之后保存 `cmd + s`. 保存为 `Open With VSCode`. 名字可以随便起.
 

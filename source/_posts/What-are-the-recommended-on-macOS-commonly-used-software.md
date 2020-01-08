@@ -23,7 +23,7 @@ tags: [Mac]
 
 `Term2` 是 `Mac` 系统下的一款非常好用的终端工具, 它比系统自带的 `Terminal` 好用得多. 有丰富的特色功能供, 比如快捷键、分屏、定制终端主题颜色等; 这些功能极大的提高我们敲命令的效率, 强烈推荐每一个程序员都尝试和习惯使用这款工具.
 
-![iTerm2](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/009.png)
+![iTerm2](/img/mac/009.png)
 
 [iTerm2 用法与技巧](https://henrytsz.github.io/2018/04/25/iterm2-usage-and-skills/)
 
@@ -47,7 +47,7 @@ Install: `$ brew cask install visual-studio-code`
 
 由于 `Mac` 的键盘和主流布局不一致, 许多人都会遇到外接键盘布局不适应的情况; 即便是 `Mac` 的内置键盘, 也有人觉得其设计不够合理, 不符合自己的工作习惯. 好在键盘和使用者之间是可以磨合的, [Karabiner-Elements](https://pqrs.org/osx/karabiner/)  就是 `Mac` 上一款非常好用的开源改键利器, 能让键盘顺着你的意愿来工作.
 
-![Karabiner-Elements](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/028.png)
+![Karabiner-Elements](/img/mac/028.png)
 
 [Karabiner-Elements 使用介绍](https://henrytsz.github.io/2018/06/23/karabiner-elements/)
 
@@ -94,7 +94,7 @@ Install: `$ brew cask install popclip`
 
 `BetterTouchTool` 是一款可以用来代替默认的系统操作方式(组合键、修饰键、手势等)的辅助应用, 其目的是方便用户创造出更适合自身习惯的操作行为, 是 `Mac` 上非常强大的触摸板辅助工具. 但如果你希望拓展出更多丰富的功能, 可能就要在购置硬件设备上投入额外资金, 目前 `BTT` 直接支持的拓展设备有: `Apple Remote`、`Leap Motion`、普通鼠标等. 如果你没有打算考虑新的硬件, 那么官方开发的 `BTT Remote iOS` 客户端也非常值得尝试.
 
-![BetterTouchTool](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/029.png)
+![BetterTouchTool](/img/mac/029.png)
 
 [少数派 BetterTouchTool 专栏](https://sspai.com/search/article?q=BetterTouchTool)
 
@@ -106,7 +106,7 @@ Install: `$ brew cask install bettertouchtool`
 
 如果你想在电脑上进行那种行云流水的操作, 快捷键的利用一定是最重要的. 但是别说其他软件的快捷键, 可能就连自带的 `Safari` 的快捷键都不知道一两个. 如果你还在搜索「XXX 的快捷键是什么?」, 那一定是没有遇到过 `CheatSheet`. 这款软件在使用前需要在「系统偏好设置 - 安全性与隐私 - 隐私 - 辅助功能」中勾选 `CheatSheet` 一项, 即可在大多数 `App` 界面中长按 `Command-⌘` 直接呼出该软件的全部快捷键, 可以说是非常的方便了.
 
-![CheatSheet](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/030.jpg)
+![CheatSheet](/img/mac/030.jpg)
 
 Install: `$ brew cask install cheatsheet`
 
@@ -116,7 +116,7 @@ Install: `$ brew cask install cheatsheet`
 
 一款功能强大的效率神器, 包括触摸板手势/鼠标手势/蓝牙解锁/四角触发/自动跳窗等效率工具集合, 不仅仅是手势, 还包含更多快捷功能等你探索, 更多功能不断完善中...
 
-![BetterAndBetter](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/031.png)
+![BetterAndBetter](/img/mac/031.png)
 
 `BetterAndBetter` 的功能基本涵盖了上面 `PopClip` / `BetterTouchTool` / `CheatSheet` , 只是相对于 `PopClip` 没有那么多的功能, 但可以满足日常轻度使用; 快捷键提示和 `CheatSheet` 平分秋色; 在触摸板方面是强于 `BetterTouchTool` 的. 如果不是重度使用以上三款产品的话, 完全可以考虑只安装 `BetterAndBetter`
 
@@ -130,7 +130,7 @@ Install: `$ brew cask install cheatsheet`
 
 `macOS` 对于压缩文件的处理不是很好. 如果你没有安装任何软件, 你只能选择压缩成 `.zip` 或者解压 `.zip` 文件, 可能听起来有点鸡肋. 而 `The Unarchiver` 作为 `Mac` 上一款相当良心的解压工具, 支持解压 `RAR` 、 `7-zip` 、 `Tar` 等常用压缩格式的文件, 同时也可以打开 `ISO` 、 `EXE` 等类型的文件, 功能齐全并且免费.
 
-![The Unarchive](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/032.jpg)
+![The Unarchive](/img/mac/032.jpg)
 
 Install: `$ brew cask install the-unarchiver`
 
@@ -140,7 +140,7 @@ Install: `$ brew cask install the-unarchiver`
 
 填补了 `The Unarchive` 没有预览和压缩的功能
 
-![eZip](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/033.png)
+![eZip](/img/mac/033.png)
 
 下载地址: [eZip](https://ezip.awehunt.com/download?s=web)
 
@@ -148,7 +148,7 @@ Install: `$ brew cask install the-unarchiver`
 
 如果是原来, 大多数人推荐给你的第一款视频播放器大概会是 `MplayerX`, 但是这款软件在安装时大多数情况下富含了各类「垃圾软件」, 并且也太久没有更新了. 但 `Mac` 上不安装一个视频播放器, 可能你的观影的日子就到头了. `IINA` 作为一款开源的视频播放器, 却很好的的做到了「干净、流畅、美观」等诸多要点. 高度定制的快捷键绝对可以为你带来更顺手的操作环境, 对视频格式的支持也做的更加完美, 一定是 [《macOS 上最好的现代视频播放器: IINA》](https://sspai.com/post/40870).
 
-![IINA](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/034.jpg)
+![IINA](/img/mac/034.jpg)
 
 Install: `$ brew cask install iina`
 
@@ -158,7 +158,7 @@ Install: `$ brew cask install iina`
 
 `Mac` 上的卸载方式有很多, 在 `MAS` 上安装的软件可以进入 `Launchpad` 长按删除. 如果是其他来源安装的软件, 可以在 `Finder` 里的应用程序一栏使用 `Command + Delete` 进行删除. 但是有人会考虑到会不会有残留在其他的地方的文件没有删除干净, 这时你就可以选择一款卸载器来卸载你的所有软件. 为大家推荐的 `AppCleaner` 一款轻量级卸载软件, 只需要将所需卸载软件拖拽至 `AppCleaner` 的空白处即可以自动检查相关的所有文件并清除.
 
-![AppCleaner](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/035.jpg)
+![AppCleaner](/img/mac/035.jpg)
 
 Install: `$ brew cask install appcleaner`
 
@@ -168,7 +168,7 @@ Install: `$ brew cask install appcleaner`
 
 截图无论是在移动端还是 `PC` 端都是比较常见的操作, 但是 `Mac` 自带的截图只能为我们截取部分画面或者整个窗口, 从功能上来说并不是很齐全. `Jietu` 是腾讯出品的一款便捷式截图软件, 除了窗口截图、定时截图、全屏截图的基本功能以外, 还可以对截图进行标注打码等二次操作. 同时, `Jietu` 还可以进行窗口的录制, 还支持对视频进行剪裁, 选择清晰度以及导出 `GIF` 等.
 
-![Jietu](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/036.jpg)
+![Jietu](/img/mac/036.jpg)
 
 关联阅读:[圈点之后, 试试腾讯出品的免费 Mac 截图软件: 截图 Jietu](https://sspai.com/post/33021)
 
@@ -218,11 +218,11 @@ Install: `$ brew cask install dash`
 
 具体配置看下图:
 
-![ShowyEdge](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/037.png)
+![ShowyEdge](/img/mac/037.png)
 
 注: 英文输入源的颜色是透明的, 因为常用英文, 透明不影响视觉; 中文输入源的颜色是蓝色的, 这是本人征求设计同学的意见而选择的, 因为蓝色在白色和黑色背景下都显眼
 
-![ShowyEdge](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/038.png)
+![ShowyEdge](/img/mac/038.png)
 
 注: 这个图主要是调整 `ShowyEdge` 的位置(好像直接输入位置无效, 只能点击右面的按钮一点一点移动)
 
@@ -234,7 +234,7 @@ Install: `$ brew cask install showyedge`
 
 其实迅雷在 `Mac` 上的使用体验还算不错, 尤其是在对应用进行一定处理除去广告. 但是迅雷下载文件时长会出现速度上不去, 没有资源或者无法下载的问题, 不如尝试一下是用 `Aria2` 作为你的下载器, 不仅可以下载一般的文件, 结合相关插件还可以直接下载百度网盘的内容. 在少数派介绍 `Aria2` 配置的 [《Mac 上使用百度网盘很烦躁? 花点时间配置 aria2 吧》](https://sspai.com/post/32167) 中所使用只是它的网页版, 操作起来可能也没有那么方便, 而 `Aria2GUI` 则是一款拥有了独立界面的软件, 除开集成了多线程下载和 `Aria2c` 之外, 还可以对未下载完成的任务自动保存以及相关任务完成时发送提示, 比起网页版更加人性化了许多.
 
-![Aria2GUI](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/039.jpg)
+![Aria2GUI](/img/mac/039.jpg)
 
 Install: `$ brew cask install aria2gui`
 
@@ -244,7 +244,7 @@ Install: `$ brew cask install aria2gui`
 
 即使 `OS X` 再好用, 玩起来也要注意时间, 注意身体嘛, 推荐一款休息提醒软件: `stretchly`, 可以帮助用户从"忘我"的状态下脱离出来, 用户提前设置好每过多长时间就休息几分钟, 到了休息点会强制性锁屏, 并进行休息时长倒数读秒.
 
-![stretchly](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/040.png)
+![stretchly](/img/mac/040.png)
 
 下载地址: [stretchly](https://hovancik.net/stretchly/downloads/)
 
@@ -260,7 +260,7 @@ Install: `$ brew cask install aria2gui`
 
 `Mac` 的原生词典是包含《现代汉语规范词典》和《牛津英汉汉英词典》的, 用户也可以通过 `Spotlight` 输入单词进行快速查询, 或者在文本中使用 `Force Touch` 进行查询. 对于一些用户来说, 原生的翻译可能没有太全面, 或者达不到他想要的效果. 其实, 安装一个有道词典也是不错选择, 界面干净整洁, 翻译准确度高, 支持快捷查词、划线查词, 取词等功能.
 
-![youdaodict](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/041.jpg)
+![youdaodict](/img/mac/041.jpg)
 
 Install: `$ brew cask install youdaodict`
 
@@ -282,7 +282,7 @@ Install: `$ brew cask install bob`
 
 与 `B 站` 有着不可告人的 `PY` 交易的音乐播放器你确定不来 `一发` 吗?
 
-![neteasemusic](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/042.png)
+![neteasemusic](/img/mac/042.png)
 
 Install: `$ brew cask install neteasemusic`
 
@@ -294,7 +294,7 @@ Install: `$ brew cask install neteasemusic`
 
 作为一个前端, 明明知道一个电脑只装一个浏览器 - `Chrome` 就够了, 但现实是你不得不去安装各种浏览器来处理兼容问题; 最可气的是 `Mac` 没有 `IE`, 你不得不为了它安装虚拟机或者自备一个 `Windows`.
 
-![google-chrome](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/043.png)
+![google-chrome](/img/mac/043.png)
 
 说了这么多你还不卸载你所有的浏览器然后投入到 `Chrome` 的怀抱?
 
@@ -308,13 +308,13 @@ Install: `$ brew cask install google-chrome`
 
 虽然大多数人的日子还没有忙到需要请个助理或者安排日程的地步…… 但年龄越来越大借助日历记事还是很有必要的, 比如看个电影看个展, 坐个飞机, 安排个旅游行程, 没有什么比日历更方便的了, 奈何 `macOS` 的日历除了能同步之外基本是个废柴的存在.
 
-![Fantastical](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/044.jpg)
+![Fantastical](/img/mac/044.jpg)
 
 于是你需要这个颜值功能并存的 `Fantastical`, 搭配 `iOS` 版效果更佳. 当然颜值并不是重点, 重点是 `Fantastical` 支持自然语义的日程建立(仅限英文), 什么叫自然语义?? 举个例子 , `macOS` 的原生日历想要加个日程, 得写 **要办的事情——写地点——选日期——其他** 等等, 而在 `Fantastical` 里呢, 如果你英文还不错的话, 直接写 "meet at crown plaza tomorrow 9am" (语法什么的, 不重要), `Fantastical` 会自动提取地点时间等介词或关键字, 自动生成一条明天 9 点的会面信息.
 
 具体效果就是酱紫咯, 又实用又骚气有木有!
 
-![Fantastical](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/045.gif)
+![Fantastical](/img/mac/045.gif)
 
 [如原生般, 却更好用: 最好的 Mac 日历应用 Fantastical 2 for Mac 评测](https://sspai.com/post/30287)
 
@@ -330,15 +330,15 @@ Install: `$ brew cask install fantastical`
 
 通过菜单栏上简单的数字, 你可以看到目前正在进行中的事项个数, 点击图标后即可看到事项的详情. 在这里, 点击一个事项即可将其标记为完成, 再次点击可撤销标记. 而且可以在这里直接录入事项
 
-![TaskTab](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/046.png)
+![TaskTab](/img/mac/046.png)
 
 在 `TaskTab` 中, 已完成的事项不会自动消失, 如果你要清理它们, 则需要进入菜单栏中的编辑(Preferences...)界面, 你可以先选中需要删除的事项, 通过 `Remove Tsak` 来删除, 也可以通过鼠标右键删除单条事项. 同样, 这里也可以录入事项
 
-![TaskTab](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/047.png)
+![TaskTab](/img/mac/047.png)
 
 `Preferences` 里可以设置快捷键和开机自启等一些设置
 
-![TaskTab](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/048.png)
+![TaskTab](/img/mac/048.png)
 
 下载地址: [TaskTab: Simple To Do List](https://itunes.apple.com/cn/app/tasktab-simple-to-do-list/id1395414535?mt=12)
 
@@ -352,7 +352,7 @@ Install: `$ brew cask install fantastical`
 
 腾讯柠檬清理主要功能包括:一键(垃圾)扫描、大文件清理、重复文件清理、相似照片清理、应用卸载、隐私清理以及设备保护功能
 
-![lemon](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/049.png)
+![lemon](/img/mac/049.png)
 
 如果, 你的 `mac` 也有系统优化等类似需求的话, 不妨尝试一下 腾讯柠檬清理, 也许可以省下购买其它昂贵清理软件的咖啡钱
 
@@ -368,7 +368,7 @@ Install: `$ brew cask install tencent-lemon`
 
 `PinTab` 是一个超级强大的 **免费资源集合库**. 实际上它是一个集图片、设计、代码等各种资源的标签页集合. 类似于高价版的网址大全, 但是上面有清晰的分类. 在这里你能找到各种 **免费的商用图片、字体、图标、Photoshop、Sketch、配色、原型, 甚至还有 HTML, CSS 和 Javascript 等资源**.
 
-![PinTab](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/050.jpg)
+![PinTab](/img/mac/050.jpg)
 
 可以说是一个超强资源集合库了. 墙裂推荐!
 

@@ -79,37 +79,37 @@ Mac 快捷键有很多和 Windows 不同, 如果需要修改为和 Windows 一�
 
 按 Ctrl+P(Cmd+P on mac), 就能快速搜寻和打开你项目的文件.
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/001.gif)
+![](/img/chrome/001.gif)
 
 ### 在源代码中搜索
 
 大家都知道如果在要在 Elements 查看源码, 只要定位到 Elements 面板, 然后按 Ctrl+F 就可以了
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/002.png)
+![](/img/chrome/002.png)
 
 ### 在源代码中快速跳转到指定的行
 
 在 Sources 标签中打开一个文件之后, 按 Ctrl + G, 然后输入行号, chrome 控制台就会跳转到你输入的行号所在的行. 或者 Ctrl+P 后输入 `:行号`
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/003.gif)
+![](/img/chrome/003.gif)
 
 ### 使用多个插入符进行选择
 
 当编辑一个文件的时候, 你可以按住 Ctrl / Cmd 在你要编辑的地方点击鼠标, 可以设置多个插入符, 这样可以一次在多个地方编辑
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/004.gif)
+![](/img/chrome/004.gif)
 
 ### 选择下一个匹配项
 
 当在 Sources 标签下编辑文件时, 按下 Ctrl + D (Cmd + D) , 当前选中的单词的下一个匹配也会被选中, 有利于你同时对它们进行编辑.
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/005.gif)
+![](/img/chrome/005.gif)
 
 ### 强制改变元素状态(方便查看不同状态下元素的样式)
 
 chrome 控制台有一个可以模拟 CSS 状态的功能, 例如元素的 hover 和 focus, 可以很容易的改变元素样式. 在 CSS 编辑器中可以利用这个功能查看不同状态下元素的样式
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/006.gif)
+![](/img/chrome/006.gif)
 
 ## 拖放的技巧
 
@@ -131,7 +131,7 @@ chrome 控制台有一个可以模拟 CSS 状态的功能, 例如元素的 hover
 
 2. 选择左上角的元素选择按钮, 图标颜色变为蓝色即表示选中了
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/007.png)
+   ![](/img/chrome/007.png)
 
 3. Windows 下按住 Ctrl, Mac 就按住 Command, 然后点击鼠标左键在页面选择区域即可, 松开鼠标后, 截图自动下载.
 4. 图片自动下载好后, 点击图片后面的箭头, 可以在文件夹中显示
@@ -146,17 +146,17 @@ chrome 控制台有一个可以模拟 CSS 状态的功能, 例如元素的 hover
 
 2. 选中任意元素节点
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/008.png)
+   ![](/img/chrome/008.png)
 
 3. 打开命令工具
 
    使用快捷键 Ctrl + Shift + p (Windows) 或 Cmd + Shift + p (Mac)
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/009.png)
+   ![](/img/chrome/009.png)
 
 4. 点击 Capture node screenshot, 或者输入这行中任意的关键字, 比如输入 node, 也会出来这个选项, 然后点击这个选项, 图片会自动下载.
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/010.png)
+   ![](/img/chrome/010.png)
 
 5. 图片自动下载好后, 点击图片后面的箭头, 可以在文件夹中显示
 
@@ -185,23 +185,23 @@ chrome 控制台有一个可以模拟 CSS 状态的功能, 例如元素的 hover
 
 2. 选中 切换开发模式按钮, 图标颜色变为蓝色即表示选中了
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/011.png)
+   ![](/img/chrome/011.png)
 
 3. 点右上方的三个 小点, 点击 Capture full size screenshot, 图片会自动下载
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/012.png)
+   ![](/img/chrome/012.png)
 
 ## 拾色器
 
 在颜色预览功能使用快捷键 Shift + Click, 可以在 rgba、hsl 和 hexadecimal 来回切换颜色的格式
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/013.gif)
+![](/img/chrome/013.gif)
 
 在 Styles 边栏 点击任意颜色的小色块, 就可以弹出颜色选择器
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/014.png)
+![](/img/chrome/014.png)
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/015.png)
+![](/img/chrome/015.png)
 
 1. 颜色选择区域.
 2. 吸管. 拾取页面中的颜色
@@ -215,17 +215,17 @@ chrome 控制台有一个可以模拟 CSS 状态的功能, 例如元素的 hover
 
 当吸管开启时, 如果你停留在页面, 鼠标指针会变成一个放大镜, 让你去选择像素精度的颜色.
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/016.gif)
+![](/img/chrome/016.gif)
 
 ## 快速添加样式规则
 
 1. 在 Styles 边栏, 鼠标放在每一小块样式规则上, 右下方都会有三个小点
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/017.png)
+   ![](/img/chrome/017.png)
 
 2. 鼠标放在这三个小点上, 会出现 5 个小图标, 每个小图标都有作用
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/018.png)
+   ![](/img/chrome/018.png)
 
 3. 他们从左到右分别代表
    - 添加 text-shadow
@@ -239,11 +239,11 @@ chrome 控制台有一个可以模拟 CSS 状态的功能, 例如元素的 hover
 1. 打开开发者工具
 2. 点击右上方的三个小点, 然后选择 Settings
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/019.png)
+   ![](/img/chrome/019.png)
 
 3. 选择 Devices, 然后在需要添加的设备前面打上勾就可以了
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/020.png)
+   ![](/img/chrome/020.png)
 
 ## 总结
 

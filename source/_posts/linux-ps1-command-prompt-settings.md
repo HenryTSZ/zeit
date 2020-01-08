@@ -23,7 +23,7 @@ echo $PS1
 
 效果图如下所示:
 
-![default PS1](https://raw.githubusercontent.com/HenryTSZ/img/master/post/git/014.png)
+![default PS1](/img/git/014.png)
 
 这样的命令提示不美观, 而且当我们输入的命令得到很多输出的时候我们很难找到命令提示符在哪里, 所以可以通过设置 `PS1` 来改善命令提示符.
 
@@ -98,7 +98,7 @@ export PS1="\[\e[32;1m\][\[\e[33;1m\]\u\[\e[31;1m\]@\[\e[33;1m\]\h \[\e[36;1m\]\
 
 效果图如下:
 
-![demo](https://raw.githubusercontent.com/HenryTSZ/img/master/post/git/001.png)
+![demo](/img/git/001.png)
 
 说明:
 

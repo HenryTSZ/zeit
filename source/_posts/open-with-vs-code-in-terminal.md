@@ -8,7 +8,7 @@ tags: [Vscode]
 - 打开 VSCode
 - 打开控制面板(`⇧⌘P`), 输入 `shell command`, 在提示里看到  `Shell Command: Install 'code' command in PATH`, 运行它就可以了。
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/021.png)
+   ![](/img/vscode/021.png)
 
 - 或者手动把下面的配置添加在  `.bash_profile`  文件里：
 

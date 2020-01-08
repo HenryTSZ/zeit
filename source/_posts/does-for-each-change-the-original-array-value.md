@@ -31,7 +31,7 @@ arr.forEach(item => {
 console.log(arr)
 ```
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/025.png)
+![](/img/js/025.png)
 
 可以看到这样是可以修改原数组的值的
 
@@ -46,7 +46,7 @@ let arr1 = arr.map(item => {
 console.log(arr1, arr)
 ```
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/026.png)
+![](/img/js/026.png)
 
 咦? `arr` 这个原数组的值为什么也改变了呢?
 
@@ -61,7 +61,7 @@ arr1 = arr.map(item => ({
 console.log(arr1, arr)
 ```
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/027.png)
+![](/img/js/027.png)
 
 emmmm, 这样就不影响原数组了
 
@@ -77,7 +77,7 @@ arr.forEach(item => {
 console.log(arr)
 ```
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/028.png)
+![](/img/js/028.png)
 
 发现原数组并没有改变
 
@@ -89,7 +89,7 @@ arr1 = arr.map(item => (item = 5))
 console.log(arr1, arr)
 ```
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/029.png)
+![](/img/js/029.png)
 
 发现原数组也没有改变
 

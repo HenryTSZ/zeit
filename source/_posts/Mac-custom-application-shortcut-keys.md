@@ -13,24 +13,24 @@ tags: [Mac]
 
 首先需要了解你快捷键对应的操作名称, 如 `重新加载此页` 和 `开发者工具`
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/001.png)
+![](/img/mac/001.png)
 
 然后点击 Mac 屏幕左上角的苹果标志, 在下拉菜单里选择 `系统偏好设置...` , 在设置面板里选择 `键盘` , 切到 `快捷键` 标签, 点击左侧 `应用快捷键` , 如下图所示.
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/002.png)
+![](/img/mac/002.png)
 
 点击下面的 `+` , 选择具体的应用程序, 填写和快捷键对应的操作名称, 键入快捷键, 如图:
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/003.png)
+![](/img/mac/003.png)
 
 同理可以修改 `开发者工具` 和其他应用程序的快捷键
 
 这里还有一个小彩蛋, 如图一: 快捷键只有 `重新加载此页` , 但有时候我们需要强制刷新来清理缓存, 但当我们修改 `重新加载此页` 的快捷键后, 竟然出现了 `强制重新加载此页`
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/004.png)
+![](/img/mac/004.png)
 
 我们可以将 `强制重新加载此页` 的快捷键改为 `Ctrl+F5` 来和 Windows 保持一致
 
 最后发一个修改完后的截图
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/005.png)
+![](/img/mac/005.png)

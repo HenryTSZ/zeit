@@ -9,7 +9,7 @@ git 基本指令
 
 ## 下载 [git](https://git-scm.com/)
 
-![git](https://raw.githubusercontent.com/HenryTSZ/img/master/post/git/002.jpg)
+![git](/img/git/002.jpg)
 
 ## git 管理项目
 

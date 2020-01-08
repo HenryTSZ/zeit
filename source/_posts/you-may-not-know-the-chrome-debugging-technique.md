@@ -48,7 +48,7 @@ console.table(animals)
 
 输出结果:
 
-![console.table](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/002.png)
+![console.table](/img/js/002.png)
 
 ### 用 console.time() 和 console.timeEnd() 测试循环耗时
 
@@ -70,7 +70,7 @@ console.timeEnd('Timer1')
 
 运行结果:
 
-![console.time](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/003.png)
+![console.time](/img/js/003.png)
 
 ### 获取函数的堆栈轨迹信息
 
@@ -117,7 +117,7 @@ func1()
 
 `console.trace` 会输出:
 
-![console.trace](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/004.png)
+![console.trace](/img/js/004.png)
 
 你可以看到 `func1` 调用了 `func2` , `func2` 又调用了 `func4` . `func4` 创建了 `Car` 的实例, 然后调用了方法 `car.funcX` , 等等.
 
@@ -152,7 +152,7 @@ console.important('This is an important message')
 
 输出:
 
-![console.todo](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/005.png)
+![console.todo](/img/js/005.png)
 
 ### 信息分组
 
@@ -172,7 +172,7 @@ console.groupEnd()
 
 输出:
 
-![console.group](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/006.png)
+![console.group](/img/js/006.png)
 
 ### 查看对象的信息
 
@@ -193,13 +193,13 @@ console.dirxml(info)
 
 输出:
 
-![console.dir](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/007.png)
+![console.dir](/img/js/007.png)
 
 ### 显示某个节点的内容
 
 `console.dirxml()` 用来显示网页的某个节点(node)所包含的 html/xml 代码.
 
-![console.dirxml](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/008.png)
+![console.dirxml](/img/js/008.png)
 
 三者区别: 如果输出的是一个对象, 基本没区别; 但如果是一个节点, dir 仍输出节点的属性和方法, 而 log 和 dirxml 则输出节点
 
@@ -207,7 +207,7 @@ console.dirxml(info)
 
 当你想代码满足某些条件时才输出信息到控制台, 那么你大可不必写 if 或者三元表达式来达到目的, `cosole.assert` 便是这样场景下一种很好的工具, 它会先对传入的表达式进行断言, 只有表达式为假时才输出相应信息到控制台.
 
-![console.assets](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/009.jpg)
+![console.assets](/img/js/009.jpg)
 
 ### 统计函数执行次数
 
@@ -215,7 +215,7 @@ console.dirxml(info)
 
 当你想统计某段代码执行了多少次时也大可不必自己去写相关逻辑, 内置的 `console.count` 可以很好地胜任这样的任务.
 
-![console.count](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/010.jpg)
+![console.count](/img/js/010.jpg)
 
 ### [QQ 空间自动删除所有说说](http://www.meiriyixue.cn/post/968.html)
 
@@ -225,7 +225,7 @@ console.dirxml(info)
 
 虽然把各种各样的手机都摆在桌子上看起来很酷, 但这却很不现实. 为什么不选择直接调整界面大小呢? Chrome 浏览器提供了你所需要的一切. 进入检查面板点击 `切换设备模式` 按钮, 这样你就可以调整视窗的大小了!
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/011.png)
+![](/img/js/011.png)
 
 ## \$
 
@@ -235,7 +235,7 @@ console.dirxml(info)
 
 `$_` 命令返回最近一次表达式执行的结果, 功能跟按向上的方向键再回车是一样的, 但它可以做为一个变量使用在你接下来的表达式中:
 
-![$_](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/012.jpg)
+![$_](/img/js/012.jpg)
 
 ### 快速定位 DOM 元素
 
@@ -243,21 +243,21 @@ console.dirxml(info)
 
 什么意思? 在页面右击选择审查元素, 然后在弹出来的 DOM 节点树上面随便点选, 这些被点过的节点会被记录下来, 而 `$0` 会返回最近一次点选的 DOM 节点, 以此类推, `$1` 返回的是上上次点选的 DOM 节点, 最多保存了 5 个, 如果不够 5 个, 则返回 `undefined` .
 
-![$0](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/013.gif)
+![$0](/img/js/013.gif)
 
 如果你像下面那样把元素按顺序标记为'item-4', 'item-3', 'item-2', 'item-1', 'item-0' , 你就可以在 console 中获取到 DOM 节点:
 
-![$0](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/014.png)
+![$0](/img/js/014.png)
 
 ### jQuery
 
 另外值得一赞的是, Chrome 控制台中原生支持类 jQuery 的选择器, 也就是说你可以用 `$` 加上熟悉的 css 选择器来选择 DOM 节点, 多么滴熟悉.
 
-![jQuery](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/015.jpg)
+![jQuery](/img/js/015.jpg)
 
 `$(selector)` 返回的是满足选择条件的首个 DOM 元素. 剥去她伪善的外衣, 其实 `$(selector)` 是原生 JavaScript `document.querySelector()` 的封装. 同时另一个命令 `$(selector)` 返回的是所有满足选择条件的元素的一个集合, 是对 `document.querySelectorAll()` 的封装.
 
-![$$](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/016.jpg)
+![$$](/img/js/016.jpg)
 
 ## 格式化代码使调试 JavaScript 变得容易
 
@@ -265,11 +265,11 @@ console.dirxml(info)
 
 格式化之前:
 
-![unformatted](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/017.png)
+![unformatted](/img/js/017.png)
 
 格式化之后:
 
-![formatted](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/018.png)
+![formatted](/img/js/018.png)
 
 ## 快速找到调试函数
 
@@ -306,7 +306,7 @@ var car = new Car()
 
 在控制台中输入 debug(car.funcY), 脚本会在调试模式下, 进入 car.funcY 的时候停止运行:
 
-![debug](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/019.png)
+![debug](/img/js/019.png)
 
 而 undebug 则是解除该断点.
 
@@ -325,7 +325,7 @@ console.log(Object.keys(person))
 console.log(Object.values(person))
 ```
 
-![keys & values](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/020.png)
+![keys & values](/img/js/020.png)
 
 [5 分钟彻底理解 Object.keys](https://github.com/berwin/Blog/issues/24)
 
@@ -333,7 +333,7 @@ console.log(Object.values(person))
 
 你可以通过 `copy` 方法在控制台里复制你想要的东西
 
-![copy](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/030.gif)
+![copy](/img/js/030.gif)
 
 ## monitor & unmonitor
 
@@ -347,7 +347,7 @@ var func1 = function(x, y, z) {
 
 然后输出:
 
-![monitor](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/021.png)
+![monitor](/img/js/021.png)
 
 这是查看将哪些参数传递到函数的一种很好的方法. 但我必须说, 如果控制台能够告诉我们需要多少参数, 那就好了. 在上面的例子中, 函数 1 期望 3 个参数, 但是只有 2 个参数被传入. 如果代码没有在代码中处理, 它可能会导致一个 bug .
 
@@ -366,13 +366,13 @@ foo.length // 3
 
 `unmonitorevent (object[， events])`停止监视指定对象和事件的事件
 
-![monitorEvents](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/031.png)
+![monitorEvents](/img/js/031.png)
 
 ## 复制 Fetch
 
 在 `Network` 标签下的所有的请求, 都可以复制为一个完整的 `Fetch` 请求的代码
 
-![fetch](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/032.gif)
+![fetch](/img/js/032.gif)
 
 ## 重写 Overrides
 
@@ -381,7 +381,7 @@ foo.length // 3
 
 打开 `Chrome DevTools` 的 `Sources` 标签页选择 `Overrides` 子标签选择 `+ Select folder for overrides`, 来为 `Overrides` 设置一个保存重写属性的目录
 
-![Overrides](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/033.png)
+![Overrides](/img/js/033.png)
 
 ## 实时表达式 Live Expression
 
@@ -389,29 +389,29 @@ foo.length // 3
 
 点击 `Create Live Expression` 眼睛图标, 打开动态表达式界面, 输入要监控的表达式
 
-![Live Expression](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/034.gif)
+![Live Expression](/img/js/034.gif)
 
 ## 滚动到视图区域 Scroll into view
 
-![Scroll into view](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/035.png)
+![Scroll into view](/img/js/035.png)
 
 ## 屏蔽不相关代码
 
 如今, 经常在应用中引入多个库或框架. 其中大多数都经过良好的测试且相对没有缺陷. 但是, 调试器仍然会进入与此调试任务无关的文件. 解决方案是将不需要调试的脚本屏蔽掉. 当然这也可以包括你自己的脚本.[点此阅读更多关于调试不相关代码.](http://raygun.com/blog/javascript-debugging-with-black-box/)
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/022.png)
+![](/img/js/022.png)
 
 ## 在控制台中快速访问元素
 
 在控制台中执行 querySelector 一种更快的方法是使用美元符. `$('css-selector')` 将会返回第一个匹配的 CSS 选择器. `$$('css-selector')` 将会返回所有. 如果你使用一个元素超过一次, 它就值会被作为一个变量.
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/023.png)
+![](/img/js/023.png)
 
 ## 节点变化时中断
 
 DOM 是个有趣的东西. 有时候它发生了变化, 但你却并不知道为什么会这样. 不过, 如果你需要调试 JavaScript, Chrome 可以在 DOM 元素发生变化的时候暂停处理. 你甚至可以监控它的属性. 在 Chrome 探查器上, 右键点击某个元素, 并选择中断(Break on)选项来使用:
 
-![Break on](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/024.png)
+![Break on](/img/js/024.png)
 
 ## 参考资料(建议阅读原文)
 

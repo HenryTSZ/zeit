@@ -90,13 +90,13 @@ CursorBlinks=yes
 
 然后重启 `Git-Bash` , 即可看到新的主题配色, 以下是我的 `Git-Bash` 外观主题配置样例.
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/git/014.png)
+![](/img/git/014.png)
 
 ## Git-Bash 修改提示符 PS1
 
 `PS1` 被称为 `prompt` (提示符), 是终端环境变量的其中之一, 主要用于 `bash` 命令前的提示词. 可以改成各种奇形怪状的内容, 自定义空间超大. 除了 `PS1` , 还有 `PS2-4` , 这些暂时没有用到. 搜索 `linux ps1` 能看到相关介绍.
 
-![default PS1](https://raw.githubusercontent.com/HenryTSZ/img/master/post/git/015.png)
+![default PS1](/img/git/015.png)
 
 默认的 `PS1` 最前面的 用户名@主机名 一般我们是用不到的, 一层一层目录实在太长太占地方, 而且截屏时也不方便把全路径显示出来, `git` 分支没有提示当前状态, 配色也不太好看, 丑兮兮的
 
@@ -181,7 +181,7 @@ export PS1="$"
     source ~/.bash_profile
     ```
 
-![changed PS1](https://raw.githubusercontent.com/HenryTSZ/img/master/post/git/016.png)
+![changed PS1](/img/git/016.png)
 
 以上配置大部分参考了这篇文章: [你不需要花哨的命令提示符 - 知乎](https://zhuanlan.zhihu.com/p/51008087)
 
@@ -328,7 +328,7 @@ hello() {
 hello
 ```
 
-![hello](https://raw.githubusercontent.com/HenryTSZ/img/master/post/git/017.png)
+![hello](/img/git/017.png)
 
 ### 三. 解决.bashrc 文件每次打开终端都需要 source 的问题
 

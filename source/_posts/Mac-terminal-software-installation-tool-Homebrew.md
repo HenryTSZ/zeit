@@ -130,7 +130,7 @@ epichrome                                                    homebrew/cask-versi
 
     brew outdated
 
-![outdated](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/051.png)
+![outdated](/img/mac/051.png)
 
 接下来更新一下可更新的应用. 一般我会更新所有应用, 所以我最常用的是这条命令:
 
@@ -140,13 +140,13 @@ epichrome                                                    homebrew/cask-versi
 
     brew upgrade 应用名
 
-![upgrade](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/052.png)
+![upgrade](/img/mac/052.png)
 
 更新完后可以运行一下下面的命令, 把应用的旧版本和缓存删除.
 
     brew cleanup
 
-![cleanup](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/053.png)
+![cleanup](/img/mac/053.png)
 
 如果你只是想看看有哪些应用可以清理, 但暂时不需要处理它们, 则可以通过这个命令一窥究竟:
 

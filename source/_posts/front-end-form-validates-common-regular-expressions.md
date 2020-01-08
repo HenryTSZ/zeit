@@ -224,7 +224,7 @@ $：表示以什么结尾
 
 ## 常用规则图片
 
-![regex-help](https://raw.githubusercontent.com/HenryTSZ/img/master/post/js/001.png)
+![regex-help](/img/js/001.png)
 
 ## [玩转 JavaScript 正则表达式](http://imweb.io/topic/56e804ef1a5f05dc50643106)
 

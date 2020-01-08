@@ -16,11 +16,11 @@ Chrome 会在客户登陆过某网站之后, 会自动记住密码. 当你下次
 
 变色前:
 
-![before](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/021.png)
+![before](/img/chrome/021.png)
 
 变色后:
 
-![after](https://raw.githubusercontent.com/HenryTSZ/img/master/post/chrome/022.png)
+![after](/img/chrome/022.png)
 
 ## 样式分析
 

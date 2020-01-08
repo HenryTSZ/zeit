@@ -364,7 +364,7 @@ VS Code 完整版配置
 
 - TypeScript/JavaScript:  `//#region`  and  `//#endregion`  and  `//region`  and  `//endregion`
 
-  ![Region Folding](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/001.gif)
+  ![Region Folding](/img/vscode/001.gif)
 
 - C#:  `#region`  and  `#endregion`
 - C/C++:  `#pragma region`  and  `#pragma endregion`
@@ -374,11 +374,11 @@ VS Code 完整版配置
 - [CSS/SCSS/Less](https://code.visualstudio.com/updates/v1_23#_css-region-folding): `/* #region */` and `/* #endregion */`
 - [SCSS/Less](https://code.visualstudio.com/updates/v1_23#_css-region-folding): `// #region` and `// #endregion`
 
-  ![css-folding](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/002.gif)
+  ![css-folding](/img/vscode/002.gif)
 
 - Markdown: 标题
 
-  ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/003.gif)
+  ![](/img/vscode/003.gif)
 
 - Coffeescript:  `#region`  and  `#endregion`
 - PHP:  `#region`  and  `#endregion`
@@ -390,17 +390,17 @@ Note: If you don't remember a folding marker, type  `#`  at the beginning of a
 
 Markdown now has support for workspace symbol search. After opening a Markdown file for the first time, you can use ( `⌘T` ) to search through the headers of all Markdown files in the current workspace:
 
-![markdown-workspace-symbol-search](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/004.png)
+![markdown-workspace-symbol-search](/img/vscode/004.png)
 
 ### [Automatic member property suggestions](https://code.visualstudio.com/updates/v1_20#_automatic-member-property-suggestions)
 
 Tired of typing  `this.`  to access class properties in JavaScript and TypeScript? Now you can just start typing to see available members.
 
-![No more need to type this. to see property suggestions](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/005.png)
+![No more need to type this. to see property suggestions](/img/vscode/005.png)
 
 Accept a member property suggestion, and VS Code automatically inserts the require  `this.` .
 
-![this. is automatically inserted when you suggest a property suggestion](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/006.png)
+![this. is automatically inserted when you suggest a property suggestion](/img/vscode/006.png)
 
 ### [Platform specific keybindings](https://code.visualstudio.com/updates/v1_27#_platform-specific-keybindings)
 
@@ -425,7 +425,7 @@ This makes it much easier to share your  `keybindings.json`  file across diffe
 
 Editor Tab completion can now complete all kind of suggestions. After setting  `"editor.tabCompletion": "on"` , pressing Tab will complete any prefix, not just snippets. Also, pressing Tab will insert the next suggestion and ⇧Tab will insert the previous suggestion.
 
-![Tab completion](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/007.gif)
+![Tab completion](/img/vscode/007.gif)
 
 ### Navigate to last edit location
 
@@ -439,13 +439,13 @@ The new command **Save without Formatting** ( `workbench.action.files.saveWith
 
 Suggestions can now be sorted based on their distance to the cursor. Set  `"editor.suggest.localityBonus": true`  and you'll see, for example, function parameters showing up at the top of the IntelliSense list.
 
-![Locality bonus](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/008.png)
+![Locality bonus](/img/vscode/008.png)
 
 ### Smart selection for JavaScript and TypeScript
 
 JavaScript and TypeScript now support [smart selection](https://code.visualstudio.com/updates/v1_33#_smart-select-api). This feature uses semantic knowledge to intelligently expand selections for expressions, types, statements, classes, and imports:
 
-![Smart selection in a TypeScript file](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/009.gif)
+![Smart selection in a TypeScript file](/img/vscode/009.gif)
 
 ### 查找某个函数在哪些地方被调用了
 
@@ -493,11 +493,11 @@ vscode 中集成了 Emmet. Emmet 可以有效提升输入速度. 正常情况下
 </div>
 ```
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/010.gif)
+![](/img/vscode/010.gif)
 
 有些 HTML 元素有许多的属性, 在输入的过程中, 通过在标签后面加上 `:属性名` 就指定了元素的属性.
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/011.gif)
+![](/img/vscode/011.gif)
 
 ### 快速输入 CSS
 
@@ -507,7 +507,7 @@ vscode 中集成了 Emmet. Emmet 可以有效提升输入速度. 正常情况下
 
 名称较长的属性往往含有连字符(-), 输入连字符前后两个单词的首字母再加上值即可. 比如: `pt10` 是 `padding-top: 10px;` .
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/012.gif)
+![](/img/vscode/012.gif)
 
 默认情况下, 不能在 js 文件中使用 Emmet. 在开发 React 项目时, 这会带来不便. 所以, 再调整一下 系统设置.
 
@@ -523,7 +523,7 @@ vscode 中集成了 Emmet. Emmet 可以有效提升输入速度. 正常情况下
 
 先选中需要添加父元素的子元素, 使用快捷键 `ctrl/cmd + shift + p` 或 `f1` 调出命令面板, 输入 `wrap` , 选择 `Emmet: Wrap Individual Lines with Abbreviation` , 输入父元素即可. 这个方法是对当前选中的文本添加父元素, 如果只对光标所在行添加, 选择 `Emmet: Wrap with Abbreviation` 即可
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/013.gif)
+![](/img/vscode/013.gif)
 
 ### 内外平衡
 
@@ -531,7 +531,7 @@ vscode 中集成了 Emmet. Emmet 可以有效提升输入速度. 正常情况下
 
 你可以使用   `balance inward`   和   `balance outward`   的 Emmet 命令在 VS 代码中选择整个标记. 将这些命令绑定到键盘快捷键是有帮助的, 例如   `Ctrl + Shift + 向上箭头` 用于平衡向外, 而   `Ctrl + Shift +向下箭头`   用于平衡向内.
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/014.gif)
+![](/img/vscode/014.gif)
 
 这里只是介绍一部分 Emmet 规则, 完整的列表点击[这里](https://docs.emmet.io/cheat-sheet/). 当你觉得有些输入很繁琐, 不妨查阅一下文档, 看看有无快捷输入的方式.
 

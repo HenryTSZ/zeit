@@ -24,7 +24,7 @@ tags: [Mac]
 
     brew cask install atom
 
-![install atom](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/054.gif)
+![install atom](/img/mac/054.gif)
 
 ## 有什么优势
 

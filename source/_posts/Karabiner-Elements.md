@@ -29,7 +29,7 @@ tags: [Mac]
 
 下图为我自己外接键盘的一些基本改键, 基本和 Mac 自带键盘键位保持一致
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/026.png)
+![](/img/mac/026.png)
 
 ### Function Keys
 
@@ -79,7 +79,7 @@ tags: [Mac]
 
 也可以通过点击菜单栏图标来切换配置
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/027.png)
+![](/img/mac/027.png)
 
 ### [Misc](https://pqrs.org/osx/karabiner/document.html#quit)
 

@@ -29,7 +29,7 @@ iTerm2 最常用的主题是 Solarized Dark theme, 首先, 使用以下命令下
 
 然后打开 iTerm2, 按 `Command + ,` 键, 打开 Preferences 配置界面, 然后 `Profiles -> Colors -> Color Presets -> Import` , 在弹出的窗口中, 定位到 `Downloads > solarized > osx-terminal.app-colors-solarized` , 双击 `Solarized Dark ansi.terminal` 导入暗色的 `Solarized` 配色方案. 就可以了.
 
-![Solarized Dark theme](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/006.png)
+![Solarized Dark theme](/img/mac/006.png)
 
 如果你有强迫症, 下载的文件可以删除
 
@@ -70,7 +70,7 @@ Oh My Zsh 是对主题的进一步扩展, [地址](https://github.com/robbyrusse
 
 我们编辑 `vim ~/.zshrc` 文件, 将主题配置修改为 `ZSH_THEME="agnoster"` .
 
-![agnoster](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/007.png)
+![agnoster](/img/mac/007.png)
 
 在 vim  编辑器下, 你可以使用方向键移动光标, 按 `i` 进入编辑模式, 编辑好后按 `esc` 退出编辑模式, 随后输入 `:wq` 并回车即可保存. 有关 Vim  的更多使用方法你可以参考  [这篇教程](https://www.runoob.com/linux/linux-vim.html). 另外, Mac  下的 Vim  默认是没有显示行号 & 开启语法高亮的, 你可以参考以下命令打开行号显示  &  语法高亮:
 
@@ -86,11 +86,11 @@ agnoster 是比较常用的 zsh 主题之一 (默认主题), 你可以挑选你�
 
 效果如下(配置了声明高亮):
 
-![agnoster](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/008.png)
+![agnoster](/img/mac/008.png)
 
 不过我更喜欢 powerlevel9k 这个主题
 
-![powerlevel9k](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/009.png)
+![powerlevel9k](/img/mac/009.png)
 
 如果您更喜欢 Powerlevel9k 外观以及右侧的退出代码和时间戳等附加信息, 请运行:
 
@@ -122,7 +122,7 @@ POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 ```
 
-![powerlevel9k settings](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/055.png)
+![powerlevel9k settings](/img/mac/055.png)
 
 详细的配置项可以看官方文档: [Powerlevel9k/powerlevel9k at next](https://github.com/Powerlevel9k/powerlevel9k/tree/next)
 
@@ -134,19 +134,19 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
 然后打开 iTerm2, 按 `Command + ,` 键, 打开 Preferences 配置界面, 然后 `Profiles -> Text -> Font -> Chanage Font` , 选择 `SourceCodePro+Powerline+Awesome+Regular` 字体.
 
-![SourceCodePro+Powerline+Awesome+Regular](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/010.png)
+![SourceCodePro+Powerline+Awesome+Regular](/img/mac/010.png)
 
 ## 自定义提示样式
 
 默认情况下, 提示符显示为 `user @ hostname` , 终端显示的时候会很不好看, 如下图中的 `daoquan@daoquandeMBP`, 我们可以手动去除.
 
-![user @ hostname](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/012.png)
+![user @ hostname](/img/mac/012.png)
 
 ### 方法一
 
 编辑 `vim ~/.zshrc` 文件, 增加 `DEFAULT_USER="user"` 配置 (DEFAULT_USER="user" 的 user 必须和提示符中的 user 匹配), 示例:
 
-![hidden user @ hostname](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/014.png)
+![hidden user @ hostname](/img/mac/014.png)
 
 我们可以通过 `whoami` 命令, 查看当前用户
 
@@ -174,7 +174,7 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
 然后编辑 `vim ~/.zshrc` 文件, 找到 plugins 配置, 增加 `zsh-syntax-highlighting` 插件.
 
-![zsh-syntax-highlighting](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/011.png)
+![zsh-syntax-highlighting](/img/mac/011.png)
 
 source 一下
 
@@ -185,7 +185,7 @@ source~/.zshrc
 
 错误的命令显示红色:
 
-![warning](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/012.png)
+![warning](/img/mac/012.png)
 
 ## 历史命令自动建议填充
 
@@ -203,7 +203,7 @@ source~/.zshrc
 
 有时候因为自动填充的颜色和背景颜色很相似, 以至于自动填充没有效果, 我们可以手动更改下自动填充的颜色配置, 我修改的颜色值为: `586e75` , 示例:
 
-![zsh-autosuggestions](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/013.png)
+![zsh-autosuggestions](/img/mac/013.png)
 
 ## 快速切换历史路径
 
@@ -312,17 +312,17 @@ iTerm2 有 2 种好用的选中即复制模式.
 
 可以用 `!!` 来执行上一条命令, 但最常用还是使用 `ctrl+r` 来搜索命令历史记录
 
-![!!](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/015.gif)
+![!!](/img/mac/015.gif)
 
 ### Tab 窗口面板管理
 
 Tab 纵向分割: `⌘+d`
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/016.png)
+![](/img/mac/016.png)
 
 Tab 横向分割: `⌘+shift+d`
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/017.png)
+![](/img/mac/017.png)
 
 切换 Tab 中的 pane: `⌘ + [` 或者 `⌘ + opt + arrow`
 
@@ -342,11 +342,11 @@ Tab 切换: `⌘ + arrow` 或者 `⌘ + shift + [`
 
 窗口太多, 可以使用 `⌘ + /` 快速定位到光标所在位置
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/018.png)
+![](/img/mac/018.png)
 
 一屏显示所有窗口: `⌘ + opt + e`
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/019.png)
+![](/img/mac/019.png)
 
 ### 标记跳转
 
@@ -360,7 +360,7 @@ Tab 切换: `⌘ + arrow` 或者 `⌘ + shift + [`
 
 输入 `d` , 就显示在会话里访问的目录列表, 输入列表前的序号, 即可以跳转
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/020.jpg)
+![](/img/mac/020.jpg)
 
 进入目录可以省略前面的 `cd` 命令
 
@@ -380,11 +380,11 @@ Alfred 有个很合适的插件符合需求, [TerminalFinder](http://www.packal.
 
 安装 iTerm 后, 会在系统设置的服务中自动生成两条服务, 如下图一:
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/021.png)
+![](/img/mac/021.png)
 
 在文件夹-右键-服务中可以找到:
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/022.png)
+![](/img/mac/022.png)
 
 这样, 只要点击这个服务就可以在 iTerm 中打开当前路径
 
@@ -395,7 +395,7 @@ Alfred 有个很合适的插件符合需求, [TerminalFinder](http://www.packal.
 1. 这个服务必须选中文件夹或文件才能执行. 选中文件夹会在 iTerm 中打开该文件夹的路径; 选中文件, 会打开该文件所在的文件夹的路径
 2. 快捷键在重启系统或 Finder 后, 需要手动激活才能生效. 手动激活方法:
 
-   ![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/023.png)
+   ![](/img/mac/023.png)
 
    点击一下需要激活的服务即可
 

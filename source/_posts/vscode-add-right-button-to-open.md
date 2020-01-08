@@ -7,7 +7,7 @@ tags: [Vscode, Windows]
 
 安装 VS Code 的时候, 如果不做任何配置(傻瓜式安装, 一路选择 `next`), 默认是不会在右键添加 `Open with Code` 选项的, 如下图:
 
-![No Choose Open with Code](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/015.png)
+![No Choose Open with Code](/img/vscode/015.png)
 
 这个功能还是很方便的, 可以快速打开文件夹或文件, 否则还需要先打开 VS Code, 再选择文件夹或文件, 比较浪费时间
 
@@ -66,7 +66,7 @@ Windows Registry Editor Version 5.00
 
 然后就可以在右键中看到 `Open with Code` 了.
 
-![Open with Code](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/016.png)
+![Open with Code](/img/vscode/016.png)
 
 ## 使用位置
 

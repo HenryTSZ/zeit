@@ -456,4 +456,4 @@ tags: [Vscode]
 
 `recommendations` 数组中是插件的 `ID` , 不是名字, 插件 `ID` 可以在这里查看:
 
-![recommendations](https://raw.githubusercontent.com/HenryTSZ/img/master/post/vscode/017.png)
+![recommendations](/img/vscode/017.png)

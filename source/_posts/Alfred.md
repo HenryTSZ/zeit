@@ -72,11 +72,11 @@ tips: Alfred 很多地方只有添加(+)符号, 而没有删除符号, 其实只
 
 安装好插件后, 双击 Script Filter, 见下图
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/024.png)
+![](/img/mac/024.png)
 
 将 `/usr/local/bin/ruby colors.rb "{query}"` 修改为 `/usr/bin/ruby colors.rb "{query}"`
 
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/mac/025.png)
+![](/img/mac/025.png)
 
 这是因为 `brew` 安装 `ruby` 的位置为 `/usr/local/bin/ruby` , 而 Mac 自带的位置为 `/usr/bin/ruby`
 

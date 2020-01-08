@@ -540,23 +540,23 @@ http://www.baidu.com
 
 例如：
 
-![无名](https://raw.githubusercontent.com/HenryTSZ/img/master/post/markdown/001.jpg "无名")
+![无名](/img/markdown/001.jpg "无名")
 
 其中图片的 alt 和 title 可以不写
 例如：
-![](https://raw.githubusercontent.com/HenryTSZ/img/master/post/markdown/001.jpg)
+![](/img/markdown/001.jpg)
 ```
 
 效果:
 
-![无名](https://raw.githubusercontent.com/HenryTSZ/img/master/post/markdown/001.jpg '无名')
+![无名](/img/markdown/001.jpg '无名')
 
 图片也可以使用参考链接的形式
 
 ```
 ![无名][id]
 
-[id]: https://raw.githubusercontent.com/HenryTSZ/img/master/post/markdown/001.jpg "无名"
+[id]: /img/markdown/001.jpg "无名"
 ```
 
 #### 限制图片大小并居中
@@ -565,12 +565,12 @@ http://www.baidu.com
 
 ```html
 <div style="text-align:center">
-  <img src="https://raw.githubusercontent.com/HenryTSZ/img/master/post/markdown/002.gif" width="300" alt="发糖了!!!" />
+  <img src="/img/markdown/002.gif" width="300" alt="发糖了!!!" />
 </div>
 ```
 
 <div style="text-align:center">
-	<img src="https://raw.githubusercontent.com/HenryTSZ/img/master/post/markdown/002.gif" width="300" alt="发糖了!!!" />
+	<img src="/img/markdown/002.gif" width="300" alt="发糖了!!!" />
 </div>
 
 ### 使用表情
