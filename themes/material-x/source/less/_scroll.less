@@ -1,0 +1,56 @@
+@scrollColor: rgba(144, 146, 152, 0.5);
+@scrollColorHover: rgba(144, 146, 152, 0.8);
+@scrollBg: transparent;
+
+body,
+html {
+  height: 100%;
+  /* 三角箭头的颜色 */
+  scrollbar-arrow-color: @scrollColor;
+  /* 立体滚动条的颜色  */
+  scrollbar-face-color: @scrollColor;
+  /* 立体滚动条亮边的颜色 */
+  scrollbar-3dlight-color: @scrollColor;
+  /* 滚动条空白部分的颜色   */
+  scrollbar-highlight-color: @scrollColor;
+  /* 立体滚动条阴影的颜色 */
+  scrollbar-shadow-color: @scrollColor;
+  /* 立体滚动条强阴影的颜色 */
+  scrollbar-darkshadow-color: @scrollColor;
+  /* 立体滚动条背景颜色 */
+  scrollbar-track-color: @scrollBg;
+  /* 滚动条的基本色 */
+  scrollbar-base-color: @scrollColor;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/* 整个滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+}
+/* 滚动条轨道 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px @scrollBg;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: transparent;
+}
+/* 滚动条上的滚动滑块 */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background: @scrollColor;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: @scrollColorHover;
+}
+/* 滚动条上的按钮 (上下箭头) */
+::-webkit-scrollbar-button {
+  display: none;
+}
+/* 当同时有垂直滚动条和水平滚动条时交汇的部分 */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
