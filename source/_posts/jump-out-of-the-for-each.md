@@ -127,7 +127,7 @@ var breakFlag = false
 }, {}) // 这里指定context
 ```
 
-需要注意的是, `forEach` 的第二个参数 `context`, 只有在使用非箭头函数时有效, 因为箭头函数, 无法改变 `context` 的指向. 如果不注意的话, 会污染了父级上下文.
+需要注意的是, `forEach` 的第二个参数 `context` , 只有在使用非箭头函数时有效, 因为箭头函数, 无法改变 `context` 的指向. 如果不注意的话, 会污染了父级上下文.
 
 ```js
 ;[1, 2, 3, 4, 5].forEach(
@@ -166,9 +166,21 @@ array.forEach(function(item, index) {
 })
 ```
 
-其实, 这种方法相当于在 `item === 2` 的时候, 改变了原数组引用的值, 因为原数组改变了, 则 `forEach` 进行到第二项就没了, 但是该方法又机智地用 `concat` 后的新数组赋值给了 `array`, 所以 `array` 的值看上去并没有变, 不信你可以试一下.
+其实, 这种方法相当于在 `item === 2` 的时候, 改变了原数组引用的值, 因为原数组改变了, 则 `forEach` 进行到第二项就没了, 但是该方法又机智地用 `concat` 后的新数组赋值给了 `array` , 所以 `array` 的值看上去并没有变, 不信你可以试一下.
 
-### 5. 最应该使用的 every/some
+### 5. 使用 ES6 的 for... of
+
+```JS
+var arr = [1, 2, 3, 4, 5]
+for (val of arr) {
+  if (val > 3) {
+    break;
+  }
+  console.log(val) // 只输出 1 2 3
+}
+```
+
+### 6. 最应该使用的 every/some
 
 **在需要 `break` 的场景下, 我们可以使用 `every` 或者 `some`**, 也比较推荐这种方式.
 
