@@ -19,7 +19,7 @@
     margin: auto;
     .enable-trans();
     a.logo {
-      color: #fff;
+      color: @color_text_in_header;
     }
   }
   &.no_sidebar{
@@ -244,6 +244,11 @@
     //   background: @theme_cardbg;
     //   box-shadow: @boxshadow_card_normal; // 适合白色导航栏背景
     // }
+    .wrapper{
+      a.logo {
+        color: @theme_main;
+      }
+    }
     .menu{
       ul > li > a{
         .enable-trans();
