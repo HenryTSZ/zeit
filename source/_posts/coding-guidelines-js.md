@@ -2,7 +2,7 @@
 title: js 编码指南
 date: 2019-09-05
 cover: true
-categories: [FrontEnd]
+categories: [FrontEnd, Js]
 tags: [Js, Guidelines]
 ---
 ## js 代码规范

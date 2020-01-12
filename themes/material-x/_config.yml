@@ -125,7 +125,7 @@ layout:
     # 列表中每一篇文章的meta信息
     meta: [title, author, date, categories, wordcount, top]
     # 列表类页面的侧边栏
-    sidebar: [author, grid, category, tagcloud, music]
+    sidebar: [author, grid, category, tagcloud, plain, music]
   # 文章页面布局
   article:
     # 文章页面主体元素，你也可以在页面的Front-matter中设置
@@ -147,9 +147,10 @@ sidebar:
     jinrishici: true
     social: true
   - widget: plain
-    icon: fas fa-file
-    title: 文本部件
-    body: '这是一段支持markdown的文本<br>![](https://img.vim-cn.com/4e/3c87a2fd28fd0b9c2f27ce3f83f1e9275d0488.png)'
+    icon: fas fa-handshake
+    title: 欢迎光临
+    # body: '这是一段支持markdown的文本<br>![](https://img.vim-cn.com/4e/3c87a2fd28fd0b9c2f27ce3f83f1e9275d0488.png)'
+    body: <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script><script src="/js/city.js"></script>
   - widget: toc
   - widget: grid
     icon: fas fa-map-signs
