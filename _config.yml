@@ -4,7 +4,8 @@
 
 # Site
 title: Henry
-# avatar: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
+favicon: /img/hexo/favicon.png
+avatar: /img/hexo/avatar.png
 logo: https://img.vim-cn.com/d1/4911906ca05da0805cb6dc3e5b44f3d4a4e8a3.png
 description: 我们在键盘上留下的余温, 也将随时代传递到更远的将来
 author: Henry
@@ -16,7 +17,7 @@ language:
 - zh-TW
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://HenryTSZ.github.io/
+url: https://love.tsz.now.sh/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -74,3 +75,5 @@ theme: material-x
 deploy:
 - type: git
   repo: https://github.com/HenryTSZ/HenryTSZ.github.io.git
+
+disqus_shortname: henrytsz

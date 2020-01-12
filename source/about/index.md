@@ -1,6 +1,9 @@
 ---
+layout: page
 title: about
-date: 2018-10-05 16:33:28
-type: "about"
-layout: "about"
+body: [article, grid, comments]
+valine:
+  placeholder: 有什么想对我说的呢？
+sidebar: false
 ---
+你好

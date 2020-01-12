@@ -477,6 +477,23 @@
               background: transparent;
             }
           }
+          .qrcode {
+            position: relative;
+            .qrcode-ewm {
+              display: none;
+              position: absolute;
+              top: 30px;
+              left: -111px;
+              width: 246px;
+              max-width: 246px;
+              height: 246px;
+              border-radius: 0;
+              z-index: 10;
+            }
+            &:hover .qrcode-ewm {
+              display: block;
+            }
+          }
         }
 
       }

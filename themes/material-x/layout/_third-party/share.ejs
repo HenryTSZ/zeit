@@ -2,12 +2,13 @@
   <div class="-mob-share-list share-body">
     <% (theme.share||[]).forEach(function(item){ %>
       <% if (item.id == 'qrcode'){ %>
-        <a class='qrcode' rel="external nofollow noopener noreferrer" href='<%- qrcode(url) %>'>
+        <a class='qrcode' rel="external nofollow noopener noreferrer" href='javascript:void(0)'>
         <% if (item.img){ %>
           <img src="<%- item.img %>">
         <% } else if (item.icon){ %>
           <i class="<%- item.icon %> fa-fw"></i>
         <% } %>
+          <img class="qrcode-ewm" src="<%- qrcode(url) %>">
         </a>
       <% } else { %>
         <a class="-mob-share-<%- item.id %>" title="<%- item.name %>" rel="external nofollow noopener noreferrer"
