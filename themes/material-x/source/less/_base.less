@@ -63,11 +63,10 @@ fancybox{
     align-items: center;
     align-self: center;
     align-content: center;
-    // padding: @gap;
+    text-align: center;
     .title, .logo{
       font-size: @fontsize_h1*2;
       margin-top: ~"calc(28vh - 2*@{gap})";
-      text-align: center;
       font-weight: bold;
     }
     .title{
@@ -78,6 +77,9 @@ fancybox{
       max-width: ~"calc(100% - 4*@{gap})";
     }
     @media(max-width: @on_phone){
+      & {
+        padding: @gap;
+      }
       .title, .logo {
         font-size: @fontsize_h1*2;
         line-height: @fontsize_h1*2.2;
