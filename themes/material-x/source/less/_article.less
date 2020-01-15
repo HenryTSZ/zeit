@@ -508,29 +508,6 @@
       content: "";
   }
 
-  &::-webkit-scrollbar {
-    height: @border_radius_line;
-    width: @border_radius_line;
-  }
-  // /* Track */
-
-  &::-webkit-scrollbar-track-piece {
-      background: transparent;
-  }
-
-
-/* Handle */
-
-  &::-webkit-scrollbar-thumb {
-    background: darken(@color_bg_code_block, 5%);
-    cursor: pointer;
-    border-radius: @border_radius_code_block;
-    .enable-trans();
-    &:hover {
-      background: darken(@color_bg_code_block, 12%);
-    }
-  }
-
 }
 
 .article {
