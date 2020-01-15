@@ -1,3 +1,28 @@
+---
+layout: post
+title: 修改浏览器默认滚动条
+date: 2018-06-10
+categories: [FrontEnd, Css]
+tags: [Css]
+keywords: CSS, 滚动条
+---
+
+作为一个有理想的程序员, 页面好看与否直接决定了你是不是一个合格的前端, 而作为页面一部分 -- 滚动条, 直接影响了页面的美观
+
+那么如何修改滚动条的样式呢? 要么使用 `js`(代表者 - `jQuery`), 要么使用 `css`
+
+关于 `jQuery` 滚动条插件网上一大堆, 就不介绍了
+
+下面重点介绍通过 `css` 来修改原生滚动条样式
+
+## 修改默认滚动条样式
+
+注:
+
+> **以下特性是非标准的，请尽量不要在生产环境中使用它！--MDN**
+
+```less
+@theme_main: #409eff;
 @scroll_bg: transparent;
 @scroll_width: 6px;
 
@@ -53,3 +78,16 @@ html {
 ::-webkit-scrollbar-corner {
   background: @scroll_bg;
 }
+```
+
+### 参考资料
+
+- [::-webkit-scrollbar](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::-webkit-scrollbar)
+
+- [自定义浏览器滚动条的样式，打造属于你的滚动条风格](https://www.lyblog.net/detail/314.html)
+
+- [css scrollbar 样式设置](https://segmentfault.com/a/1190000012800450)
+
+## 隐藏滚动条
+
+[CSS 实现隐藏滚动条同时又可以滚动](https://www.cnblogs.com/alice626/p/6206760.html)
