@@ -1,7 +1,7 @@
 ---
 title: 跳出 forEach
 date: 2018-11-25
-categories: [FrontEnd]
+categories: [FrontEnd, Js]
 tags: [Js]
 ---
 

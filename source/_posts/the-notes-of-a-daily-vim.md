@@ -1,7 +1,7 @@
 ---
 title: 每日一 Vim 笔记
 date: 2018-05-08
-categories: [vscode]
+categories: [Software]
 tags: [Vim]
 ---
 

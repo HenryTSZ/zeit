@@ -1,13 +1,13 @@
 ---
 title: Mac 使用 Homebrew 安装 node
 date: 2018-11-13
-categories: [Operating System]
-tags: [Mac]
+categories: [Software, Mac]
+tags: [Homebrew]
 ---
 
 最近 `vue-cli` 升级 `3.0` 了, 就想着尝试一下, 发现需要 `Node.js 8.9` 或更高版本 (推荐 `8.11.0+`), 而自己本地 `node` 需要升级. 这才想起来当初是在官网下载的 `pkg` 版本安装的, 这个怎么升级? `Windows` 的话覆盖安装就可以了, 这个可以吗? 网上查了一下, 大部分都推荐使用 `n` 这个包来升级 `node`. 突然想到可以试试 `Homebrew`, 以前一直听人说这个管理软件非常棒, 正好趁着升级 `node` 搞一下
 
-## [安装 Homebrew](https://henrytsz.github.io/2018/10/27/mac-terminal-software-installation-tool-homebrew/)
+## [安装 Homebrew](https://love.tsz.now.sh//2018/10/27/mac-terminal-software-installation-tool-homebrew/)
 
 既然现在电脑上已经有 `node` 了, 那下一步肯定是先卸载之了
 

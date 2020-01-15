@@ -1,7 +1,7 @@
 ---
 title: git 本地分支和远程分支建立映射关系
 date: 2017-01-21
-categories: [Git]
+categories: [Software]
 tags: [Git]
 ---
 

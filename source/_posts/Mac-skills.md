@@ -2,7 +2,7 @@
 layout: post
 title: Mac 使用 技巧
 date: 2018-12-21
-categories: [Operating System]
+categories: [Software, Mac]
 tags: [Mac]
 ---
 

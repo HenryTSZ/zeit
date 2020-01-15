@@ -1,8 +1,8 @@
 ---
 title: Alfred
 date: 2018-06-01
-categories: [Operating System]
-tags: [Mac]
+categories: [Software, Mac]
+tags: [Alfred]
 ---
 
 我们为你带来了 Alfred 的全面上手指南, 希望能帮助你摆脱不知从何下手的困境.

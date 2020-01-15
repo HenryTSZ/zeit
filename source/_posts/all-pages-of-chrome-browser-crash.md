@@ -1,7 +1,7 @@
 ---
 title: Chrome 浏览器所有页面全部崩溃
 date: 2019-03-03
-categories: [Browser]
+categories: [Software, Browser]
 tags: [Chrome]
 ---
 

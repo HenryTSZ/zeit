@@ -2,7 +2,7 @@
 title: css 编码指南
 date: 2019-09-03
 cover: true
-categories: [FrontEnd]
+categories: [FrontEnd, Css]
 tags: [Css, Guidelines]
 ---
 ## css 规范

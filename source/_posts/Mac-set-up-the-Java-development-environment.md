@@ -1,7 +1,7 @@
 ---
 title: Mac 下搭建 Java 开发环境
 date: 2017-11-05
-categories: [Operating System]
+categories: [Software, Mac]
 tags: [Mac]
 ---
 

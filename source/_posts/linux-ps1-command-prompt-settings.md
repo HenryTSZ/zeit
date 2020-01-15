@@ -1,8 +1,8 @@
 ---
 title: linux 下 PS1 命令提示符设置
 date: 2018-06-02
-categories: [Operating System]
-tags: [Linux]
+categories: [Software, Linux]
+tags: [PS1]
 ---
 
 `PS1` 被称为 `prompt` (提示符), 是终端环境变量的其中之一, 主要用于 `bash` 命令前的提示词. 可以改成各种奇形怪状的内容, 自定义空间超大. 除了 `PS1` , 还有 `PS2-4` , 这些暂时没有用到. 搜索 `linux ps1` 能看到相关介绍.

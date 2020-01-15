@@ -1,8 +1,8 @@
 ---
 title: Git-Bash 的配置
 date: 2019-05-05
-categories: [Software]
-tags: [Windows, Git]
+categories: [Software, Windows]
+tags: [Git]
 ---
 
 通过这篇文章, 可以了解到:
@@ -185,7 +185,7 @@ export PS1="$"
 
 以上配置大部分参考了这篇文章: [你不需要花哨的命令提示符 - 知乎](https://zhuanlan.zhihu.com/p/51008087)
 
-`PS1` 具体配置可以看这篇文章: [linux 下 PS1 命令提示符设置](https://henrytsz.github.io/2018/06/02/linux-ps1-command-prompt-settings/), 这里就不再详述
+`PS1` 具体配置可以看这篇文章: [linux 下 PS1 命令提示符设置](https://love.tsz.now.sh//2018/06/02/linux-ps1-command-prompt-settings/), 这里就不再详述
 
 ## Git-Bash 命令行基础
 

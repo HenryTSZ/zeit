@@ -1,7 +1,7 @@
 ---
 title: Date 方法预览
 date: 2017-07-25
-categories: [FrontEnd]
+categories: [FrontEnd, Js]
 tags: [Js]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 你可能不知道的 chrome 调试技巧
 date: 2017-12-12
-categories: [Browser]
+categories: [Software, Browser]
 tags: [Chrome]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Mac 自定义应用程序快捷键
 date: 2017-11-03
-categories: [Operating System]
+categories: [Software, Mac]
 tags: [Mac]
 ---
 

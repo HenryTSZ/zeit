@@ -1,7 +1,7 @@
 ---
 title: forEach 会改变原数组值吗
 date: 2018-05-26
-categories: [FrontEnd]
+categories: [FrontEnd, Js]
 tags: [Js]
 ---
 

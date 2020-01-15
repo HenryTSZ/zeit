@@ -16,7 +16,46 @@ node 和 npm 简介
 - 安装好之后, 在 `cmd` 控制台输入: `node -v` , 控制台打印出版本表示安装成功.
 - 由于新版的 `nodejs` 已经集成了 `npm` , 所以 `npm` 也一并安装好了. 同样可以使用 `cmd` 命令行输入: `npm -v` 来测试是否成功安装. 出现版本提示表示安装成功.
 
-### [Mac 使用 Homebrew 安装 node](https://henrytsz.github.io/2018/11/13/install-node-with-homebrew/)
+### [Mac 使用 Homebrew 安装 node](https://love.tsz.now.sh//2018/11/13/install-node-with-homebrew/)
+
+## 列出所有全局模块
+
+通过 `npm list -g` 可以列出所有已经安装的全局模块
+
+``` zsh
+F:\>npm list -g
+D:\nodejs\node_global
++-- express@4.15.3
+| +-- accepts@1.3.3
+| | +-- mime-types@2.1.16
+| | | `-- mime-db@1.29.0
+| | `-- negotiator@0.6.1
+| +-- array-flatten@1.1.1
+| +-- content-disposition@0.5.2
+| +-- content-type@1.0.2
+  ........................
+`-- less@2.7.2
+  +-- errno@0.1.4
+  | `-- prr@0.0.0
+  +-- graceful-fs@4.1.11
+  +-- image-size@0.5.5
+  +-- mime@1.3.6
+  +-- mkdirp@0.5.1
+  | `-- minimist@0.0.8
+  +-- promise@7.3.1
+  ........................
+```
+
+但是, 得到的输出信息会很冗长, 我们可以加上 `--depth=0` 来精简一下输出
+
+``` zsh
+F:\>npm list -g --depth=0
+D:\nodejs\node_global
++-- express@4.15.3
+`-- less@2.7.2
+```
+
+现在输出信息就清楚了, 我们只列出了我们安装的模块和版本号
 
 ## 基于 node 工程
 

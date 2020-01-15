@@ -1,7 +1,7 @@
 ---
 title: 前端表单验证常用的正则表达式 - reg
 date: 2017-07-15
-categories: [FrontEnd]
+categories: [FrontEnd, Js]
 tags: [Js]
 ---
 

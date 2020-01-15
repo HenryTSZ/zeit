@@ -1,8 +1,8 @@
 ---
 title: iTerm2 用法与技巧
 date: 2018-04-25
-categories: [Operating System]
-tags: [Mac]
+categories: [Software, Mac]
+tags: [iTerm2]
 ---
 
 iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS 10.10 or newer. iTerm2 brings the terminal into the modern age with features you never knew you always wanted.

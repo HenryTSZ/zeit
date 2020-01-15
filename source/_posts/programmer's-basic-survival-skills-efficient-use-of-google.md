@@ -1,7 +1,7 @@
 ---
 title: 程序员的基础生存技能 - 高效用 Chrome
 date: 2017-11-23
-categories: [Browser]
+categories: [Software, Browser]
 tags: [Chrome]
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: VS Code 在 Windows 上添加右键打开菜单的显示
 date: 2018-09-06
-categories: [Software]
-tags: [Vscode, Windows]
+categories: [Software, Windows]
+tags: [Vscode]
 ---
 
 安装 VS Code 的时候, 如果不做任何配置(傻瓜式安装, 一路选择 `next`), 默认是不会在右键添加 `Open with Code` 选项的, 如下图:

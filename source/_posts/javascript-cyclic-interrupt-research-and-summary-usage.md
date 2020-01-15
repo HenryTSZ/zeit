@@ -1,16 +1,16 @@
 ---
 title: JavaScript 循环中断研究与总结-用法篇
 date: 2018-03-11
-categories: [FrontEnd]
+categories: [FrontEnd, Js]
 tags: [Js]
 ---
 
-[上篇](https://henrytsz.github.io/2018/03/10/javascript-cyclic-interrupt-research-and-summary-keyword/)我们讲了 `break` , `continue` , `return` 这三个常用的关键字, 本篇讲一下在具体循环或函数中的用法
+[上篇](https://love.tsz.now.sh//2018/03/10/javascript-cyclic-interrupt-research-and-summary-keyword/)我们讲了 `break` , `continue` , `return` 这三个常用的关键字, 本篇讲一下在具体循环或函数中的用法
 
 ## 结论
 
 1. `for` , `for...in` , `for...of` : 当没有 `label` 标记时候, `break` 跳出本次循环并执行循环体后的代码, `continue` 结束本次循环执行下一次循环. 没有 `return` .
-2. `Array.forEach` : 遍历整个数组, `return false` 或者 `return true` 都是结束本次循环执行下一次循环. 没有 `break` 或 `continue` . 我想你可能需要[跳出 forEach](https://henrytsz.github.io/2018/11/25/jump-out-of-the-for-each/)
+2. `Array.forEach` : 遍历整个数组, `return false` 或者 `return true` 都是结束本次循环执行下一次循环. 没有 `break` 或 `continue` . 我想你可能需要[跳出 forEach](https://love.tsz.now.sh//2018/11/25/jump-out-of-the-for-each/)
 3. `Array.map` : `map` 和 `forEach` 类似, 有返回值, 返回结果是 `return` 值组成的数组.
 4. `jQuery.each` : `return false` 跳出本次循环并执行循环体后的代码; `return true` 结束本次循环执行下一次循环. 没有 `break` 或 `continue` .
 

@@ -1,7 +1,7 @@
 ---
 title: git 常见问题
 date: 2017-02-21
-categories: [Git]
+categories: [Software]
 tags: [Git]
 ---
 

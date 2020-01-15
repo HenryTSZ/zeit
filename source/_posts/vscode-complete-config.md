@@ -23,7 +23,7 @@ VS Code 完整版配置
 4. 此时需要输入 `GitHub Personal Access Token` , 如果你以前没有上传配置到 `Gist` 或你想使用我的配置, 留空回车即可
 5. 输入一个 `Gist ID` , 我的是 `e4881a8e307f3186e80cc4aea54011df` , 当然你也可以输入一个 `公开的 Gist ID` (比如你朋友共享给你的   `Gist` )
 6. VS Code 会自动从云端下载配置
-7. 如果提示: `下载失败, 请检测网络设置` , 很可能是被墙了, 此时需要[如何科学使用 GitHub 服务](https://henrytsz.github.io/2019/02/05/scientific-use-of-github)
+7. 如果提示: `下载失败, 请检测网络设置` , 很可能是被墙了, 此时需要[如何科学使用 GitHub 服务](https://love.tsz.now.sh//2019/02/05/scientific-use-of-github)
 8. 重复一遍, 此操作会**覆盖**本地配置, 请慎重
 
 ## 代码片段
@@ -135,7 +135,7 @@ VS Code 完整版配置
 
 详细介绍可以看这篇文章: [跟我一起在 Visual Studio Code 添加自定义 snippet（代码段），附详细配置 - 猫科龙 - CSDN博客](https://blog.csdn.net/maokelong95/article/details/54379046)
 
-## [插件](https://henrytsz.github.io/2018/09/08/vscode-extension/)
+## [插件](https://love.tsz.now.sh//2018/09/08/vscode-extension/)
 
 ## 系统设置
 
@@ -356,7 +356,7 @@ VS Code 完整版配置
 }
 ```
 
-## [快捷键](https://henrytsz.github.io/2018/09/09/vscode-shortcuts/)
+## [快捷键](https://love.tsz.now.sh//2018/09/09/vscode-shortcuts/)
 
 ## 一些小技巧
 

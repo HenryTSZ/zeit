@@ -1,7 +1,7 @@
 ---
 title: Mac 常用快捷键
 date: 2017-11-06
-categories: [Operating System]
+categories: [Software, Mac]
 tags: [Mac]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 在 Finder 中使用 VSCode 打开文件或文件夹
 date: 2019-01-11
-categories: [Software]
+categories: [Software, Mac]
 tags: [Vscode]
 ---
 
@@ -32,6 +32,6 @@ tags: [Vscode]
 
 6. 选择电脑上任意一个文件或文件夹, 点击右键 `服务`, 就可以看到 `Open With VSCode` 菜单
 
-7. 为了避免每次都要右键选择服务, 可以为这个服务设置一个快捷键. 具体设置看[这里](https://henrytsz.github.io/2018/04/25/iterm2-usage-and-skills/#toc-heading-24)
+7. 为了避免每次都要右键选择服务, 可以为这个服务设置一个快捷键. 具体设置看[这里](https://love.tsz.now.sh//2018/04/25/iterm2-usage-and-skills/#toc-heading-24)
 
 8. 参考资料: [Open With VSCode](https://blog.csdn.net/u013069892/article/details/83147239)

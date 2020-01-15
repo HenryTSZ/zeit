@@ -1,7 +1,7 @@
 ---
 title: git 基本指令
 date: 2017-01-20
-categories: [Git]
+categories: [Software, Windows]
 tags: [Git]
 ---
 
@@ -172,7 +172,7 @@ user.email=email
 
 5. 本地分支和远程分支建立映射关系的作用
 
-	参见 [Git branch upstream](https://henrytsz.github.io/2017/01/21/git-local-branch-and-remote-branch-establish-mapping-relationship/)
+	参见 [Git branch upstream](https://love.tsz.now.sh//2017/01/21/git-local-branch-and-remote-branch-establish-mapping-relationship/)
 
 
 ## [阮一峰关于 git 5 个重要(基本)的指令](http://www.ruanyifeng.com/blog/2014/06/git_remote.html)

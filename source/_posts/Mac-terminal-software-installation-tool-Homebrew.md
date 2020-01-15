@@ -1,8 +1,8 @@
 ---
 title: Mac 终端软件安装利器 - Homebrew
 date: 2018-10-27
-categories: [Operating System]
-tags: [Mac]
+categories: [Software, Mac]
+tags: [Homebrew]
 ---
 
 [Homebrew](https://brew.sh/index_zh-cn.html) 是一款 `Mac OS` 平台下的软件包管理工具, 拥有安装、卸载、更新、查看、搜索等很多实用的功能. 简单的一条指令, 就可以实现包管理, 而不用你关心各种依赖和文件路径的情况, 十分方便快捷.
@@ -120,7 +120,7 @@ epichrome                                                    homebrew/cask-versi
 
 那此时我们就需要使用 `brew cask google-chrome` 来安装 `chrome` 浏览器了
 
-若想了解更多关于 `cask` 的内容, 请阅读:[借助 Homebrew Cask, 教你快速下载安装 Mac App 新姿势](https://henrytsz.github.io/2018/11/07/with-homebrew-cask-you-can-quickly-download-and-install-new-poses-for-your-mac-app/)
+若想了解更多关于 `cask` 的内容, 请阅读:[借助 Homebrew Cask, 教你快速下载安装 Mac App 新姿势](https://love.tsz.now.sh//2018/11/07/with-homebrew-cask-you-can-quickly-download-and-install-new-poses-for-your-mac-app/)
 
 ### 更新应用和清理旧版
 

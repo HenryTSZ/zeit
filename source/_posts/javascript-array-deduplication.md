@@ -1,7 +1,7 @@
 ---
 title: JavaScript 数组去重
 date: 2018-08-02
-categories: [FrontEnd]
+categories: [FrontEnd, Js]
 tags: [Js]
 ---
 

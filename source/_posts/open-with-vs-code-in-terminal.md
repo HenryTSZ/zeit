@@ -1,7 +1,7 @@
 ---
 title: 在 Terminal 中使用 VSCode 打开文件或文件夹
 date: 2019-01-12
-categories: [Software]
+categories: [Software, Mac]
 tags: [Vscode]
 ---
 

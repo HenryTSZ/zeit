@@ -1,7 +1,7 @@
 ---
 title: MacTalk
 date: 2018-05-18
-categories: [Operating System]
+categories: [Software, Mac]
 tags: [Mac]
 ---
 
@@ -72,7 +72,7 @@ tags: [Mac]
 
 1. 根据文件名快速查找文件
 
-    我们在 `OS X` 中查找文件或文件内容一般使用 `spotlight` 或 [alfred](https://henrytsz.github.io/2018/06/01/alfred/), 不过, 如果你知道文件名的一部分, 想更加快速的定位文件, 那么就会用到命令行工具 `locate` .
+    我们在 `OS X` 中查找文件或文件内容一般使用 `spotlight` 或 [alfred](https://love.tsz.now.sh//2018/06/01/alfred/), 不过, 如果你知道文件名的一部分, 想更加快速的定位文件, 那么就会用到命令行工具 `locate` .
 
     `locate` 是 `Unix/Linux` 下的命令工具, 基本原理就是通过定期更新系统的文件和文件名并把索引信息放入系统的数据库中, 当通过 `locate` 查找文件时直接从数据库里那数据. 而且 `locate` 可以查到 `spotlight` 查不到的系统文件.
 

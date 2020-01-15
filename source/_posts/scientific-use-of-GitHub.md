@@ -1,7 +1,7 @@
 ---
 title: 如何科学使用 GitHub 服务
 date: 2019-02-05
-categories: [Operating System]
+categories: [Software]
 tags: [Git]
 ---
 

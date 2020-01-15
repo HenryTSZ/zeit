@@ -2,7 +2,7 @@
 layout: post
 title: chrome 浏览器表单自动填充默认样式 - autofill
 date: 2018-04-17
-categories: [Browser]
+categories: [Software, Browser]
 tags: [Chrome]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: chrome 扩展插件
 date: 2018-10-20
-categories: [Browser]
+categories: [Software, Browser]
 tags: [Chrome]
 ---
 

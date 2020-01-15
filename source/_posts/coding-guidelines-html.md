@@ -2,7 +2,7 @@
 title: html 编码指南
 date: 2019-09-04
 cover: true
-categories: [FrontEnd]
+categories: [FrontEnd, Html]
 tags: [Html, Guidelines]
 ---
 ## html 规范
