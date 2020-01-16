@@ -62,7 +62,7 @@ tags: [Homebrew]
 
 说完理由, 下面让我们一起看看如何使用 `Homebrew Cask`.
 
-## [安装 Homebrew](https://love.tsz.now.sh//2018/10/27/mac-terminal-software-installation-tool-homebrew/)
+## [安装 Homebrew](https://tsz.now.sh/2018/10/27/mac-terminal-software-installation-tool-homebrew/)
 
 在开始前, 你需要先安装 `Homebrew`. 点击上面链接跟着教程安装即可, 如果已经安装好了, 那么可以愉快的进行下一部分了
 
@@ -77,7 +77,7 @@ tags: [Homebrew]
 这里的「软件名」就是我们所要安装软件的名称, 下面列举几个常用软件的安装命令大家就会明白了:
 
 - `brew cask install google-chrome`   安装 Chrome 浏览器
-- `brew cask install alfred`   安装  [Alfred](https://love.tsz.now.sh//2018/06/01/alfred/)
+- `brew cask install alfred`   安装  [Alfred](https://tsz.now.sh/2018/06/01/alfred/)
 - `brew cask install fliqlo`   安装屏保程序 Fliqlo
 - `brew cask install dropbox`   安装 Dropbox
 - `brew cask install java`   安装 Java 等开发环境也是可以的

@@ -13,7 +13,7 @@ tags: [Chrome]
 
 快捷键比较多, 这里挑出几个常用的说一下
 
-Mac 快捷键有很多和 Windows 不同, 如果需要修改为和 Windows 一致, [请点这里](https://love.tsz.now.sh//2017/11/03/mac-custom-application-shortcut-keys)
+Mac 快捷键有很多和 Windows 不同, 如果需要修改为和 Windows 一致, [请点这里](https://tsz.now.sh/2017/11/03/mac-custom-application-shortcut-keys)
 
 ### URL 链接
 

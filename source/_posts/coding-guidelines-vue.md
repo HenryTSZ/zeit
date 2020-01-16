@@ -168,6 +168,6 @@ export default {
 </style>
 ```
 
-可以配合 VS Code 使用代码模版生成统一的 vue 文件, 具体配置请看 [传送门](https://love.tsz.now.sh//2018/09/05/vscode-complete-config/#toc-heading-5)
+可以配合 VS Code 使用代码模版生成统一的 vue 文件, 具体配置请看 [传送门](https://tsz.now.sh/2018/09/05/vscode-complete-config/#toc-heading-5)
 
 ## [关于代码评审（Code Review）](https://mp.weixin.qq.com/s/kLi56CGJ2WCQeBlLt_Feaw)

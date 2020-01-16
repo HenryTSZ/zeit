@@ -7,7 +7,7 @@ tags: [Mac]
 
 对于一台全新的 `Mac` , 我们除了欣赏它奇妙的工业设计之外, 还有一件非常重要的事情, 就是装上 `Mac` 上的第一批软件. 一般, 这第一批软件会一直伴随着我们日常生活、办公、娱乐, 所以能在最开始就装上这些优秀的应用, 绝对是提升幸福感的不错途径.
 
-## Mac 终端软件安装利器:[Homebrew](https://love.tsz.now.sh//2018/10/27/mac-terminal-software-installation-tool-homebrew/) 和 [Homebrew Cask](https://love.tsz.now.sh//2018/11/07/with-homebrew-cask-you-can-quickly-download-and-install-new-poses-for-your-mac-app/)
+## Mac 终端软件安装利器:[Homebrew](https://tsz.now.sh/2018/10/27/mac-terminal-software-installation-tool-homebrew/) 和 [Homebrew Cask](https://tsz.now.sh/2018/11/07/with-homebrew-cask-you-can-quickly-download-and-install-new-poses-for-your-mac-app/)
 
 强烈推荐先安装 `Homebrew`, 因为 `Mac` 端几乎所有软件都可以通过它来安装. 这种方法只需在终端输入一行命令, 就可以解决包括查找、下载和安装软件的一系列步骤.
 
@@ -25,7 +25,7 @@ tags: [Mac]
 
 ![iTerm2](/img/mac/009.png)
 
-[iTerm2 用法与技巧](https://love.tsz.now.sh//2018/04/25/iterm2-usage-and-skills/)
+[iTerm2 用法与技巧](https://tsz.now.sh/2018/04/25/iterm2-usage-and-skills/)
 
 Install: `$ brew cask install iterm2`
 
@@ -37,7 +37,7 @@ Install: `$ brew cask install iterm2`
 
 ![VS Code](https://code.visualstudio.com/assets/home/home-screenshot-mac-lg-2x.png)
 
-[VSCode 初始化配置](https://love.tsz.now.sh//2018/09/05/vscode-complete-config/)
+[VSCode 初始化配置](https://tsz.now.sh/2018/09/05/vscode-complete-config/)
 
 Install: `$ brew cask install visual-studio-code`
 
@@ -49,7 +49,7 @@ Install: `$ brew cask install visual-studio-code`
 
 ![Karabiner-Elements](/img/mac/028.png)
 
-[Karabiner-Elements 使用介绍](https://love.tsz.now.sh//2018/06/23/karabiner-elements/)
+[Karabiner-Elements 使用介绍](https://tsz.now.sh/2018/06/23/karabiner-elements/)
 
 Install: `$ brew cask install karabiner-elements`
 
@@ -72,7 +72,7 @@ Install: `$ brew cask install karabiner-elements`
 
 ![Alfred](https://cdn.sspai.com/2018/04/09/16acd6a52ca0fe53661d8223adc3525a.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1)
 
-[Alfred 上手指南](https://love.tsz.now.sh//2018/06/01/alfred/)
+[Alfred 上手指南](https://tsz.now.sh/2018/06/01/alfred/)
 
 Install: `$ brew cask install alfred`
 

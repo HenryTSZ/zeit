@@ -93,7 +93,7 @@ tags: [Vscode, Guidelines]
 
 * [HTML Snippets](https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets)
 
-  + 各种 HTML 标签片段, 如果你 [Emmet](https://love.tsz.now.sh//2018/09/05/vscode-complete-config/#toc-heading-21) 玩的熟, 完全可以忽略这个
+  + 各种 HTML 标签片段, 如果你 [Emmet](https://tsz.now.sh/2018/09/05/vscode-complete-config/#toc-heading-21) 玩的熟, 完全可以忽略这个
   + [Install](vscode:extension/abusaidm.html-snippets)
 
 ### 自动补全
@@ -151,7 +151,7 @@ tags: [Vscode, Guidelines]
 * [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
 
   + vim 被誉为『编辑器之神』, 一旦学会了 vim 的指法, 会让你终身受益, 至少在你敲代码的年代会收益, 毫无夸张, 它会让你摆脱烦人的, 在敲代码的时候频繁的移动鼠标, 这也是 vim 的设计理念之一 -- 脱离鼠标.
-  + [每日一 Vim 笔记](https://love.tsz.now.sh//2018/05/08/the-notes-of-a-daily-vim)
+  + [每日一 Vim 笔记](https://tsz.now.sh/2018/05/08/the-notes-of-a-daily-vim)
   + [每日一 Vim](http://liuzhijun.iteye.com/category/270228)
   + [Install](vscode:extension/vscodevim.vim)
 
@@ -370,13 +370,13 @@ tags: [Vscode, Guidelines]
 
   + 使用 Finder 打开 VSCode 中的文件或文件夹
   + [Install](vscode:extension/fabiospampinato.vscode-open-in-finder)
-  + [在 Finder 中使用 VSCode 打开文件或文件夹 | Henry](https://love.tsz.now.sh//2019/01/11/open-with-vs-code-in-finder/)
+  + [在 Finder 中使用 VSCode 打开文件或文件夹 | Henry](https://tsz.now.sh/2019/01/11/open-with-vs-code-in-finder/)
 
 * [Open in Terminal](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-terminal#overview)
 
   + 使用 Terminal 打开 VSCode 中的文件夹路径
   + [Install](vscode:extension/fabiospampinato.vscode-open-in-terminal)
-  + [在 Terminal 中使用 VSCode 打开文件或文件夹 | Henry](https://love.tsz.now.sh//2019/04/02/open-with-vs-code-in-terminal/)
+  + [在 Terminal 中使用 VSCode 打开文件或文件夹 | Henry](https://tsz.now.sh/2019/04/02/open-with-vs-code-in-terminal/)
 
 * [Code Time](https://marketplace.visualstudio.com/items?itemName=softwaredotcom.swdc-vscode)
 

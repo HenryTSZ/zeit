@@ -32,6 +32,6 @@ tags: [Vscode]
 
 6. 选择电脑上任意一个文件或文件夹, 点击右键 `服务`, 就可以看到 `Open With VSCode` 菜单
 
-7. 为了避免每次都要右键选择服务, 可以为这个服务设置一个快捷键. 具体设置看[这里](https://love.tsz.now.sh//2018/04/25/iterm2-usage-and-skills/#toc-heading-24)
+7. 为了避免每次都要右键选择服务, 可以为这个服务设置一个快捷键. 具体设置看[这里](https://tsz.now.sh/2018/04/25/iterm2-usage-and-skills/#toc-heading-24)
 
 8. 参考资料: [Open With VSCode](https://blog.csdn.net/u013069892/article/details/83147239)

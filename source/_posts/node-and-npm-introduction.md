@@ -16,7 +16,7 @@ node 和 npm 简介
 - 安装好之后, 在 `cmd` 控制台输入: `node -v` , 控制台打印出版本表示安装成功.
 - 由于新版的 `nodejs` 已经集成了 `npm` , 所以 `npm` 也一并安装好了. 同样可以使用 `cmd` 命令行输入: `npm -v` 来测试是否成功安装. 出现版本提示表示安装成功.
 
-### [Mac 使用 Homebrew 安装 node](https://love.tsz.now.sh//2018/11/13/install-node-with-homebrew/)
+### [Mac 使用 Homebrew 安装 node](https://tsz.now.sh/2018/11/13/install-node-with-homebrew/)
 
 ## 列出所有全局模块
 
