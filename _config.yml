@@ -72,8 +72,12 @@ theme: material-x
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
-deploy:
-- type: git
-  repo: https://github.com/HenryTSZ/HenryTSZ.github.io.git
+# deploy:
+# - type: git
+#   repo: https://github.com/HenryTSZ/HenryTSZ.github.io.git
 
 disqus_shortname: henrytsz
+
+# Add google analytics configuration
+# 添加 Google Analytics 配置
+google_analytics_key: UA-151312548-2
