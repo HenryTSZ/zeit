@@ -1,7 +1,7 @@
 ---
 title: Vue 编码指南
 date: 2019-09-06
-categories: [FrontEnd]
+categories: [FrontEnd, Vue]
 tags: [Vue, Guidelines]
 ---
 
