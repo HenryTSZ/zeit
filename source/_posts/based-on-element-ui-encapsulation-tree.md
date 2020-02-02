@@ -377,7 +377,7 @@ handleCheck(data, checked) {
 
 ### 存在的问题
 
-`element-ui` 的 `filter`, 只是将数据在页面隐藏, 使用 `_getAllNodes` 仍然能获取到, 所以还需要过滤一下
+一: `element-ui` 的 `filter`, 只是将数据在页面隐藏, 使用 `_getAllNodes` 仍然能获取到, 所以还需要过滤一下
 
 ``` JS
 const elTreeStore = this.$refs[this.ref].store
@@ -385,6 +385,8 @@ const allNodes = elTreeStore._getAllNodes().filter(node => node.visible)
 ```
 
 虽然咱们自己的全选使用过滤实现了页面与实际数据相同, 但 `element-ui` 自己仍然有 `bug`, 具体请看这里: [[Bug Report] with tree components, multi box filter, select the parent node, can only choose to filter out of the current node? · Issue #18522 · ElemeFE/element](https://github.com/ElemeFE/element/issues/18522)
+
+二: 只有点击复选框的时候, `全选` 复选框可以联动, 通过 `setCheckedNodes` 、 `setCheckedKeys` 和 `default-checked-keys` 设置目前勾选的节点时, 无法联动, 具体解决方案请查看 [基于 ElementUI 封装的 Tree2 | Henry](https://tsz.now.sh/2020/01/31/based-on-element-ui-encapsulation-tree-2/)
 
 ## Attributes/Events/slot/方法
 
