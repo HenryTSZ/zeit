@@ -7,7 +7,7 @@ tags: [Js, ElementUI]
 
 继上一篇 [基于 ElementUI 封装的 SelectTree | Henry](https://tsz.now.sh/2019/11/29/based-on-element-ui-encapsulation-select-tree/) 后, 发现 `tree` 也需要封装一下, 增加一个全选功能和展开到 `level` 级的功能
 
-[源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/Tree.vue)在这里
+[源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/Tree1.vue)在这里
 
 ## 展开 level 级
 
@@ -348,13 +348,13 @@ handleCheckAllChange() {
 
 再处理 `tree` 的选中逻辑:
 
-1. 首先判断 `showCheckAll`, 如果为 `false`, 直接 `return`
+1. 首先判断 `showCheckAll` 和 `showCheckbox`, 如果为 `false`, 直接 `return`
 2. 根据 `checkedKeys.length` 和 `allNodes.length` 比较来给 `checkAll` 和 `isIndeterminate` 赋值
 
 ``` JS
 // el-tree 复选框被点击
 handleCheck(data, checked) {
-  if (!this.showCheckAll) {
+  if (!this.showCheckAll || !this.showCheckbox) {
     return
   }
   const { checkedKeys } = checked
