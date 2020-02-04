@@ -3,6 +3,7 @@ title: el-tree 节点过滤加载对应子节点
 date: 2020-01-12
 categories: [FrontEnd]
 tags: [Js, ElementUI]
+thumbnail: /img/element-ui/thumbnail.svg
 ---
 
 `el-tree` 的官网例子, 不会返回过滤节点的子节点, 这也是总结这篇博客的原因.

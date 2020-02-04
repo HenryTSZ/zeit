@@ -3,6 +3,7 @@ title: VS Code 快捷键
 date: 2018-09-09
 categories: [Software]
 tags: [Vscode, Guidelines]
+thumbnail: /img/vscode/thumbnail.png
 ---
 
 ## 快捷键

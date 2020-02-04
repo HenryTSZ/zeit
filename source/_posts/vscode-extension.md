@@ -3,6 +3,7 @@ title: VS Code 插件
 date: 2018-09-08
 categories: [Software]
 tags: [Vscode, Guidelines]
+thumbnail: /img/vscode/thumbnail.png
 ---
 
 ## 插件

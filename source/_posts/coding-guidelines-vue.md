@@ -3,6 +3,7 @@ title: Vue 编码指南
 date: 2019-09-06
 categories: [FrontEnd, Vue]
 tags: [Vue, Guidelines]
+thumbnail: /img/vue/thumbnail.png
 ---
 
 ## Vue 规范

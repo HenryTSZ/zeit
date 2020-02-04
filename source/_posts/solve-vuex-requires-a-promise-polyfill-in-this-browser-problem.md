@@ -4,6 +4,7 @@ title: 解决 vuex requires a Promise polyfill in this browser 问题
 date: 2018-04-22
 categories: [FrontEnd, Vue]
 tags: [Vue]
+thumbnail: /img/vue/thumbnail.png
 ---
 
 造成这种现象的原因归根究底就是浏览器对 `ES6` 中的 `promise` 无法支持, 因此需要通过引入 `babel-polyfill` 来使我们的浏览器正常使用 `es6` 的功能

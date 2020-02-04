@@ -4,6 +4,7 @@ title: vue-cli 启动本地服务局域网不能访问的原因分析
 date: 2018-02-08
 categories: [FrontEnd, Vue]
 tags: [Vue]
+thumbnail: /img/vue/thumbnail.png
 ---
 
 这篇文章主要介绍了 `vue-cli` 启动的 `webpack` 项目用 `localhost` 可以访问, 但是切换到 `ip` 就不可以访问的原因

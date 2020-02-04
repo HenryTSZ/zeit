@@ -3,6 +3,7 @@ title: VS Code 完整版配置
 date: 2018-09-05
 categories: [Software]
 tags: [Vscode, Guidelines]
+thumbnail: /img/vscode/thumbnail.png
 ---
 
 VS Code 完整版配置

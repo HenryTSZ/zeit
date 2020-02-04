@@ -4,6 +4,7 @@ title: vue-router 路由参数刷新消失的问题
 date: 2017-08-17
 categories: [FrontEnd, Vue]
 tags: [Vue]
+thumbnail: /img/vue/thumbnail.png
 ---
 
 页面使用 `vue-router` 在跳转时需要给下一个页面携带参数. 在进入页面后再次刷新, 参数就消失了.

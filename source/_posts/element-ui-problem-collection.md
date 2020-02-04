@@ -4,6 +4,7 @@ title: ElementUI 问题集合
 date: 2017-09-15
 categories: [FrontEnd]
 tags: [ElementUI]
+thumbnail: /img/element-ui/thumbnail.svg
 ---
 
 收集工作中使用 ElementUI 遇到的一些问题

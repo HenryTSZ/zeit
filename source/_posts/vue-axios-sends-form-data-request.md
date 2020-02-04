@@ -1,9 +1,10 @@
 ---
 layout: post
-title: vue axios 发送 Form Data 数据格式请求
+title: Vue axios 发送 Form Data 数据格式请求
 date: 2019-03-20
 categories: [FrontEnd, Vue]
 tags: [Vue, axios]
+thumbnail: /img/vue/thumbnail.png
 ---
 
 `axios` 默认是 `Payload` 格式数据请求, 但有时候后端接收参数要求必须是 `Form Data` 格式的, 所以我们就得进行转换.

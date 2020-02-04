@@ -3,6 +3,7 @@ title: VS Code 简明版配置
 date: 2018-09-04
 categories: [Software]
 tags: [Vscode, Guidelines]
+thumbnail: /img/vscode/thumbnail.png
 ---
 
 VS Code 简明版配置

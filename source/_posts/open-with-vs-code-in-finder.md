@@ -3,6 +3,7 @@ title: 在 Finder 中使用 VSCode 打开文件或文件夹
 date: 2019-01-11
 categories: [Software, Mac]
 tags: [Vscode]
+thumbnail: /img/vscode/thumbnail.png
 ---
 
 1. 找到自动操作(小机器人), 点击新建文稿或 `cmd + n`, 选择快速操作, 点击选取. 如图：

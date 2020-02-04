@@ -4,6 +4,7 @@ title: Vue 修饰符
 date: 2018-09-10
 categories: [FrontEnd, Vue]
 tags: [Vue]
+thumbnail: /img/vue/thumbnail.png
 ---
 
 为了方便大家写代码, `vue.js` 给大家提供了很多方便的修饰符, 比如我们经常用到的取消冒泡, 阻止默认事件等等~

@@ -1,9 +1,10 @@
 ---
 layout: post
-title: vue props 传多值的问题
+title: Vue props 传多值的问题
 date: 2018-06-18
 categories: [FrontEnd, Vue]
 tags: [Vue]
+thumbnail: /img/vue/thumbnail.png
 ---
 
 一般使用 `vue` 父传子值时, 都是 `:a="a" :b="b"`, 但你见过这种 `:a="a, b, c, d..."` 吗?

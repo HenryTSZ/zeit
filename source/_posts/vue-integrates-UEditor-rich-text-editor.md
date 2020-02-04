@@ -1,9 +1,10 @@
 ---
 layout: post
-title: vue 集成 UEditor 富文本编辑器
+title: Vue 集成 UEditor 富文本编辑器
 date: 2018-03-05
 categories: [FrontEnd, Vue]
 tags: [Vue]
+thumbnail: /img/vue/thumbnail.png
 ---
 
 `vue` 是前端开发者所追捧的框架, 简单易上手, 但是基于 `vue` 的富文本编辑器大多数太过于精简. 于是我将百度富文本编辑器放到 `vue` 项目中使用.

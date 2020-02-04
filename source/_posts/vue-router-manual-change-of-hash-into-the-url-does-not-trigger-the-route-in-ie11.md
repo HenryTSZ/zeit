@@ -4,6 +4,7 @@ title: vue-router 在 IE11 下手动更改 URL 的 hash 不会触发路由
 date: 2018-05-21
 categories: [FrontEnd, Vue]
 tags: [Vue]
+thumbnail: /img/vue/thumbnail.png
 ---
 
 在 `IE`、`chrome` 中, 通过 `Element-Ui` 的 `el-menu` 的 `router` 属性, 点击切换路由是可以正常跳转的, 但如果手动输入 `url`, `chrome` 可以正常跳转, 但 `IE` 没有任何反应

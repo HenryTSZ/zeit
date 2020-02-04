@@ -3,6 +3,7 @@ title: 基于 ElementUI 封装的 Tree2
 date: 2020-01-31
 categories: [FrontEnd]
 tags: [Js, ElementUI]
+thumbnail: /img/element-ui/thumbnail.svg
 ---
 
 最近在使用自己封装的 [Tree](https://tsz.now.sh/2020/01/02/based-on-element-ui-encapsulation-tree/) 的时候, 发现只有点击复选框的时候, `全选` 复选框可以联动, 通过 `setCheckedNodes` 、 `setCheckedKeys` 和 `default-checked-keys` 设置目前勾选的节点时, 无法联动, 需要再优化

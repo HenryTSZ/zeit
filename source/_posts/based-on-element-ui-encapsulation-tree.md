@@ -3,6 +3,7 @@ title: 基于 ElementUI 封装的 Tree
 date: 2020-01-02
 categories: [FrontEnd]
 tags: [Js, ElementUI]
+thumbnail: /img/element-ui/thumbnail.svg
 ---
 
 继上一篇 [基于 ElementUI 封装的 SelectTree | Henry](https://tsz.now.sh/2019/11/29/based-on-element-ui-encapsulation-select-tree/) 后, 发现 `tree` 也需要封装一下, 增加一个全选功能和展开到 `level` 级的功能

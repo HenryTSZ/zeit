@@ -4,6 +4,7 @@ title: 解决 Vue 相同路由参数不同不会刷新的问题
 date: 2019-02-15
 categories: [FrontEnd, Vue]
 tags: [Vue]
+thumbnail: /img/vue/thumbnail.png
 ---
 
 通常情况下我们喜欢设置 `keepAlive` 包裹 `router-view`
