@@ -1,6 +1,6 @@
 ---
 title: Markdown 简明教程
-date: 2019-09-06
+date: 2019-10-06
 categories: [Software]
 tags: [Markdown]
 ---
