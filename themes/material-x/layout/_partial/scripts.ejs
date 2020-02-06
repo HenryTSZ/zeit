@@ -115,26 +115,23 @@
 %>
 <% if (enableDisqus){ %>
   <script>
-    var disqus_shortname = '<%= config.disqus_shortname %>';
-    (function(){
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', '//disqus.com/next/config.json?' + new Date().getTime(), true);
-      xhr.timeout = 3000;
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          // 加载 Disqus 评论框
-          var dsq = document.createElement('script');
-          dsq.type = 'text/javascript';
-          dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        }
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '//disqus.com/next/config.json?' + new Date().getTime(), true);
+    xhr.timeout = 3000;
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        // 加载 Disqus 评论框
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//<%= config.disqus_shortname %>.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       }
-      xhr.ontimeout = function () {
-        xhr.abort();
-      }
-      xhr.send(null);
-    })();
+    }
+    xhr.ontimeout = function () {
+      xhr.abort();
+    }
+    xhr.send(null);
   </script>
 <% } %>
 <% if (enableLivere){ %>
