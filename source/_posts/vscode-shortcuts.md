@@ -39,20 +39,20 @@ thumbnail: /img/vscode/thumbnail.png
 
 ### 移动光标
 
-| 快捷键         | 作用                                       |
-| -------------- | ------------------------------------------ |
-| C + ←          | 将光标定位到当前行的最左侧                 |
-| C + →          | 将光标定位到当前行的最右侧                 |
-| O + ←          | 将光标定位到当前单词的左侧单词             |
-| O + →          | 将光标定位到当前单词的右侧单词             |
-| C + S + \\     | 在代码块之间移动光标                       |
-| CT + g / C + g | 转到行                                     |
-| C + u          | 将光标的移动回退到上一个位置               |
-| C + S + 字母 O | 转到文件中的符号                           |
-| CT + S + [     | 转到括号                                   |
-| CT + S + ]     | 选中括号中到内容                           |
-| C + t          | 转到工作区的符号                           |
-| C + S + o      | 文件中符号跳转, 可以通过冒号来进行分组：@: |
+| 快捷键         | 作用                                      |
+| -------------- | ----------------------------------------- |
+| C + ←          | 将光标定位到当前行的最左侧                |
+| C + →          | 将光标定位到当前行的最右侧                |
+| O + ←          | 将光标定位到当前单词的左侧单词            |
+| O + →          | 将光标定位到当前单词的右侧单词            |
+| C + S + \\     | 在代码块之间移动光标                      |
+| CT + g / C + g | 转到行                                    |
+| C + u          | 将光标的移动回退到上一个位置              |
+| C + S + 字母 O | 转到文件中的符号                          |
+| CT + S + [     | 转到括号                                  |
+| CT + S + ]     | 选中括号中到内容                          |
+| C + t          | 转到工作区的符号                          |
+| C + S + o      | 文件中符号跳转, 可以通过冒号来进行分组:@: |
 
 ### 删除
 
@@ -120,14 +120,15 @@ thumbnail: /img/vscode/thumbnail.png
 
 ### 折叠展开
 
-| 快捷键           | 作用                         |
-| ---------------- | ---------------------------- |
-| C + k C + [      | 折叠所有子区域代码           |
-| C + k C + ]      | 展开所有子区域代码           |
-| C + O + [        | 折叠光标处最内部的未折叠区域 |
-| C + O + ]        | 展开光标处的折叠区域         |
-| C + k C + 数字 0 | 折叠编辑器中的所有区域       |
-| C + k C + j      | 展开编辑器中的所有区域       |
+| 快捷键           | 作用                                                                                                                                                         |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| C + k C + [      | 折叠所有子区域代码                                                                                                                                           |
+| C + k C + ]      | 展开所有子区域代码                                                                                                                                           |
+| C + O + [        | 折叠光标处最内部的未折叠区域                                                                                                                                 |
+| C + O + ]        | 展开光标处的折叠区域                                                                                                                                         |
+| C + k C + 数字 0 | 折叠编辑器中的所有区域                                                                                                                                       |
+| C + k C + j      | 展开编辑器中的所有区域                                                                                                                                       |
+| S + Click        | 第一次在折叠指示器上先折叠内部范围. 再次(当所有内部范围都已折叠时)将折叠父级. 再次展开一切. https://code.visualstudio.com/updates/v1_42#_folding-refinements |
 
 ### js 相关
 
@@ -489,10 +490,10 @@ thumbnail: /img/vscode/thumbnail.png
 ]
 ```
 
-## 所有 VS Code 快捷键的 PDF 文件：
+## 所有 VS Code 快捷键的 PDF 文件:
 
-- Linux：https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf
+- Linux:https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf
 
-- Window：https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+- Window:https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
 
-- macOS：https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
+- macOS:https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf

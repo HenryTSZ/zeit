@@ -74,3 +74,7 @@ https://disqus.com/next/config.json
 ```
 
 采用超时的方法来判断是否能连接上 `Disqus`, 是因为我想 `3` 秒内无法成功 `GET` 这个小文件, 就算翻了墙, 评论框的加载速度也不容乐观.
+
+## 参考资料
+
+- [检测网络是否能够访问 Disqus | Fooleap's Blog](https://blog.fooleap.org/check-network-able-to-access-disqus.html)
