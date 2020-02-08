@@ -581,11 +581,11 @@ Git 中的 Markdown 语法扩展中包括了一些表情包.
 
 例如:
 
-`表情一：:+1:, 表情二：:o:`
+`表情一：:tada:, 表情二：:bug:`
 
 效果:
 
-表情一: :+1: , 表情二: :o:
+表情一: :tada: , 表情二: :bug:
 
 更多表情可以查看 [表情大全](https://www.webpagefx.com/tools/emoji-cheat-sheet/) 或 [scotch-io/All-Github-Emoji-Icons](https://github.com/scotch-io/All-Github-Emoji-Icons)
 
