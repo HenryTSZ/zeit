@@ -273,6 +273,9 @@
             white-space: normal;
             overflow: hidden;
             text-overflow: ellipsis;
+            b {
+              color: @theme_main;
+            }
           }
           .digest {
             display: block;
@@ -298,6 +301,12 @@
             font-size: 11px;
             color: @color_grey;
           }
+        }
+        .no-data {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
         }
       }
     }
