@@ -91,7 +91,6 @@ var SearchService = ''
           self.afterQuery()
         })
       } else {
-        console.log('query() does not exist.')
         self.onQueryError(self.queryText, '')
         self.afterQuery()
       }
@@ -243,7 +242,6 @@ var SearchService = ''
 })(jQuery)
 
 var AlgoliaSearch
-
 ;(function($) {
   'use strict'
 
@@ -345,7 +343,6 @@ var AlgoliaSearch
   }
 })(jQuery)
 var AzureSearch
-
 ;(function($) {
   'use strict'
 
@@ -458,7 +455,6 @@ var AzureSearch
   }
 })(jQuery)
 var BaiduSearch
-
 ;(function($) {
   'use strict'
 
@@ -651,7 +647,6 @@ var GoogleCustomSearch = ''
   }
 })(jQuery)
 var HexoSearch
-
 ;(function($) {
   'use strict'
 
@@ -662,7 +657,7 @@ var HexoSearch
   HexoSearch = function(options) {
     SearchService.apply(this, arguments)
     var self = this
-    self.config.endpoint = ROOT + ((options || {}).endpoint || 'content.json')
+    self.config.endpoint = ROOT + ((options || {}).endpoint || 'search.xml')
     self.config.endpoint = self.config.endpoint.replace('//', '/') //make sure the url is correct
     self.cache = ''
 
@@ -707,7 +702,7 @@ var HexoSearch
       var html = ''
       $.each(data, function(index, post) {
         if (self.contentSearch(post, queryText)) {
-          html += self.buildResult(post.permalink, post.title, post.digest)
+          html += self.buildResult(post.url, post.title, post.digest)
         }
       })
       return html
@@ -729,42 +724,29 @@ var HexoSearch
      */
     self.query = function(queryText, startIndex, callback) {
       if (!self.cache) {
-        $.get(
-          self.config.endpoint,
-          {
-            key: self.config.apiKey,
-            cx: self.config.engineId,
-            q: queryText,
-            start: startIndex,
-            num: self.config.per_page
-          },
-          function(data, status) {
-            if (
-              status !== 'success' ||
-              !data ||
-              (!data.posts && !data.pages) ||
-              (data.posts.length < 1 && data.pages.length < 1)
-            ) {
-              self.onQueryError(queryText, status)
-            } else {
-              self.cache = data
-              var results = ''
-              var noData = '<span class="no-data">暂无数据</span>'
-              results += self.buildResultList(data.pages, queryText)
-              results += self.buildResultList(data.posts, queryText)
-              self.dom.modal_results.html(results || noData)
-            }
-            self.buildMetadata(data)
-            if (callback) {
-              callback(data)
-            }
+        $.ajax({
+          url: self.config.endpoint,
+          dataType: 'xml',
+          success: function(xmlResponse) {
+            var datas = $('entry', xmlResponse)
+              .map(function() {
+                return {
+                  title: $('title', this).text(),
+                  content: $('content', this).text(),
+                  url: $('url', this).text()
+                }
+              })
+            self.cache = datas
+            handleData()
           }
-        )
+        })
       } else {
+        handleData()
+      }
+      function handleData () {
         var results = ''
         var noData = '<span class="no-data">暂无数据</span>'
-        results += self.buildResultList(self.cache.pages, queryText)
-        results += self.buildResultList(self.cache.posts, queryText)
+        results += self.buildResultList(self.cache, queryText)
         self.dom.modal_results.html(results || noData)
         self.buildMetadata(self.cache)
         if (callback) {
