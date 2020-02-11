@@ -1,6 +1,6 @@
 ---
 title: Vue 动态路由
-date: 2019-09-06
+date: 2020-02-08
 categories: [FrontEnd, Vue]
 tags: [Vue]
 thumbnail: /img/vue/thumbnail.png
