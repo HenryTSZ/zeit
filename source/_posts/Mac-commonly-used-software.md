@@ -9,7 +9,7 @@ tags: [Mac]
 
 ## Mac 终端软件安装利器:[Homebrew](https://tsz.now.sh/2018/10/27/mac-terminal-software-installation-tool-homebrew/) 和 [Homebrew Cask](https://tsz.now.sh/2018/11/07/with-homebrew-cask-you-can-quickly-download-and-install-new-poses-for-your-mac-app/)
 
-强烈推荐先安装 `Homebrew`, 因为 `Mac` 端几乎所有软件都可以通过它来安装. 这种方法只需在终端输入一行命令, 就可以解决包括查找、下载和安装软件的一系列步骤.
+强烈推荐先安装 `Homebrew` , 因为 `Mac` 端几乎所有软件都可以通过它来安装. 这种方法只需在终端输入一行命令, 就可以解决包括查找、下载和安装软件的一系列步骤.
 
 也许在你看到「终端」「命令」等字眼的时候会有些犹豫, 更是对 `Homebrew` 一无所知, 没关系, 因为它其实并没有很复杂, 只需一点学习成本, 就能让你解锁一种高效而炫酷的安装 `Mac App` 新姿势.
 
@@ -33,7 +33,7 @@ Install: `$ brew cask install iterm2`
 
 ## VS Code: 编辑器
 
-`Visual Studio Code` 是一个轻量级但功能强大的源代码编辑器, 可在桌面上运行, 适用于 `Windows`, `macOS` 和 `Linux`. 它内置了对 `JavaScript`, `TypeScript` 和 `Node.js` 的支持, 并为其他语言(如 `C++`, `C＃`, `Java`, `Python`, `PHP`, `Go`)和运行时(如 `.NET` 和 `Unity`)提供了丰富的扩展生态系统.
+`Visual Studio Code` 是一个轻量级但功能强大的源代码编辑器, 可在桌面上运行, 适用于 `Windows` , `macOS` 和 `Linux` . 它内置了对 `JavaScript` , `TypeScript` 和 `Node.js` 的支持, 并为其他语言(如 `C++` , `C＃` , `Java` , `Python` , `PHP` , `Go` )和运行时(如 `.NET` 和 `Unity` )提供了丰富的扩展生态系统.
 
 ![VS Code](https://code.visualstudio.com/assets/home/home-screenshot-mac-lg-2x.png)
 
@@ -61,7 +61,7 @@ Install: `$ brew cask install karabiner-elements`
 
 什么是启动器? 顾名思义, 就是通过键盘输入来执行相应动作, 从而提高工作效率的软件. 例如 `macOS` 自带的聚焦搜索(Spotlight), 就能将文稿、邮件、应用等整合在一起, 通过关键词匹配展示.
 
-而本文要介绍的 `Alfred`, 也可以看成是 `Spotlight` 的增强版, 但它更多的高级功能, 比如:
+而本文要介绍的 `Alfred` , 也可以看成是 `Spotlight` 的增强版, 但它更多的高级功能, 比如:
 
 - 添加自定义网络搜索引擎;
 - 指定规则精准定位本地文件;
@@ -80,7 +80,7 @@ Install: `$ brew cask install alfred`
 
 ## PopClip: 选中小工具
 
-`PopClip` 是一款在 `Mac` 上人尽皆知的小工具, 它简单高效, 具有强大的拓展功能. `PopClip` 最基本的功能即用鼠标选中一段文字就可以做复制粘贴的动作, 省去了我们平时 `Command + C or V` 的麻烦, 除此之外, 在无拓展支持的情况下, 根据鼠标选中的内容, `PopClip` 还自身支持链接的跳转打开、自带词典的翻译、邮件地址跳转、搜索引擎搜索、单词纠正等功能. 但这个工具真正强大之处在于它的拓展功能  `PopClip Extensions`  的使用.
+`PopClip` 是一款在 `Mac` 上人尽皆知的小工具, 它简单高效, 具有强大的拓展功能. `PopClip` 最基本的功能即用鼠标选中一段文字就可以做复制粘贴的动作, 省去了我们平时 `Command + C or V` 的麻烦, 除此之外, 在无拓展支持的情况下, 根据鼠标选中的内容, `PopClip` 还自身支持链接的跳转打开、自带词典的翻译、邮件地址跳转、搜索引擎搜索、单词纠正等功能. 但这个工具真正强大之处在于它的拓展功能   `PopClip Extensions`   的使用.
 
 ![PopClip](https://cdn.sspai.com/attachment/origin/2014/06/14/75481.jpg?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1)
 
@@ -92,7 +92,7 @@ Install: `$ brew cask install popclip`
 
 ## BetterTouchTool: Mac 触摸板增强神器
 
-`BetterTouchTool` 是一款可以用来代替默认的系统操作方式(组合键、修饰键、手势等)的辅助应用, 其目的是方便用户创造出更适合自身习惯的操作行为, 是 `Mac` 上非常强大的触摸板辅助工具. 但如果你希望拓展出更多丰富的功能, 可能就要在购置硬件设备上投入额外资金, 目前 `BTT` 直接支持的拓展设备有: `Apple Remote`、`Leap Motion`、普通鼠标等. 如果你没有打算考虑新的硬件, 那么官方开发的 `BTT Remote iOS` 客户端也非常值得尝试.
+`BetterTouchTool` 是一款可以用来代替默认的系统操作方式(组合键、修饰键、手势等)的辅助应用, 其目的是方便用户创造出更适合自身习惯的操作行为, 是 `Mac` 上非常强大的触摸板辅助工具. 但如果你希望拓展出更多丰富的功能, 可能就要在购置硬件设备上投入额外资金, 目前 `BTT` 直接支持的拓展设备有: `Apple Remote` 、 `Leap Motion` 、普通鼠标等. 如果你没有打算考虑新的硬件, 那么官方开发的 `BTT Remote iOS` 客户端也非常值得尝试.
 
 ![BetterTouchTool](/img/mac/029.png)
 
@@ -104,7 +104,7 @@ Install: `$ brew cask install bettertouchtool`
 
 ## CheatSheet: 快捷键提示
 
-如果你想在电脑上进行那种行云流水的操作, 快捷键的利用一定是最重要的. 但是别说其他软件的快捷键, 可能就连自带的 `Safari` 的快捷键都不知道一两个. 如果你还在搜索「XXX 的快捷键是什么?」, 那一定是没有遇到过 `CheatSheet`. 这款软件在使用前需要在「系统偏好设置 - 安全性与隐私 - 隐私 - 辅助功能」中勾选 `CheatSheet` 一项, 即可在大多数 `App` 界面中长按 `Command-⌘` 直接呼出该软件的全部快捷键, 可以说是非常的方便了.
+如果你想在电脑上进行那种行云流水的操作, 快捷键的利用一定是最重要的. 但是别说其他软件的快捷键, 可能就连自带的 `Safari` 的快捷键都不知道一两个. 如果你还在搜索「XXX 的快捷键是什么?」, 那一定是没有遇到过 `CheatSheet` . 这款软件在使用前需要在「系统偏好设置 - 安全性与隐私 - 隐私 - 辅助功能」中勾选 `CheatSheet` 一项, 即可在大多数 `App` 界面中长按 `Command-⌘` 直接呼出该软件的全部快捷键, 可以说是非常的方便了.
 
 ![CheatSheet](/img/mac/030.jpg)
 
@@ -126,6 +126,16 @@ Install: `$ brew cask install cheatsheet`
 
 下载地址: [BetterAndBetter - 奇迹秀](http://www.qijishow.com/bab.html)
 
+## BitBar: Mac 菜单栏「万能」工具箱
+
+开源免费的 BitBar, 是专门为 macOS 菜单栏准备, 能够将任何脚本、程序、代码的运行结果输出到菜单栏上面的应用.
+
+![BitBar](https://cdn.sspai.com/editor/u_spencerwoo/15807227036967.png?imageMogr2/quality/95/thumbnail/!1420x708r/gravity/Center/crop/1420x708/interlace/1)
+
+[监控疫情、看天气、查汇率…… Mac 菜单栏「万能」工具箱：BitBar - 少数派](https://sspai.com/post/58683)
+
+Install: `$ brew cask install bitbar`
+
 ## The Unarchive: 解压缩工具
 
 `macOS` 对于压缩文件的处理不是很好. 如果你没有安装任何软件, 你只能选择压缩成 `.zip` 或者解压 `.zip` 文件, 可能听起来有点鸡肋. 而 `The Unarchiver` 作为 `Mac` 上一款相当良心的解压工具, 支持解压 `RAR` 、 `7-zip` 、 `Tar` 等常用压缩格式的文件, 同时也可以打开 `ISO` 、 `EXE` 等类型的文件, 功能齐全并且免费.
@@ -146,7 +156,7 @@ Install: `$ brew cask install the-unarchiver`
 
 ## IINA: 视频播放器
 
-如果是原来, 大多数人推荐给你的第一款视频播放器大概会是 `MplayerX`, 但是这款软件在安装时大多数情况下富含了各类「垃圾软件」, 并且也太久没有更新了. 但 `Mac` 上不安装一个视频播放器, 可能你的观影的日子就到头了. `IINA` 作为一款开源的视频播放器, 却很好的的做到了「干净、流畅、美观」等诸多要点. 高度定制的快捷键绝对可以为你带来更顺手的操作环境, 对视频格式的支持也做的更加完美, 一定是 [《macOS 上最好的现代视频播放器: IINA》](https://sspai.com/post/40870).
+如果是原来, 大多数人推荐给你的第一款视频播放器大概会是 `MplayerX` , 但是这款软件在安装时大多数情况下富含了各类「垃圾软件」, 并且也太久没有更新了. 但 `Mac` 上不安装一个视频播放器, 可能你的观影的日子就到头了. `IINA` 作为一款开源的视频播放器, 却很好的的做到了「干净、流畅、美观」等诸多要点. 高度定制的快捷键绝对可以为你带来更顺手的操作环境, 对视频格式的支持也做的更加完美, 一定是 [《macOS 上最好的现代视频播放器: IINA》](https://sspai.com/post/40870).
 
 ![IINA](/img/mac/034.jpg)
 
@@ -242,7 +252,7 @@ Install: `$ brew cask install aria2gui`
 
 ## stretchly: 提醒工作狂按时休息
 
-即使 `OS X` 再好用, 玩起来也要注意时间, 注意身体嘛, 推荐一款休息提醒软件: `stretchly`, 可以帮助用户从"忘我"的状态下脱离出来, 用户提前设置好每过多长时间就休息几分钟, 到了休息点会强制性锁屏, 并进行休息时长倒数读秒.
+即使 `OS X` 再好用, 玩起来也要注意时间, 注意身体嘛, 推荐一款休息提醒软件: `stretchly` , 可以帮助用户从"忘我"的状态下脱离出来, 用户提前设置好每过多长时间就休息几分钟, 到了休息点会强制性锁屏, 并进行休息时长倒数读秒.
 
 ![stretchly](/img/mac/040.png)
 
@@ -290,9 +300,9 @@ Install: `$ brew cask install neteasemusic`
 
 ## Chrome: 浏览器
 
-作为一个前端, 当一个公司和你说: "我们只兼容 `Chrome`", 难道这不是一项最大的福利吗?
+作为一个前端, 当一个公司和你说: "我们只兼容 `Chrome` ", 难道这不是一项最大的福利吗?
 
-作为一个前端, 明明知道一个电脑只装一个浏览器 - `Chrome` 就够了, 但现实是你不得不去安装各种浏览器来处理兼容问题; 最可气的是 `Mac` 没有 `IE`, 你不得不为了它安装虚拟机或者自备一个 `Windows`.
+作为一个前端, 明明知道一个电脑只装一个浏览器 - `Chrome` 就够了, 但现实是你不得不去安装各种浏览器来处理兼容问题; 最可气的是 `Mac` 没有 `IE` , 你不得不为了它安装虚拟机或者自备一个 `Windows` .
 
 ![google-chrome](/img/mac/043.png)
 
@@ -310,7 +320,7 @@ Install: `$ brew cask install google-chrome`
 
 ![Fantastical](/img/mac/044.jpg)
 
-于是你需要这个颜值功能并存的 `Fantastical`, 搭配 `iOS` 版效果更佳. 当然颜值并不是重点, 重点是 `Fantastical` 支持自然语义的日程建立(仅限英文), 什么叫自然语义?? 举个例子 , `macOS` 的原生日历想要加个日程, 得写 **要办的事情——写地点——选日期——其他** 等等, 而在 `Fantastical` 里呢, 如果你英文还不错的话, 直接写 "meet at crown plaza tomorrow 9am" (语法什么的, 不重要), `Fantastical` 会自动提取地点时间等介词或关键字, 自动生成一条明天 9 点的会面信息.
+于是你需要这个颜值功能并存的 `Fantastical` , 搭配 `iOS` 版效果更佳. 当然颜值并不是重点, 重点是 `Fantastical` 支持自然语义的日程建立(仅限英文), 什么叫自然语义?? 举个例子 , `macOS` 的原生日历想要加个日程, 得写 **要办的事情——写地点——选日期——其他** 等等, 而在 `Fantastical` 里呢, 如果你英文还不错的话, 直接写 "meet at crown plaza tomorrow 9am" (语法什么的, 不重要), `Fantastical` 会自动提取地点时间等介词或关键字, 自动生成一条明天 9 点的会面信息.
 
 具体效果就是酱紫咯, 又实用又骚气有木有!
 
@@ -332,7 +342,7 @@ Install: `$ brew cask install fantastical`
 
 ![TaskTab](/img/mac/046.png)
 
-在 `TaskTab` 中, 已完成的事项不会自动消失, 如果你要清理它们, 则需要进入菜单栏中的编辑(Preferences...)界面, 你可以先选中需要删除的事项, 通过 `Remove Tsak` 来删除, 也可以通过鼠标右键删除单条事项. 同样, 这里也可以录入事项
+在 `TaskTab` 中, 已完成的事项不会自动消失, 如果你要清理它们, 则需要进入菜单栏中的编辑(Preferences... )界面, 你可以先选中需要删除的事项, 通过 `Remove Tsak` 来删除, 也可以通过鼠标右键删除单条事项. 同样, 这里也可以录入事项
 
 ![TaskTab](/img/mac/047.png)
 
@@ -344,13 +354,13 @@ Install: `$ brew cask install fantastical`
 
 ## 腾讯柠檬清理 - 全新 Mac 清理工具, 实时了解 Mac 系统状况
 
-人们常说，`macOS` 不需要清理和优化, 但随着使用时间的变长, 硬盘空间还是会被一些搞不清楚的东西占据, 难免还是会想念 `Windows` 下的一些清理优化工具. 去搜索 `macOS` 的清理与优化工具, `CleanMyMac`、`MacBooster` 等优秀软件会被许多网友提及并推荐
+人们常说, `macOS` 不需要清理和优化, 但随着使用时间的变长, 硬盘空间还是会被一些搞不清楚的东西占据, 难免还是会想念 `Windows` 下的一些清理优化工具. 去搜索 `macOS` 的清理与优化工具, `CleanMyMac` 、 `MacBooster` 等优秀软件会被许多网友提及并推荐
 
 而去年底, 腾讯也上线了一款 `macOS` 下的清理软件-腾讯柠檬清理(Tencent Lemon Cleaner), 虽说在 `Windows` 系统下, 各类"管家"类软件口碑实在不怎么样, 那在 `mac` 系统下, 腾讯的这颗"柠檬"酸不酸呢?
 
 软件主界面还是蛮简洁的, 只有一个"开始扫描按钮", 右下角菜单按钮可以打开各种功能
 
-腾讯柠檬清理主要功能包括:一键(垃圾)扫描、大文件清理、重复文件清理、相似照片清理、应用卸载、隐私清理以及设备保护功能
+腾讯柠檬清理主要功能包括: 一键(垃圾)扫描、大文件清理、重复文件清理、相似照片清理、应用卸载、隐私清理以及设备保护功能
 
 ![lemon](/img/mac/049.png)
 
@@ -380,7 +390,7 @@ Install: `$ brew cask install tencent-lemon`
   * [Snipaste](https://zh.snipaste.com/)或许是最好的截图软件
   * [Annotate](http://www.waitsun.com/annotate-2-0-5.html) 屏幕截图批注应用, 令人惊喜的是, 支持划区域gif制作, 教程以及动图制作者必备.
   * [Licecap](http://www.cockos.com/licecap/) mac上超强大的且极简的gif录制应用, 使用免费, 支持FPS帧率调整且无录制时间限制(笔者用它录制了很多gif动图).
-  * [KeyCastr](http://mac.softpedia.com/get/Utilities/KeyCastr.shtml) 将mac按键显示在屏幕上，分享演示、录制视频或动图时超赞.
+  * [KeyCastr](http://mac.softpedia.com/get/Utilities/KeyCastr.shtml) 将mac按键显示在屏幕上, 分享演示、录制视频或动图时超赞.
 
 ## 一些暂时没用但可能有用的
 
@@ -393,4 +403,4 @@ Install: `$ brew cask install tencent-lemon`
 ## 参考资料
 
 - [macOS 上有哪些值得推荐的常用软件?](https://www.zhihu.com/question/19550256#Popover127-toggle)
-- [干货满满！推介几款 Mac 下非常好用的软件（第一弹） - 掘金](https://juejin.im/post/5de664e5f265da33b82bcfce#heading-1)
+- [干货满满! 推介几款 Mac 下非常好用的软件(第一弹) - 掘金](https://juejin.im/post/5de664e5f265da33b82bcfce#heading-1)
