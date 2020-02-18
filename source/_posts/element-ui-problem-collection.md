@@ -288,8 +288,42 @@ getValidCurrentPage(value) {
 }
 ```
 
-## 问题二
+### 问题二
 
 如果布局使用的是百分比布局, 那使用滚动条也会有问题.
 
 比如两个子元素高度都是 `50%` , 如果使用 `el-scrillbar` 包裹子元素的话, 子元素的父元素会变成 `el-scrollbar__view` , 而这个元素是没有设置高度的, 会导致子元素的 `50%` 失效, 从而被内容撑开, 解决办法就是给 `el-scrollbar__view` 设置高度为 `100%`
+
+## select 文本太长会超出选择框
+
+> element-ui: 2.13.0
+
+具体问题: 当选择某一个文本内容太长的选项后, 选择的文本会超出选择框, 如下图所示:
+
+![overflow](/img/element-ui/012.png)
+
+[When the [Bug Report] select component is multiple-selected, the text is too long and the display box overflows. · Issue #15473 · ElemeFE/element](https://github.com/ElemeFE/element/issues/15473)
+
+解决方法:
+
+`@kissu` 提出一种解决方案:
+
+``` CSS
+.el-tag--info {
+	display: flex !important;
+	max-width: 100% !important;
+}
+.el-select__tags-text {
+	display: inline-block !important;
+	max-width: 90% !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+}
+.el-tag__close {
+	align-self: center !important;
+}
+```
+
+但 `collapse-tags` 仍然有一点问题:
+
+![collapse-tags](/img/element-ui/013.png)
