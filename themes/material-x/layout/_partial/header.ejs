@@ -33,7 +33,7 @@
 				</ul>
 			</div>
 
-			<% if (theme.search.enable === true) { %>
+			<% if (config.search.enable === true) { %>
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
 						<input type="text" class="input u-search-input" placeholder="<%- __('search.placeholder') %>" />
@@ -42,7 +42,7 @@
 				</div>
 			<% } %>
 			<ul class='switcher h-list'>
-				<% if (theme.search.enable === true) { %>
+				<% if (config.search.enable === true) { %>
 					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
 				<% } %>
 				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
