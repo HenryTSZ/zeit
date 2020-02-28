@@ -86,52 +86,48 @@ VS Code 完整版配置
 
 ### vue 代码片段
 
-```json
-"initVue": {
-	"prefix": "initVue",
-	"body": [
-		"<template>",
-		"  <div class=\"$1\">",
-		"    ",
-		"  </div>",
-		"</template>",
-		"",
-		"<script>",
-		"  ",
-		"  export default {",
-		"    name: '',",
-		"    components: {",
-		"      ",
-		"    },",
-		"    props: {",
-		"      ",
-		"    },",
-		"    data () {",
-		"      return {",
-		"        ",
-		"      }",
-		"    },",
-		"    computed: {},",
-		"    watch: {},",
-		"    methods: {",
-		"      ",
-		"    },",
-		"    created () {",
-		"      ",
-		"    },",
-		"    mounted () {",
-		"      ",
-		"    }",
-		"  }",
-		"</script>",
-		"",
-		"<style lang=\"less\">",
-		"  ",
-		"</style>"
-	],
-	"description": "initVue"
+``` json
+{
+  "init Vue": {
+    "prefix": "ivue",
+    "body": [
+      "<template>",
+      "  <div class=\"$1\">$2</div>",
+      "</template>",
+      "",
+      "<script>",
+      "export default {",
+      "  name: '$TM_FILENAME_BASE',",
+      "  components: {},",
+      "  props: {},",
+      "  data() {",
+      "    return {}",
+      "  },",
+      "  computed: {},",
+      "  watch: {},",
+      "  methods: {",
+      "    init() {}",
+      "  },",
+      "  created() {",
+      "    this.init()",
+      "  },",
+      "  mounted() {}",
+      "}",
+      "</script>",
+      "",
+      "<style lang=\"less\">",
+      ".$1 {",
+      "}",
+      "</style>",
+      ""
+    ],
+    "description": "init Vue"
+  }
 }
 ```
+
+[这里](https://tsz.now.sh/2020/02/28/conclusion-the-code-snippet-in-my-work/)是本人工作中总结的代码片段, 仅供参考
+
 可以在这个网址生成代码片段: [snippet generator](https://snippet-generator.app/)
 
 详细介绍可以看这篇文章: [跟我一起在 Visual Studio Code 添加自定义 snippet（代码段），附详细配置 - 猫科龙 - CSDN博客](https://blog.csdn.net/maokelong95/article/details/54379046)
