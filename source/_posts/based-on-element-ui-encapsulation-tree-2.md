@@ -32,10 +32,11 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 但这个 `Event` 只要有节点变化就会触发, 像上图例子会调用好几次, 而且点击复选框的时候也会调用. 咱们在点击复选框的时候已经处理过逻辑了, 如果要使用 `check-change`, 那么 `check` 这个事件就不能要了
 
-``` HTML
+```HTML
 <el-tree
   :ref="ref"
   v-bind="$attrs"
+  :node-key="nodeKey"
   :show-checkbox="showCheckbox"
   v-on="$listeners"
   @check-change="handleCheckChange"
@@ -44,13 +45,12 @@ thumbnail: /img/element-ui/thumbnail.svg
 </el-tree>
 ```
 
-``` JS
+```JS
 data() {
   return {
     ref: 'elTree',
     isIndeterminate: false,
-    isCheckAll: false,
-    time: 0
+    isCheckAll: false
   }
 },
 watch: {
@@ -64,15 +64,27 @@ methods: {
     if (!this.showCheckAll || !this.showCheckbox) {
       return
     }
-    // 节流
-    if (Date.now() - this.time > 100) {
-      this.time = Date.now()
-    } else {
-      return
+    // 防抖
+    this.debounce(
+      this.$nextTick(() => {
+        this.handleCheckAllStatus()
+      }),
+      100
+    )
+  },
+  // 防抖
+  debounce(func, wait) {
+    var timeout
+
+    return function() {
+      var context = this
+      var args = arguments
+
+      clearTimeout(timeout)
+      timeout = setTimeout(function() {
+        func.apply(context, args)
+      }, wait)
     }
-    this.$nextTick(() => {
-      this.handleCheckAllStatus()
-    })
   },
   handleCheckAllStatus() {
     const elTreeStore = this.$refs[this.ref].store
@@ -96,11 +108,12 @@ methods: {
 
 处理一下传入 `el-tree` 的 `data` 数据, 加上一个 `全选` 的根节点
 
-``` HTML
+```HTML
 <el-tree
   :ref="ref"
   v-bind="$attrs"
   :data="treeData"
+  :node-key="nodeKey"
   :show-checkbox="showCheckbox"
   v-on="$listeners"
 >
@@ -108,7 +121,7 @@ methods: {
 </el-tree>
 ```
 
-``` JS
+```JS
 props: {
   data: {
     type: Array,
@@ -145,12 +158,11 @@ mounted() {
 
 那就只能修改 `getChecked` 方法, 先拿到当前选中的数据, 过滤掉 `全选` 的数据, 不能使用 `el-tree` 的默认方法了
 
-``` JS
+```JS
 data() {
   return {
     treeData: [],
     ref: 'elTree',
-    nodeKey: '',
     checkAllId: '__rootId__'
   }
 },
@@ -191,7 +203,6 @@ methods: {
 },
 mounted() {
   if (this.isCheckAll) {
-    this.nodeKey = this.$refs[this.ref].nodeKey || 'id'
     this.treeData = [
       {
         [this.$refs[this.ref].props.label]: '全选',
