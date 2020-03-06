@@ -5,6 +5,7 @@ date: 2020-02-28
 categories: [FrontEnd]
 tags: [Vscode, Vue, ElementUI]
 keywords: code-snippet
+thumbnail: /img/vscode/thumbnail.png
 ---
 
 `snippet` [ˈsnɪpɪt], 或者说「 `code snippet` 」, 也即代码片, 指的是能够帮助输入重复代码模式, 比如循环或条件语句, 的模板. 通过 `snippet` , 我们仅仅输入一小段字符串, 就可以在代码片引擎的帮助下, 生成预定义的模板代码, 接着我们还可以通过在预定义的光标位置之间跳转, 来快速补全模板.

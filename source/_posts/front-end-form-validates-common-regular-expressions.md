@@ -2,7 +2,7 @@
 title: 前端表单验证常用的正则表达式 - reg
 date: 2017-07-15
 categories: [FrontEnd, Js]
-tags: [Js]
+tags: [Js, Reg]
 ---
 
 在表单验证中, 使用正则表达式来验证正确与否是一个很频繁的操作, 本文收集整理了常用的 javaScript 正则表达式, 其中包括用户名、密码强度、数字、电子邮件地址(Email)、手机号码、身份证号、URL 地址、 IPv4 地址、 十六进制颜色、 日期、 QQ 号码、 微信号、车牌号、中文正则.
@@ -224,7 +224,7 @@ $：表示以什么结尾
 
 ## 常用规则图片
 
-![regex-help](/img/js/001.png)
+![regex-help](/img/reg/001.png)
 
 ## [玩转 JavaScript 正则表达式](http://imweb.io/topic/56e804ef1a5f05dc50643106)
 
