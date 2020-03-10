@@ -91,17 +91,15 @@ thumbnail: /img/vscode/thumbnail.png
 | S + F3 or C + S + g | 查找上一个(备注同上)                                                                                                          |
 | ↑                   | 上一个搜索关键词 history.showPrevious                                                                                         |
 | ↓                   | 下一个搜索关键词 history.showNext                                                                                             |
-| O + C + 字母 c      | Mac 切换是否区分大小写 toggleSearchCaseSensitive                                                                              |
-| O + C + w           | Mac 切换是否全字匹配 toggleSearchWholeWord                                                                                    |
-| O + C + r           | Mac 切换是否正则匹配 toggleSearchRegex                                                                                        |
-| O + 字母 c          | windows 切换是否区分大小写 toggleSearchCaseSensitive                                                                          |
-| O + w               | windows 切换是否全字匹配 toggleSearchWholeWord                                                                                |
-| O + r               | windows 切换是否正则匹配 toggleSearchRegex                                                                                    |
+| O + C + 字母 c      | 切换是否区分大小写 toggleSearchCaseSensitive                                                                                  |
+| O + C + w           | 切换是否全字匹配 toggleSearchWholeWord                                                                                        |
+| O + C + r           | 切换是否正则匹配 toggleSearchRegex                                                                                            |
 | Esc                 | 当焦点在查找弹窗组件时, 退出查找                                                                                              |
 | S + Esc             | 当焦点不在查找弹窗组件时, 退出查找                                                                                            |
 | C + h               | 替换                                                                                                                          |
 | C + S + f           | 在文件中查找                                                                                                                  |
 |                     | [跳转搜索结果](https://code.visualstudio.com/updates/v1_9#_search-result-navigation)                                          |
+|                     | [搜索编辑](https://code.visualstudio.com/updates/v1_43#_search-editors)                                                       |
 | C + S + L           | [将光标添加到文本搜索的所有匹配项](https://code.visualstudio.com/updates/v1_41#_add-cursors-to-search-results)                |
 | ↑                   | 当焦点在搜索结果时, 跳转到上一个搜索结果                                                                                      |
 | ↓                   | 当焦点在搜索结果时, 跳转到下一个搜索结果                                                                                      |
