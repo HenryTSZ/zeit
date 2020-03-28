@@ -7,7 +7,65 @@ tags: [ElementUI]
 thumbnail: /img/element-ui/thumbnail.svg
 ---
 
-收集工作中使用 ElementUI 遇到的一些问题
+收集工作中使用 `ElementUI` 遇到的一些问题
+
+<!-- more -->
+
+## table current-row-key 无法高亮子节点
+
+> element-ui: 2.13.0
+
+官方文档:
+
+| 参数            | 说明                   | 类型          | 可选值 | 默认值 |
+| --------------- | ---------------------- | ------------- | ------ | ------ |
+| current-row-key | 当前行的 key，只写属性 | String,Number | ---    | ---    |
+
+具体问题请看[[Bug Report] el-table current-row-key can't highlight children · Issue #19067 · ElemeFE/element](https://github.com/ElemeFE/element/issues/19067)
+
+如果 `current-row-key` 为父节点 `key`, 那么可以高亮, 如果为子节点 `key`, 无法高亮
+
+目前只能使用 `setCurrentRow` 来实现默认高亮子节点了:
+
+```JS
+this.$nextTick(() => {
+  this.$refs.table.setCurrentRow(this.defaultCurrentRow)
+})
+```
+
+## select 文本太长会超出选择框
+
+> element-ui: 2.13.0
+
+具体问题: 当选择某一个文本内容太长的选项后, 选择的文本会超出选择框, 如下图所示:
+
+![overflow](/img/element-ui/012.png)
+
+[When the [Bug Report] select component is multiple-selected, the text is too long and the display box overflows. · Issue #15473 · ElemeFE/element](https://github.com/ElemeFE/element/issues/15473)
+
+解决方法:
+
+`@kissu` 提出一种解决方案:
+
+```CSS
+.el-tag--info {
+	display: flex !important;
+	max-width: 100% !important;
+}
+.el-select__tags-text {
+	display: inline-block !important;
+	max-width: 90% !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+}
+.el-tag__close {
+	align-self: center !important;
+}
+```
+
+但 `collapse-tags` 仍然有一点问题:
+
+![collapse-tags](/img/element-ui/013.png)
 
 ## table + pagination 序号问题
 
@@ -27,7 +85,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 例子:
 
-``` html
+```html
 <el-table-column
   align="center"
   prop="createDate"
@@ -49,7 +107,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 </el-table-column>
 ```
 
-``` js
+```js
 methods: {
   formatTime (value, type) {
     if (value == null || value === '') {
@@ -75,14 +133,13 @@ methods: {
 
 结果就出问题了, 不论点击第几页, 永远会跳回第一页. 比如点击第四页, `current-change` 事件会触发两次, 第一次的回调参数是 `4`, 而第二次就是 `1`, 所以会永远跳回第一页
 
-结果就去 `https://github.com/ElemeFE/element/issues/
-`. 发现一个 [和我类似的](https://github.com/ElemeFE/element/issues/6809)
+结果就去 `https://github.com/ElemeFE/element/issues/`. 发现一个 [和我类似的](https://github.com/ElemeFE/element/issues/6809)
 
 其中 `@huguangju` 的话点醒了我, 原文:
 
 > 删除 `jumper` 中的数字后, 当前页跳到第 `1` 页并不是点击 `next` 直接导致的, 而是 `jumper` 失焦后其值此时为空字符串, 应用值到 `internalCurrentPage` 前会校验设置的页码, 部分源码如下, 会被设置为 `1`:
 
-``` js
+```js
 getValidCurrentPage(value) {
   value = parseInt(value, 10);
   // ...
@@ -107,7 +164,7 @@ getValidCurrentPage(value) {
 
 先上代码
 
-``` html
+```html
 <div class="monitor-container">
   <el-card class="box-card">
     <div slot="header" class="clearfix">
@@ -173,11 +230,7 @@ getValidCurrentPage(value) {
       <template slot-scope="scope">
         <el-button type="text" class="el-icon-edit" @click="editRow(scope.$index, scope.row)">
         </el-button>
-        <el-button
-          type="text"
-          class="el-icon-delete"
-          @click="deleteRow(scope.$index, scope.row)"
-        >
+        <el-button type="text" class="el-icon-delete" @click="deleteRow(scope.$index, scope.row)">
         </el-button>
       </template>
     </el-table-column>
@@ -217,7 +270,7 @@ getValidCurrentPage(value) {
 
 修改后的代码:
 
-``` html
+```html
 <el-table-column
   v-if="monitorActiveName === '0'"
   key="ipAddress"
@@ -241,7 +294,7 @@ getValidCurrentPage(value) {
 
 以下为我自己设置的全局样式
 
-``` css
+```css
 .el-scrollbar {
   height: 100%;
   /* margin-right 配合下面的 padding-right 使用, 防止滚动条遮挡内容 */
@@ -270,7 +323,7 @@ getValidCurrentPage(value) {
 2. 封装成组件, 在组件内部修改, 但这已经是一个组件了, 有点画蛇添足
 3. 还是修改全局样式, 只不过在 `select-dropdown` 中重写样式, 使用原来的样式
 
-``` css
+```css
 /* 修改 scrollbar 在 select 下显示不全问题 */
 .el-select-dropdown {
   .el-scrollbar {
@@ -293,37 +346,3 @@ getValidCurrentPage(value) {
 如果布局使用的是百分比布局, 那使用滚动条也会有问题.
 
 比如两个子元素高度都是 `50%` , 如果使用 `el-scrillbar` 包裹子元素的话, 子元素的父元素会变成 `el-scrollbar__view` , 而这个元素是没有设置高度的, 会导致子元素的 `50%` 失效, 从而被内容撑开, 解决办法就是给 `el-scrollbar__view` 设置高度为 `100%`
-
-## select 文本太长会超出选择框
-
-> element-ui: 2.13.0
-
-具体问题: 当选择某一个文本内容太长的选项后, 选择的文本会超出选择框, 如下图所示:
-
-![overflow](/img/element-ui/012.png)
-
-[When the [Bug Report] select component is multiple-selected, the text is too long and the display box overflows. · Issue #15473 · ElemeFE/element](https://github.com/ElemeFE/element/issues/15473)
-
-解决方法:
-
-`@kissu` 提出一种解决方案:
-
-``` CSS
-.el-tag--info {
-	display: flex !important;
-	max-width: 100% !important;
-}
-.el-select__tags-text {
-	display: inline-block !important;
-	max-width: 90% !important;
-	overflow: hidden !important;
-	text-overflow: ellipsis !important;
-}
-.el-tag__close {
-	align-self: center !important;
-}
-```
-
-但 `collapse-tags` 仍然有一点问题:
-
-![collapse-tags](/img/element-ui/013.png)

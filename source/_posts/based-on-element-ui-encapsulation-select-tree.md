@@ -6,9 +6,9 @@ tags: [Js, ElementUI]
 thumbnail: /img/element-ui/thumbnail.svg
 ---
 
-最近重构项目, 遇到一个需要 SelectTree 的组件, 就在网上找了一圈, 发现[Element-UI二次封装实现TreeSelect 树形下拉选择组件 - sleepwalker_1992的专栏 - CSDN博客](https://blog.csdn.net/sleepwalker_1992/article/details/87894588)这个还不错, 但奈何作者不更新了, 而且现在样式有点问题, 就想着参考大佬的思路自己也封装一下
+最近重构项目, 遇到一个需要 `SelectTree` 的组件, 就在网上找了一圈, 发现 [Element-UI二次封装实现TreeSelect 树形下拉选择组件 - sleepwalker_1992的专栏 - CSDN博客](https://blog.csdn.net/sleepwalker_1992/article/details/87894588)这个还不错, 但奈何作者不更新了, 而且现在样式有点问题, 就想着参考大佬的思路自己也封装一下
 
-话不多说, 开干!
+话不多说, 先将[本人源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/SelectTree.vue)奉上. 好了, 开干!
 
 <!-- more -->
 
@@ -258,6 +258,8 @@ v-bind="selectProps"
 
 但这样也有一个问题: 那就是用户只能传入驼峰值, 不能传入中划线分割的值, 否则无法覆盖默认值(注: 比较过两种传值, `Vue` 推荐使用中划线方式, 但现在用户其实传入的是对象, 中划线方式还需要外层包围引号, 而且对象中写中划线感觉很别扭, 就定为驼峰了)
 
+注: 如果看过本人对 `tree` 的封装文章的同学, 这里可能会问为什么不用 `v-bind="$attrs"`, 一是本人封装 `tree` 的时候才算了解这个属性; 二是这里有两个组件, 虽然目前它们需要的属性名都不一样, 但不知道以后会不会有同名但作用不同的属性, 而且传一堆没用的属性过去也不好, 所以就不改了
+
 ## 处理逻辑
 
 主要考虑的逻辑就是 `tree` 的单选和多选
@@ -459,7 +461,6 @@ export default {
       if (this.multiple) return
       // 给 selectOptions 一个默认值, 防止出现无数据, 从而无法显示 tree
       this.selectOptions = [{}]
-      this.selectData = ''
       const currentNode = this.$refs.tree.getCurrentNode()
       // 初始值为空
       if (!currentNode) return
