@@ -1,6 +1,7 @@
 ---
 layout: post
 title: CSS3 的 nth-child 和 nth-of-type 的区别
+date: 2017-03-21
 categories: [FrontEnd, Css]
 tags: [Css]
 keywords: CSS3, nth-child, nth-of-type
