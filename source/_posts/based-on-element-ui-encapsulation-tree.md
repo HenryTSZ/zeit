@@ -8,6 +8,8 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 继上一篇 [基于 ElementUI 封装的 SelectTree | Henry](https://tsz.now.sh/2019/11/29/based-on-element-ui-encapsulation-select-tree/) 后, 发现 `tree` 也需要封装一下, 增加一个全选功能和展开到 `level` 级的功能
 
+<!--more -->
+
 [源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/Tree1.vue)在这里
 
 ## 展开 level 级
