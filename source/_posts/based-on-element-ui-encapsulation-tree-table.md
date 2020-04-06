@@ -45,7 +45,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 </el-table>
 ```
 
-### 参考 ek-tree 方法
+### 参考 el-tree 方法
 
 由于本人曾经封装过 `el-tree` 的相同功能, 所以想着 `el-table` 是不是可以参考一下呢? 结果发现还是太年轻啊
 
@@ -119,7 +119,7 @@ if (this.level <= 0) {
    *  // this.key 为 el-table 的 key
    *  // 因为 defaultExpandAll 只在 table 初始化生效, 后续改变值并不会生效
    *  // 所以需要使用 key 重新渲染
-   *  // 但如果数据量很大, 重新渲染会消耗性能, 所以不推荐使用
+   *  // 但如果数据量很大, 重新渲染会很耗性能, 所以不推荐使用
    */
 } else {
   level = this.level - 2
@@ -160,7 +160,7 @@ this.expandRowKeys = expandRowKeys
 
 现在问题好像有点麻烦了, 咱们是不是一开始方向就错了? 当初自己也说了这是一个笨办法, 是不是有什么细节被忽略了呢?
 
-咱们再看一下 `treeData'
+咱们再看一下 `treeData`
 
 ``` JS
 {
@@ -412,3 +412,56 @@ methods: {
   }
 }
 ```
+
+## 修正
+
+当初封装组件的时候没有测试方法, 今天一测试, 发现 `selection-change`、 `select` 和 `select-all` 都触发了, 而且 `selection-change` 触发了两次, 一次是 `el-table` 的, 一次是咱 `emit` 出去的, 如果选中的是父级并且 `check-strictly` 为 `false` 时, 会触发多次, 咱做的防抖确实是只 `emit` 最后一次, 但 `el-table` 自己会触发多次
+
+一直以为 `$listeners` 和 `$attrs` 是一样的: 写在标签里的属性会覆盖 `$attrs`; 但方法不会, 我想应该是方法是对象, 引用地址不同, 所以不会覆盖
+
+关于这两个属性的问题可以看看这篇文章:
+
+那这样的话就需要咱们自己覆盖了
+
+``` HTML
+<el-table
+  class="tree-table"
+  :ref="ref"
+  :data="data"
+  v-bind="$attrs"
+  v-on="{ ...$listeners, select, 'select-all': selectAll, 'selection-change': selectionChange }"
+>
+  <slot></slot>
+</el-table>
+```
+
+``` JS
+select(selection, row) {
+  if (!this.checkStrictly) {
+    const selected = selection.some(item => item === row)
+    this.selectChildren(row, selected)
+  }
+  this.$emit('select', selection, row)
+},
+selectAll(selection) {
+  if (this.checkAll) {
+    // tableData 第一层只要有在 selection 里面就是全选
+    const isSelect = this.data.some(item => selection.includes(item))
+    if (isSelect) {
+      selection.forEach(item => {
+        this.selectChildren(item, isSelect)
+      })
+    } else {
+      this.data.forEach(item => {
+        this.selectChildren(item, isSelect)
+      })
+    }
+  }
+  // 使用 $nextTick 以后可以正确 emit 出去当前选中项
+  this.$nextTick(() => {
+    this.$emit('select-all', selection)
+  })
+}
+```
+
+而且我还发现一个现象: 使用 `console.log` 输出 `selectAll` 的 `selection` 一开始为所有根级, 但点击以后发现是全部数据, 那么就可以使用 `$nextTick` 来 `emit` 正确数据了. 但 `select` 的 `selection` 不会变, 所以这个在选中父级后, 仍然只能 `emit` 父级, 想要将子级也全部 `emit` 出去, 那就还需要递归将所有子级全部加到 `selection` 中去. 鉴于目前没有使用到这个数据, 就暂时不做处理了, 等以后需要或者想到更好办法了再解决吧.
