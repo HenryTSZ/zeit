@@ -134,7 +134,7 @@ props: {
 
 - **详细**:
 
-  包含了父作用域中的 (不含 `.native` 修饰器的)  `v-on` 事件监听器. 它可以通过 `v-on="$listeners"` 传入内部组件 —— 在创建更高层次的组件时非常有用.
+  包含了父作用域中的 (不含 `.native` 修饰器的)  `v-on` 事件监听器. 它可以通过 `v-on="$listeners"` 传入内部组件——在创建更高层次的组件时非常有用.
 
 理解了 `$attrs` 后, 理解 `$listeners` 就方便很多了. 简单来讲就是: 假如在父元素中给子元素绑定了两个方法(不含 `.native` 修饰器的), 那么 `$listeners` 就包含这两个方法
 
@@ -148,7 +148,7 @@ props: {
 <el-tree v-bind="$attrs" @check-change="handleCheckChange"></el-tree>
 ```
 
-现在的情况是使用我们封装的组件后, 只能绑定到本组件上, 无法绑定到 `el-tree` 上:
+现在的情况是使用我们封装的组件后, 只能绑定到 `base-tree` 上, 无法绑定到 `el-tree` 上:
 
 ``` HTML
 <base-tree @check-change="handleCheckChange"></base-tree>
@@ -165,7 +165,12 @@ props: {
 那有人要问了, 本组件也需要 `check-change` 这个方法呢? 那你也绑定上不就行了吗
 
 ``` HTML
-<el-tree v-bind="$attrs" v-on="$listeners" @check-change="handleCheckChange"></el-tree>
+<el-tree
+  v-bind="$attrs"
+  v-on="$listeners"
+  @check-change="handleCheckChange"
+>
+</el-tree>
 ```
 
 ### 注意事项
@@ -185,7 +190,11 @@ props: {
 那假如我想要覆盖效果怎么办呢? 也好办:
 
 ``` HTML
-<el-tree v-bind="$attrs" v-on="{ ...$listeners, 'check-change': handleCheckChange }"></el-tree>
+<el-tree
+  v-bind="$attrs"
+  v-on="{ ...$listeners, 'check-change': handleCheckChange }"
+>
+</el-tree>
 ```
 
 ``` JS

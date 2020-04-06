@@ -418,9 +418,9 @@ methods: {
 
 当初封装组件的时候没有测试方法, 今天一测试, 发现 `selection-change`、 `select` 和 `select-all` 都触发了, 而且 `selection-change` 触发了两次, 一次是 `el-table` 的, 一次是咱 `emit` 出去的, 如果选中的是父级并且 `check-strictly` 为 `false` 时, 会触发多次, 咱做的防抖确实是只 `emit` 最后一次, 但 `el-table` 自己会触发多次
 
-一直以为 `$listeners` 和 `$attrs` 是一样的: 写在标签里的属性会覆盖 `$attrs`; 但方法不会, 我想应该是方法是对象, 引用地址不同, 所以不会覆盖
+一直以为 `$listeners` 和 `$attrs` 是一样的: 写在标签里的属性会覆盖 `$attrs`; 但方法不会, ~~我想应该是方法是对象, 引用地址不同, 所以不会覆盖~~
 
-关于这两个属性的问题可以看看这篇文章:
+关于这两个属性的介绍可以看看这篇文章: [Vue $attrs 和 $listeners | Henry](https://tsz.now.sh/2020/04/06/vue-$attrs-$listeners/)
 
 那这样的话就需要咱们自己覆盖了
 
