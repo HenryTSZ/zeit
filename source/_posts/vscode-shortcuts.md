@@ -146,7 +146,7 @@ thumbnail: /img/vscode/thumbnail.png
 | 快捷键                        | 作用                                                                        |
 | ----------------------------- | --------------------------------------------------------------------------- |
 | C + S + p or F1               | 打开命令面板                                                                |
-| C + p                         | [快速打开文件](https://code.visualstudio.com/updates/vJanuary#_file-picker) |
+| C + p                         | [快速打开文件](https://code.visualstudio.com/updates/vJanuary#_file-picker), [快速打开重写](https://code.visualstudio.com/updates/v1_44#_quick-open-rewrite) |
 | C + S + t                     | 重新打开关闭的编辑页面                                                      |
 | C + A + D                     | Windows 打开该任务管理器                                                    |
 | C + k v                       | 打开侧边预览                                                                |
