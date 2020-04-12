@@ -2,7 +2,7 @@
 title: Date 方法预览
 date: 2017-07-25
 categories: [FrontEnd, Js]
-tags: [Js]
+tags: [Js, Date]
 ---
 
 Date 自带很多将 Date 对象转换为字符串的格式化方法, 这里将各个方法转换后的结果收集为表格, 方便查看
