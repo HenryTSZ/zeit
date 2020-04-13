@@ -20,7 +20,7 @@ node 和 npm 简介
 
 ## 列出所有全局模块
 
-通过 `npm list -g` 可以列出所有已经安装的全局模块
+通过 `npm list -g`(简写: `npm ls -g`) 可以列出所有已经安装的全局模块
 
 ``` zsh
 F:\>npm list -g
@@ -195,13 +195,18 @@ npm set <key> <value> [--global]
 
   - `npm init` : 生成 `package.json`
   - `npm init --yes` (简写: `npm init -y` ): 跳过回答问题步骤, 直接生成默认值的 `package.json` 文件. 使用此方法时, 文件夹名字必须符合 `package.json` 的 `name` 命名规范
+  - `npm view packageName versions`: 查看 `npm` 服务器上所有的 `packageName` 版本信息
+  - `npm view packageName version`: 查看 `npm` 服务器上最新的 `packageName` 版本信息
+  - `npm info packageName` : 显示包的信息
   - `npm install` (简写: `npm i` ): 用来安装 `package.json` 里的相关依赖包( `dependencies` 和 `devDependencies` 里的所有模块)
   - `npm install --production` : 只安装 `dependencies` 中的内容
   - `npm install packageName --global` (简写: `npm i -g packageName` ): 全局安装
   - `npm install packageName --save` (简写: `npm i -S packageName` ): 局部安装运行依赖
   - `npm install packageName@version --save` : 安装指定版本的包(局部安装)
   - `npm install packageName --save-dev` (简写: `npm i -D packageName` ): 局部安装开发依赖
-  - `npm info packageName` : 显示包的信息
+  - `npm list -g` (简写: `npm ls -g`): 列出全局安装的模块的详细信息
+  - `npm list -g --depth=0` (简写: `npm ls -g --depth=0`): 列出全局安装的模块简略信息
+  - `npm list packageName` (简写: `npm ls packageName`): 查看本地安装的 `packageName` 版本信息
   - `npm rm packageName --save` : 移除包并删除依赖
   - `npm config set prefix "E:\nodejs\node_global"` : 设置全局模块安装地址
   - `npm config get prefix` : 获取全局安装包的所在地址, 并且可见对应的 `cmd` 命令
