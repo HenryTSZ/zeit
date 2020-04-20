@@ -16,6 +16,8 @@ thumbnail: /img/vscode/thumbnail.png
 - D: Delete(Mac 自带键盘没有)
 - B: Backspace(Mac 自带键盘的 delete)
 - E: Enter(Mac 自带键盘的 return)
+- H: Home
+- Ed: End
 - ↑: UpArrow(上箭头)
 - ↓: DownArrow(下箭头)
 - ←: LeftArrow(左箭头)
@@ -143,17 +145,17 @@ thumbnail: /img/vscode/thumbnail.png
 
 ### 其他
 
-| 快捷键                        | 作用                                                                        |
-| ----------------------------- | --------------------------------------------------------------------------- |
-| C + S + p or F1               | 打开命令面板                                                                |
+| 快捷键                        | 作用                                                                                                                                                         |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| C + S + p or F1               | 打开命令面板                                                                                                                                                 |
 | C + p                         | [快速打开文件](https://code.visualstudio.com/updates/vJanuary#_file-picker), [快速打开重写](https://code.visualstudio.com/updates/v1_44#_quick-open-rewrite) |
-| C + S + t                     | 重新打开关闭的编辑页面                                                      |
-| C + A + D                     | Windows 打开该任务管理器                                                    |
-| C + k v                       | 打开侧边预览                                                                |
-| C + b                         | 切换侧栏可见性                                                              |
+| C + S + t                     | 重新打开关闭的编辑页面                                                                                                                                       |
+| C + A + D                     | Windows 打开该任务管理器                                                                                                                                     |
+| C + k v                       | 打开侧边预览                                                                                                                                                 |
+| C + b                         | 切换侧栏可见性                                                                                                                                               |
 | C + j / CT + ` | 切换终端面板 |
 
-插件:
+### 插件
 
 | 快捷键                           | 作用                                        | 插件名            |
 | -------------------------------- | ------------------------------------------- | ----------------- |
@@ -167,15 +169,23 @@ thumbnail: /img/vscode/thumbnail.png
 | win: CT + O + i, mac: CT + C + i | 文件头部注释                                | koroFileHeader    |
 | win: CT + O + t, mac: CT + C + t | 函数注释                                    | koroFileHeader    |
 | CT + O + n                       | 运行代码                                    | Run Code          |
-| O + ;                            | 跳转到当前可见屏幕上的字符                  | MetaGo            |
-| O + S + ;                        | 从光标选择到当前可见屏幕上的字符            | MetaGo            |
+| O + .                            | 跳转到当前可见屏幕上的字符之后              | MetaGo            |
+| O + ,                            | 跳转到当前可见屏幕上的字符之前              | MetaGo            |
+| O + /                            | 跳转到当前可见屏幕上的字符                  | MetaGo            |
+| O + S + /                        | 从光标选择到当前可见屏幕上的字符            | MetaGo            |
 | O + '                            | 在光标位置设置书签                          | MetaGo            |
-| O + /                            | 列出书签并显示管理菜单                      | MetaGo            |
+| O + [                            | 转到上一个书签                              | MetaGo            |
+| O + ]                            | 转到下一个书签                              | MetaGo            |
+| O + \                            | 列出书签并显示管理菜单                      | MetaGo            |
 | O + m                            | 将当前行滚动到屏幕中心                      | MetaGo            |
 | O + t                            | 将当前行滚动到屏幕顶部                      | MetaGo            |
 | O + b                            | 将当前行滚动到屏幕底部                      | MetaGo            |
 | C + i                            | 选择上一行                                  | MetaGo            |
-| C + S + i                        | 选择下一行                                  | MetaGo            |
+| C + l                            | 选择下一行                                  | MetaGo            |
+| A + H                            | 将光标移动到上面的空白行                    | MetaGo            |
+| A + Ed                           | 将光标移动到下面的空白行                    | MetaGo            |
+| A + S + H                        | 从光标处选择到上面的空白行                  | MetaGo            |
+| A + S + Ed                       | 从光标处选择到下面的空白行                  | MetaGo            |
 | C + '                            | 在引号之间进行切换                          | Toggle Quotes     |
 
 ```json
