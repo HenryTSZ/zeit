@@ -141,7 +141,7 @@ thumbnail: /img/vscode/thumbnail.png
 | O + F12        | 在缩略图中显示变量或者函数的定义和引用                                                                                                               |
 | S + O + F12    | 在左侧 References 中显示变量或者函数的定义和引用                                                                                                     |
 | S + O + 字母 O | 删除未使用的导入并对剩余的导入进行排序, 该命令适用于 JavaScript 和 TypeScript 的 ES6 模块.                                                           |
-| CT + j         | mac 将多行代码合并为一行, Windows 上: 通过 File > Preferences > Keyboard shortcuts 打开快捷键的设置, 并且绑定 editor.action.joinLines 你自己的快捷键 |
+| C + j         | 将多行代码合并为一行 |
 
 ### 其他
 
@@ -494,6 +494,22 @@ thumbnail: /img/vscode/thumbnail.png
     "key": "alt+cmd+l",
     "command": "turboConsoleLog.displayLogMessage",
     "when": "isMac && editorTextFocus"
+  },
+  // ctrl/cmd + j 合并行
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.joinLines",
+    "when": "isWindows && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+j",
+    "command": "editor.action.joinLines",
+    "when": "isMac && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-editor.action.joinLines",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]
 ```
