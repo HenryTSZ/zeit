@@ -1,5 +1,5 @@
 ---
-title: VS Code 快捷键
+title: VSCode 快捷键
 date: 2018-09-09
 categories: [Software]
 tags: [Vscode, Guidelines]
@@ -48,7 +48,7 @@ thumbnail: /img/vscode/thumbnail.png
 | O + ←          | 将光标定位到当前单词的左侧单词            |
 | O + →          | 将光标定位到当前单词的右侧单词            |
 | C + S + \\     | 在代码块之间移动光标                      |
-| CT + g / C + g | 转到行                                    |
+| CT + g         | 转到行                                    |
 | C + u          | 将光标的移动回退到上一个位置              |
 | C + S + 字母 O | 转到文件中的符号                          |
 | CT + S + [     | 转到括号                                  |
@@ -132,16 +132,16 @@ thumbnail: /img/vscode/thumbnail.png
 
 ### js 相关
 
-| 快捷键         | 作用                                                                                                                                                 |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| O + S + /      | 切换块注释                                                                                                                                           |
-| C + /          | 切换行注释                                                                                                                                           |
-| F8             | 跳转到下一个 Error 或 Warning                                                                                                                        |
-| F12            | 跳转到变量或者函数定义处                                                                                                                             |
-| O + F12        | 在缩略图中显示变量或者函数的定义和引用                                                                                                               |
-| S + O + F12    | 在左侧 References 中显示变量或者函数的定义和引用                                                                                                     |
-| S + O + 字母 O | 删除未使用的导入并对剩余的导入进行排序, 该命令适用于 JavaScript 和 TypeScript 的 ES6 模块.                                                           |
-| C + j         | 将多行代码合并为一行 |
+| 快捷键         | 作用                                                                                       |
+| -------------- | ------------------------------------------------------------------------------------------ |
+| O + S + /      | 切换块注释                                                                                 |
+| C + /          | 切换行注释                                                                                 |
+| F8             | 跳转到下一个 Error 或 Warning                                                              |
+| F12            | 跳转到变量或者函数定义处                                                                   |
+| O + F12        | 在缩略图中显示变量或者函数的定义和引用                                                     |
+| S + O + F12    | 在左侧 References 中显示变量或者函数的定义和引用                                           |
+| S + O + 字母 O | 删除未使用的导入并对剩余的导入进行排序, 该命令适用于 JavaScript 和 TypeScript 的 ES6 模块. |
+| C + j          | 将多行代码合并为一行                                                                       |
 
 ### 其他
 
@@ -159,13 +159,10 @@ thumbnail: /img/vscode/thumbnail.png
 
 | 快捷键                           | 作用                                        | 插件名            |
 | -------------------------------- | ------------------------------------------- | ----------------- |
-| O + w                            | 给 单个或多个 html 标签 或 文本 添加 父标签 | htmltagwrap       |
 | C + k f                          | mac 在 Finder 中打开当前文件夹              | Open in Finder    |
 | C + k C + f                      | mac 在 Finder 中打开当前项目根目录          | Open in Finder    |
 | C + k i                          | mac 在 iTerm 中打开当前文件夹               | Open in Terminal  |
 | C + k r                          | mac 在 iTerm 中打开当前项目根目录           | Open in Terminal  |
-| CT + O + i                       | 文件头部注释                                | vscode-fileheader |
-| CT + O + d CT + O + d            | 函数注释                                    | Document This     |
 | win: CT + O + i, mac: CT + C + i | 文件头部注释                                | koroFileHeader    |
 | win: CT + O + t, mac: CT + C + t | 函数注释                                    | koroFileHeader    |
 | CT + O + n                       | 运行代码                                    | Run Code          |

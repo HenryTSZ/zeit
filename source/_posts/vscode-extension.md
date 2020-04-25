@@ -1,5 +1,5 @@
 ---
-title: VS Code 插件
+title: VSCode 插件
 date: 2018-09-08
 categories: [Software]
 tags: [Vscode, Guidelines]
@@ -19,11 +19,6 @@ thumbnail: /img/vscode/thumbnail.png
 
   + TypeScript 语法检查工具
   + [Install](vscode:extension/eg2.tslint)
-
-* [stylelint](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint)
-
-  + style 语法检查工具
-  + [Install](vscode:extension/shinnn.stylelint)
 
 * [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
@@ -45,28 +40,6 @@ thumbnail: /img/vscode/thumbnail.png
 
   + 对 css 按一定规则属性进行排序
   + [Install](vscode:extension/mrmlnc.vscode-postcss-sorting)
-
-* [Prettify JSON](https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json)
-
-  + 格式化 JSON
-  + [Install](vscode:extension/mohsen1.prettify-json)
-
-* [JS-CSS-HTML-Formatter](https://marketplace.visualstudio.com/items?itemName=lonefy.vscode-JS-CSS-HTML-formatter)
-
-  + 格式化插件, 保存后自动格式
-  + [Install](vscode:extension/lonefy.vscode-JS-CSS-HTML-formatter)
-
-* [vscode-pangu](https://marketplace.visualstudio.com/items?itemName=baurine.vscode-pangu)
-
-  + 一款给中英文间加空格的 VS Code 插件
-  + [Doc](https://github.com/baurine/vscode-pangu)
-  + [如何实现一个给中英文间加空格的 VS Code 扩展](https://juejin.im/post/5a43718cf265da43310e1a34)
-  + [Install](vscode:extension/baurine.vscode-pangu)
-
-* [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.editorConfig)
-
-  + 使用 .editorconfig 文件中的设置覆盖用户/工作区设置, 适合团队统一格式
-  + [Install](vscode:extension/EditorConfig.editorConfig)
 
 ### 代码片段
 
@@ -103,14 +76,6 @@ thumbnail: /img/vscode/thumbnail.png
 
   + 代码补全. 不少使用过的网友说: TabNine 是他们用过的最好的代码补全工具, 这是属于程序员的杀手级应用
   + [Install](vscode:extension/TabNine.tabnine-vscode)
-
-* [建议增强](https://marketplace.visualstudio.com/items?itemName=llej.suggest-plus)
-
-  + 如果你安装了 TabNine, 为了使用体验, 我强烈建议你安装这个.
-  + 因为使用 TabNine 后, 很多插件的输入建议会被 TabNine 覆盖, 包括 Emmet
-  + Issue 详情: [Conflicts with vscode's own TS/JS intellisense](https://github.com/zxqfl/tabnine-vscode/issues/20)
-  + 这个插件可以保证安装了 TabNine 的情况下正常显示建议
-  + [Install](vscode:extension/llej.suggest-plus)
 
 * [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
 
@@ -171,12 +136,12 @@ thumbnail: /img/vscode/thumbnail.png
   + 使用 Google Translate API 翻译 VSCode 的编程语言的注释
   + [Install](vscode:extension/intellsmi.comment-translate)
 
-* [Can I Use - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse)
+* [Can I Use](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse)
 
   + 基于 http://caniuse.com/ 直接从 Visual Studio Code 对 HTML5, CSS3, SVG, New JS API 进行兼容性检查
   + [Install](vscode:extension/akamud.vscode-caniuse)
 
-* [REST Client - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+* [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
 
   + REST Client 允许您直接发送 HTTP 请求并在 Visual Studio 代码中查看响应.
   + [Install](vscode:extension/humao.rest-client)
@@ -185,12 +150,6 @@ thumbnail: /img/vscode/thumbnail.png
 
   + Run C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml, R, AppleScript, Elixir, VB. NET, Clojure, Haxe, Objective-C, Rust, Racket, AutoHotkey, AutoIt, Kotlin, Dart, Pascal, Haskell, Nim, D
   + [Install](vscode:extension/formulahendry.code-runner)
-
-* [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
-
-  + 基于 Gist 实现 VSCode 用户配置、 快捷键配置、 已安装插件列表等的备份和恢复功能
-  + 无法跨平台恢复快捷键
-  + [Install](vscode:extension/Shan.code-settings-sync)
 
 * [Syncing](https://marketplace.visualstudio.com/items?itemName=nonoroazoro.syncing)
 
@@ -218,15 +177,10 @@ thumbnail: /img/vscode/thumbnail.png
   + Project Manager 提供了专门的视图来展示你的项目, 我们可以把常用的项目保存在这里, 需要时一键切换, 十分方便
   + [Install](vscode:extension/alefragnani.project-manager)
 
-* [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.bookmarks&WT.mc_id=marketplace-pack-sdras)
+* [Image preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview)
 
-  + 给代码添加书签
-  + [Install](vscode:extension/alefragnani.bookmarks)
-
-* [macros](https://marketplace.visualstudio.com/items?itemName=geddski.macros)
-
-  + 自定义宏
-  + [Install](vscode:extension/geddski.macros)
+  + 在编辑器左侧和鼠标悬停到图片链接上时显示图片
+  + [Install](vscode:extension/kisstkondoros.vscode-gutter-preview)
 
 ### 外观增强
 
@@ -285,27 +239,11 @@ thumbnail: /img/vscode/thumbnail.png
   + 在当前选中的变量下面利用 console 输出该变量
   + [Install](vscode:extension/ChakrounAnas.turbo-console-log)
 
-* [htmltagwrap](https://marketplace.visualstudio.com/items?itemName=bradgashler.htmltagwrap)
-
-  + 给 单个或多个 html 标签 或 文本 添加 父标签
-  + 快捷键: alt/opt + w
-  + [Install](vscode:extension/bradgashler.htmltagwrap)
-
 * [AutoScssStruct4Vue](https://marketplace.visualstudio.com/items?itemName=KQ.autoscssstruct4vue)
 
   + 根据 Vue 模板自动生成 Scss / Less 结构
   + [解放双手-vscode 扩展之根据 Vue 模板自动生成 Scss 结构 - 掘金](https://juejin.im/post/5d4396856fb9a06b2442fcf9)
   + [Install](vscode:extension/KQ.autoscssstruct4vue)
-
-* [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis)
-
-  + 一键给代码中的类、 函数加上注释, 支持函数声明、 函数表达式、 箭头函数等
-  + [Install](vscode:extension/joelday.docthis)
-
-* [vscode-fileheader](https://marketplace.visualstudio.com/items?itemName=mikey.vscode-fileheader)
-
-  + 一键生成文件头部注释
-  + [Install](vscode:extension/mikey.vscode-fileheader)
 
 * [koroFileHeader](https://marketplace.visualstudio.com/items?itemName=OBKoro1.korofileheader)
 
@@ -316,11 +254,6 @@ thumbnail: /img/vscode/thumbnail.png
 
   + 这款插件能实时的识别单词拼写是否有误, 并给出提示
   + [Install](vscode:extension/streetsidesoftware.code-spell-checker)
-
-* [any-rule](https://marketplace.visualstudio.com/items?itemName=russell.any-rule)
-
-  + 常用正则大全
-  + [Install](vscode:extension/russell.any-rule)
 
 * [Paste JSON as Code](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
 
@@ -404,11 +337,6 @@ thumbnail: /img/vscode/thumbnail.png
   + 带有定制字体和主题的代码截屏
   + [Install](vscode:extension/pnp.polacode)
 
-* [Autoprefixer](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-autoprefixer)
-
-  + 为 css 属性添加浏览器兼容前缀, webpack PostCSS 也具有相同功能
-  + [Install](vscode:extension/mrmlnc.vscode-autoprefixer)
-
 * [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.liveServer)
 
   + 启动一个本地服务, 用于测试调试
@@ -424,10 +352,10 @@ thumbnail: /img/vscode/thumbnail.png
   + 图形化正则表达式
   + [Install](vscode:extension/le0zh.vscode-regexp-preivew)
 
-* [file-tree-generator](https://marketplace.visualstudio.com/items?itemName=Shinotatwu-DS.file-tree-generator)
+* [Directory tree generator](https://marketplace.visualstudio.com/items?itemName=yarimit.directory-configuration-generator)
 
   + 将文件夹及其中的文件转换树文本.
-  + [Install](vscode:extension/Shinotatwu-DS.file-tree-generator)
+  + [Install](vscode:extension/yarimit.directory-configuration-generator)
 
 * [JSON Tree View](https://marketplace.visualstudio.com/items?itemName=ChaunceyKiwi.json-tree-view)
 

@@ -1,5 +1,5 @@
 ---
-title: VS Code 完整版配置
+title: VSCode 完整版配置
 date: 2018-09-05
 categories: [Software]
 tags: [Vscode, Guidelines]

@@ -1,5 +1,5 @@
 ---
-title: VS Code 在 Windows 上添加右键打开菜单的显示
+title: VSCode 在 Windows 上添加右键打开菜单的显示
 date: 2018-09-06
 categories: [Software, Windows]
 tags: [Vscode]
