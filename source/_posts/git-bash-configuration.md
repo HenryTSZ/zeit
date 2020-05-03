@@ -1,5 +1,5 @@
 ---
-title: Git-Bash 的配置
+title: Git Bash 的配置
 date: 2019-05-05
 categories: [Software, Windows]
 tags: [Git]
@@ -41,7 +41,7 @@ tags: [Git]
 
 ## Git-Bash 的主题配置
 
-`Git-Bash` 原生的主题, 其实也并不难看, 更换 `Git-Bash` 的需求主要在于: `Git-Bash` 原生的主题配色和 `MacOS` 下 `iTerm Solarized` 主题配色差距甚大. 因此, 一是视觉上不同一, 看上去不习惯, 二是本着手贱的探索精神, 总希望做点特别的挑战, 就有了去修改 `Git-Bash` 主题的需求.
+`Git-Bash` 原生的主题, 其实也并不难看, 更换 `Git-Bash` 的需求主要在于: `Git-Bash` 原生的主题配色和 `MacOS` 下 `iTerm Solarized` 主题配色差距甚大. 因此, 一是视觉上不统一, 看上去不习惯, 二是本着手贱的探索精神, 总希望做点特别的挑战, 就有了去修改 `Git-Bash` 主题的需求.
 
 修改 `Git-Bash` 主题主要有两个困难: 一是 `Git-Bash` 自带的 `Options` 下 `Text` 设置有缺陷, 只有有限的字体可选, 一些系统上已经安装了的字体, 这里并没有得选择. 二要使用 `Git-Bash SSH` 连接使用了 `agnoster` 主题的 `ZSH` , 需要一种含特殊字符的字体 `Powerline` , 没有了这种字体, 就会出现乱码.
 
@@ -227,7 +227,7 @@ export PS1="$"
 
 1. 各种符号代表的含义
 
-* `~` : 用户目录: 我的电脑上就是 `/c/Users/ASUS`
+* `~` : 用户目录: 我的电脑上就是 `C:/Users/lih-y`
 * `/` : 根目录, 一个 `/` 就是根目录, 不管你有多少个硬盘, 他会把所有硬盘联合起来当作一块
 * `.` : 一个点表示当前目录,
 * `../` : 两个点表示父目录
