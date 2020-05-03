@@ -2,14 +2,15 @@
 layout: post
 title: Location 对象
 date: 2018-03-02
-categories: [JS]
-description: Location 对象
-keywords: JavaScript, Location
+categories: [FrontEnd, Js]
+tags: [Js, Location]
 ---
 
 `Location` 对象包含有关当前 `URL` 的信息.
 
 `Location` 对象是 `Window` 对象的一个部分, 可通过 `window.location` 属性来访问.
+
+<!-- more -->
 
 ## Location 对象属性
 

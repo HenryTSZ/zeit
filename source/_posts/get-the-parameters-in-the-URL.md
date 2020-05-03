@@ -2,12 +2,13 @@
 layout: post
 title: JS 如何取得 URL 里的参数
 date: 2019-03-14
-categories: [JS]
-description: JS 如何取得 URL 里的参数
-keywords: js
+categories: [FrontEnd, Js]
+tags: [Js, Location]
 ---
 
 [上篇](https://tsz.now.sh/2018/03/02/location)简单介绍了一下 `Location` 对象, 并封装了一个简单处理 `URL` 的方法, 本篇封装一个处理复杂 `URL` 的方法
+
+<!-- more -->
 
 要只是获取一些常规字符串倒没什么难的, 关键还有些乱七八糟的需求, 什么同一个参数名传递了多次啊, 传数组啊. 搞来搞去就写了一大堆
 
