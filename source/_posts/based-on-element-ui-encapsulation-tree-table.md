@@ -26,14 +26,13 @@ thumbnail: /img/element-ui/thumbnail.svg
 | 参数               | 说明                                                                                              | 类型    | 可选值 | 默认值 |
 | ------------------ | ------------------------------------------------------------------------------------------------- | ------- | ------ | ------ |
 | default-expand-all | 是否默认展开所有行, 当 Table 包含展开行存在或者为树形表格时有效                                   | Boolean | -      | false  |
-| expand-row-keys    | 可以通过该属性设置 Table 目前的展开行, 需要设置 row-key 属性才能使用, 该属性为展开行的 keys 数组.| Array   | -      |
-
+| expand-row-keys    | 可以通过该属性设置 Table 目前的展开行, 需要设置 row-key 属性才能使用, 该属性为展开行的 keys 数组. | Array   | -      |
 
 这里我想到一个最笨到办法: 我们可以对源数据进行处理, 根据层级将数据分类, 将相同层级的 `id` 放到一个数组中, 将这些数组和层级做一个 `map` 映射. `level` 等于 `0` 时, `default-expand-all` 为 `true` , 大于 `0` 时, 从映射中取出对应的数组, 给 `expand-row-keys` 赋值, 这样不就可以了吗. 我真是一个天才啊. 但结果总是在那么不经意间给你当头一棒(这个暂且不表, 后续会说明的)
 
 所以 `html` 为:
 
-``` HTML
+```HTML
 <el-table
   class="tree-table"
   :ref="ref"
@@ -59,7 +58,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 终于经过大半天的苦苦探索后, 发现了这个: `this.$refs[this.ref].store.states.treeData`
 
-``` JS
+```JS
 {
   3: {
     children: [31, 32],
@@ -88,7 +87,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 我们先处理一下数据:
 
-``` JS
+```JS
 handleData() {
   this.treeData = this.$refs[this.ref].store.states.treeData
   this.maxLevel =
@@ -104,7 +103,7 @@ handleData() {
 
 这样我们在 `watch level` 中就可以处理展开折叠了:
 
-``` JS
+```JS
 if (!this.$refs[this.ref]) return
 if (!this.maxLevel) {
   this.handleData()
@@ -141,7 +140,7 @@ this.expandRowKeys = expandRowKeys
 
 比如现在展开到 `3` 级了, 想要展开到 `2` 级, `table` 一看目前 `2` 级节点是展开状态, 不用我管了, 我继续吃瓜去了. 什么? 你说 `3` 级为什么不折叠起来? 我收到的展开节点的 `id` 数组为第 `1` 级和第 `2` 级, 现在不是展开状态吗? 我有错吗? `emmmm` , 你好像确实没错, 是我错怪你了, 你继续吃瓜去吧. 当头一棒该来的还是来了呀. 但我怎么折叠呀! 有了, 不是还有 `key` 吗?
 
-``` JS
+```JS
 let expandRowKeys = []
 for (const key in this.treeData) {
   if (this.treeData.hasOwnProperty(key)) {
@@ -162,7 +161,7 @@ this.expandRowKeys = expandRowKeys
 
 咱们再看一下 `treeData`
 
-``` JS
+```JS
 {
   3: {
     children: [31, 32],
@@ -175,7 +174,7 @@ this.expandRowKeys = expandRowKeys
 
 这个 `expanded` 不就是控制展开折叠的吗? 修改这个值不就可以了吗? 我的天呐
 
-``` JS
+```JS
 for (const key in this.treeData) {
   if (this.treeData.hasOwnProperty(key)) {
     this.treeData[key].expanded = this.treeData[key].level <= level
@@ -187,7 +186,7 @@ for (const key in this.treeData) {
 
 ## 全选
 
-这个正好从网上找到一个大佬分享的方法: [el-table树形结构的复选 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000021501121), 修改一下应该就可以了
+这个正好从网上找到一个大佬分享的方法: [el-table 树形结构的复选 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000021501121), 修改一下应该就可以了
 
 ### 分析大佬代码
 
@@ -195,7 +194,7 @@ for (const key in this.treeData) {
 
 ### 处理数据
 
-``` HTML
+```HTML
 <el-table
   class="tree-table"
   :ref="ref"
@@ -210,7 +209,7 @@ for (const key in this.treeData) {
 </el-table>
 ```
 
-``` JS
+```JS
 props: {
   data: {
     type: Array,
@@ -385,7 +384,7 @@ methods: {
 
 代码如下:
 
-``` JS
+```JS
 props: {
   checkStrictly: {
     type: Boolean,
@@ -424,7 +423,7 @@ methods: {
 
 那这样的话就需要咱们自己覆盖了
 
-``` HTML
+```HTML
 <el-table
   class="tree-table"
   :ref="ref"
@@ -436,7 +435,7 @@ methods: {
 </el-table>
 ```
 
-``` JS
+```JS
 select(selection, row) {
   if (!this.checkStrictly) {
     const selected = selection.some(item => item === row)
@@ -466,3 +465,85 @@ selectAll(selection) {
 ```
 
 而且我还发现一个现象: 使用 `console.log` 输出 `selectAll` 的 `selection` 一开始为所有根级, 但点击以后发现是全部数据, 那么就可以使用 `$nextTick` 来 `emit` 正确数据了. 但 `select` 的 `selection` 不会变, 所以这个在选中父级后, 仍然只能 `emit` 父级, 想要将子级也全部 `emit` 出去, 那就还需要递归将所有子级全部加到 `selection` 中去. 鉴于目前没有使用到这个数据, 就暂时不做处理了, 等以后需要或者想到更好办法了再解决吧.
+
+## 实际工作中发现的问题
+
+### data 变化后无法展开层级
+
+由于本人测试的时候, `data` 是写死的, 而实际工作中, 一般都是初始值为 `[]`, 随后通过接口获取重新赋值. 这个时候发现展开层级无效了, 所以还需要 `watch` 一下 `data`
+
+```JS
+watch: {
+  level: {
+    handler: 'expandToLevel',
+    immediate: true
+  },
+  data: {
+    handler: 'handleData',
+    deep: true
+  }
+},
+methods: {
+  async expandToLevel() {
+    if (!this.$refs[this.ref]) return
+    if (!this.maxLevel) {
+      await this.handleData()
+    }
+    let level = 0
+    if (this.level <= 0) {
+      level = this.maxLevel - 2
+    } else {
+      level = this.level - 2
+    }
+    for (const key in this.treeData) {
+      if (this.treeData.hasOwnProperty(key)) {
+        this.treeData[key].expanded = this.treeData[key].level <= level
+      }
+    }
+  },
+  handleData() {
+    this.$nextTick(() => {
+      this.treeData = this.$refs[this.ref].store.states.treeData
+      // 防止出现 -Infinity
+      const levels = Object.values(this.treeData).map(({ level }) => level)
+      if (levels.length) {
+        this.maxLevel = Math.max.apply(null, levels) + 2
+      } else {
+        this.maxLevel = 0
+      }
+      this.$emit('max-level', this.maxLevel)
+
+      this.children = this.$refs[this.ref].treeProps.children
+      return Promise.resolve()
+    })
+  }
+}
+```
+
+## columns 中 label、prop 需支持动态设置
+
+有一个项目是动态表头, 需要后端生成返给前端. 当然可以和后端约定好字段, 但咱们作为一个成熟的框架, 也需要支持这个需求
+
+```JS
+props: {
+  keyProps: {
+    type: Object,
+    default() {
+      return null
+    }
+  }
+},
+computed: {
+  cols() {
+    return this.keyProps
+      ? this.columns.map(column => ({
+          ...column,
+          prop: column[this.keyProps.prop || 'prop'],
+          label: column[this.keyProps.label || 'label']
+        }))
+      : this.columns
+  }
+}
+```
+
+目前只支持这两个字段, 以后有可能还需要扩展支持更多自定义字段, 需要的时候再加

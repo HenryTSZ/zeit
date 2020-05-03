@@ -401,8 +401,7 @@ export default {
   watch: {
     value() {
       // 为了检测 v-model 的变化
-      // 多选的时候, value 和 selectData 是同一个引用, 所以 v-model 不变的话这个判断就进不去
-      if (this.value !== this.selectData) {
+      if (this.value + '' !== this.selectData + '') {
         this.treeKey = Math.random()
         this.init()
       }
@@ -420,7 +419,8 @@ export default {
     },
     // select 下拉框出现/隐藏
     handleVisibleChange(val) {
-      if (!val) {
+      // 下拉框隐藏并且值改变后
+      if (!val && this.value + '' !== this.selectData + '') {
         this.$emit('input', this.selectData)
         this.$emit('change', this.selectData)
       }
@@ -566,3 +566,17 @@ treeBind() {
 ```
 
 这样, `getCheckedNodes`, `getCheckedKeys`, `getNode` 都可以正常使用了
+
+## 实际工作中发现的问题
+
+由于本人后面封装了 `tree`, 就想着使用 `tree` 代替这里的 `el-tree`, 并且通过懒加载方式引入组件
+
+``` JS
+components: {
+  Tree: resolve => require(['plugins/Tree'], resolve)
+}
+```
+
+结果杯具了, `this.$refs.tree` 初始化永远是 `undefined`, 只有手动点击下拉框后才能正常获取.
+
+一开始以为加一个 `$nextTick` 就好了, 最后发现没用. 然后就想到是不是懒加载影响的, 替换成 `import Tree from 'plugins/Tree'` 一下就好了. 看来什么东西也不能太绝对了, 太追求性能也不行
