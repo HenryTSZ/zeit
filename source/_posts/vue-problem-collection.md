@@ -4,7 +4,7 @@ title: Vue 问题集合
 date: 2020-05-04
 categories: [FrontEnd, Vue]
 tags: [Vue]
-thumbnail: /img/vue/thumbnail.svg
+thumbnail: /img/vue/thumbnail.png
 ---
 
 收集工作中使用 `Vue` 遇到的一些问题
