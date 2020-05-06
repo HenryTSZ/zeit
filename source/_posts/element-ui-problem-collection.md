@@ -11,19 +11,75 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 <!-- more -->
 
+## 打包后 icon 不显示
+
+### 问题
+
+`ElementUI` 自带了一套常用的图标集合, 使用起来十分方便. 最近发现当 `Vue.js` 项目中使用 `ElementUI` 图标时, 如果使用 `npm run dev` 方式启动, 图标是显示正常的; 而一旦使用 `npm run build` 编译打包后发布到服务器上, 会发现图片显示不出来( `Chrome` 浏览器下显示方块)
+
+### 原因
+
+查看 `/build/webpack.base.conf.js` 文件可以发现, `woff` 或 `ttf` 这些字体会经由 `url-loader` 处理后在 `static/fonts` 目录下生成相应的文件
+
+也就是说实际应该通过 `/static/fonts/` 路径来获取字体图标, 而实际却是请求 `/static/css/static/fonts/`, 自然报 `404` 错误.
+
+### 解决方法:
+
+#### 方法一
+
+打开 `build/utils.js` 文件, 在如下位置添加 `publicPath: '../../'`
+
+```JS
+if (options.extract) {
+  return ExtractTextPlugin.extract({
+    use: loaders,
+    fallback: 'vue-style-loader',
+    publicPath: '../../'
+  })
+} else {
+  return ['vue-style-loader'].concat(loaders)
+}
+```
+
+#### 方法二
+
+在 `build/webpack.base.conf.js` 中添加
+
+```js
+module: {
+  rules: [
+    ...(config.dev.useEslint ? [createLintingRule()] : []),
+    {
+      test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      loader: 'url-loader',
+      options: {
+        limit: 10000,
+        publicPath: '../../',
+        name: utils.assetsPath('fonts/[name].[hash:7].[ext]'),
+      },
+    },
+  ]
+}
+```
+
+### 参考资料
+
+- [Element-ui 项目打包后 icon 图标不显示\_JavaScript_weixin_41346436 的博客-CSDN 博客](https://blog.csdn.net/weixin_41346436/article/details/104841908)
+- [elementUI 中 icon 在 webpack 打包后不显示的问题 - Jocelee - 博客园](https://www.cnblogs.com/EassieLee/p/11289521.html)
+
 ## table current-row-key 无法高亮子节点
 
 > element-ui: 2.13.0
 
 官方文档:
 
-| 参数            | 说明                   | 类型          | 可选值 | 默认值 |
-| --------------- | ---------------------- | ------------- | ------ | ------ |
-| current-row-key | 当前行的 key，只写属性 | String,Number | ---    | ---    |
+| 参数            | 说明                   | 类型           | 可选值 | 默认值 |
+| --------------- | ---------------------- | -------------- | ------ | ------ |
+| current-row-key | 当前行的 key, 只写属性 | String, Number | ---    | ---    |
 
 具体问题请看[[Bug Report] el-table current-row-key can't highlight children · Issue #19067 · ElemeFE/element](https://github.com/ElemeFE/element/issues/19067)
 
-如果 `current-row-key` 为父节点 `key`, 那么可以高亮, 如果为子节点 `key`, 无法高亮
+如果 `current-row-key` 为父节点 `key` , 那么可以高亮, 如果为子节点 `key` , 无法高亮
 
 目前只能使用 `setCurrentRow` 来实现默认高亮子节点了:
 
@@ -49,17 +105,19 @@ this.$nextTick(() => {
 
 ```CSS
 .el-tag--info {
-	display: flex !important;
-	max-width: 100% !important;
+  display: flex !important;
+  max-width: 100% !important;
 }
+
 .el-select__tags-text {
-	display: inline-block !important;
-	max-width: 90% !important;
-	overflow: hidden !important;
-	text-overflow: ellipsis !important;
+  display: inline-block !important;
+  max-width: 90% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
+
 .el-tag__close {
-	align-self: center !important;
+  align-self: center !important;
 }
 ```
 
@@ -77,7 +135,7 @@ this.$nextTick(() => {
 
 ## table formatter 问题
 
-使用 `formatter` 时, 按照官方给出的例子, 第三个参数永远是 `undefined`, 如果需要对所有列都 `format`(逻辑是一样的), 则需要每一列都写一个函数, 将需要 `format` 的参数传入, 这样无疑是没有意义的
+使用 `formatter` 时, 按照官方给出的例子, 第三个参数永远是 `undefined` , 如果需要对所有列都 `format` (逻辑是一样的), 则需要每一列都写一个函数, 将需要 `format` 的参数传入, 这样无疑是没有意义的
 
 [具体问题](https://github.com/ElemeFE/element/issues/6606)
 
@@ -129,15 +187,15 @@ methods: {
 
 注: 在 `current-change` 事件会调 `fetchDesign` 方法
 
-如图, 原意是想在发请求前将 `total` 置为 `0`, 即初始值, 请求成功后根据返回的值来改变 `total`, 这样就不用写 `else` 和 `catch` 了
+如图, 原意是想在发请求前将 `total` 置为 `0` , 即初始值, 请求成功后根据返回的值来改变 `total` , 这样就不用写 `else` 和 `catch` 了
 
-结果就出问题了, 不论点击第几页, 永远会跳回第一页. 比如点击第四页, `current-change` 事件会触发两次, 第一次的回调参数是 `4`, 而第二次就是 `1`, 所以会永远跳回第一页
+结果就出问题了, 不论点击第几页, 永远会跳回第一页. 比如点击第四页, `current-change` 事件会触发两次, 第一次的回调参数是 `4` , 而第二次就是 `1` , 所以会永远跳回第一页
 
-结果就去 `https://github.com/ElemeFE/element/issues/`. 发现一个 [和我类似的](https://github.com/ElemeFE/element/issues/6809)
+结果就去 `https://github.com/ElemeFE/element/issues/` . 发现一个 [和我类似的](https://github.com/ElemeFE/element/issues/6809)
 
 其中 `@huguangju` 的话点醒了我, 原文:
 
-> 删除 `jumper` 中的数字后, 当前页跳到第 `1` 页并不是点击 `next` 直接导致的, 而是 `jumper` 失焦后其值此时为空字符串, 应用值到 `internalCurrentPage` 前会校验设置的页码, 部分源码如下, 会被设置为 `1`:
+> 删除 `jumper` 中的数字后, 当前页跳到第 `1` 页并不是点击 `next` 直接导致的, 而是 `jumper` 失焦后其值此时为空字符串, 应用值到 `internalCurrentPage` 前会校验设置的页码, 部分源码如下, 会被设置为 `1` :
 
 ```js
 getValidCurrentPage(value) {
@@ -152,11 +210,11 @@ getValidCurrentPage(value) {
 }
 ```
 
-因为每次触发 `current-change` 事件都会调用 `fetchDesign` 方法, 而在这个方法中都将 `total` 置为 `0`, 这样由于要校验设置的页码, 比如点击第四页, 当前为 `4`, 而 `total` 为 `0`, 总数是 `0`, 哪来的第四页, 所以就被置为 `1` 了.
+因为每次触发 `current-change` 事件都会调用 `fetchDesign` 方法, 而在这个方法中都将 `total` 置为 `0` , 这样由于要校验设置的页码, 比如点击第四页, 当前为 `4` , 而 `total` 为 `0` , 总数是 `0` , 哪来的第四页, 所以就被置为 `1` 了.
 
 ### 解决
 
-那就不能图省事, 在发请求前就将 `total` 置为 `0`, 而是根据请求返回来改变 `total` 的值. 如图:
+那就不能图省事, 在发请求前就将 `total` 置为 `0` , 而是根据请求返回来改变 `total` 的值. 如图:
 
 ![](/img/element-ui/005.png)
 
