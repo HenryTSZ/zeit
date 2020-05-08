@@ -11,6 +11,10 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 <!-- more -->
 
+## tabs + table
+
+如果使用 `tabs` 包裹 `table` 出现样式问题: 如切换 `tabs` 后, `table` 右侧出现一条滚动条滑槽, 但没有滚动条出现(实际上 `table` 确实不应该有滚动条) 等等, 可以尝试给 `table` 加一个 `v-if="activeName === 'currentName`. `activeName` 为 `tabs` 绑定值, `currentName` 为包裹该 `table` 的 `tab-pane` 的 `name`
+
 ## 打包后 icon 不显示
 
 ### 问题
