@@ -136,6 +136,11 @@ thumbnail: /img/vscode/thumbnail.png
   + 使用 Google Translate API 翻译 VSCode 的编程语言的注释
   + [Install](vscode:extension/intellsmi.comment-translate)
 
+* [vue-helper](https://marketplace.visualstudio.com/items?itemName=shenjiaolong.vue-helper)
+
+  + 跳转到定义(解决 vue 中有时候无法跳转的痛点), 代码片段, 选中代码块
+  + [Install](vscode:extension/shenjiaolong.vue-helper)
+
 * [Can I Use](https://marketplace.visualstudio.com/items?itemName=akamud.vscode-caniuse)
 
   + 基于 http://caniuse.com/ 直接从 Visual Studio Code 对 HTML5, CSS3, SVG, New JS API 进行兼容性检查

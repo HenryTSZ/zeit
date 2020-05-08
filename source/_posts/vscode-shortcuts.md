@@ -82,6 +82,7 @@ thumbnail: /img/vscode/thumbnail.png
 | O + d         | 选中当前光标所在字符, 或者选中当前已选择字符的下一个出现位置, 并进入多列编辑模式 |
 | O + S + i     | 选中一堆文本后, 即可在每一行的末尾都创建一个光标                                 |
 | C + i / C + l | 选中当前行                                                                       |
+| CT + space    | 触发建议                                                                         |
 
 ### 查找替换
 
@@ -157,33 +158,35 @@ thumbnail: /img/vscode/thumbnail.png
 
 ### 插件
 
-| 快捷键                           | 作用                                        | 插件名            |
-| -------------------------------- | ------------------------------------------- | ----------------- |
-| C + k f                          | mac 在 Finder 中打开当前文件夹              | Open in Finder    |
-| C + k C + f                      | mac 在 Finder 中打开当前项目根目录          | Open in Finder    |
-| C + k i                          | mac 在 iTerm 中打开当前文件夹               | Open in Terminal  |
-| C + k r                          | mac 在 iTerm 中打开当前项目根目录           | Open in Terminal  |
-| win: CT + O + i, mac: CT + C + i | 文件头部注释                                | koroFileHeader    |
-| win: CT + O + t, mac: CT + C + t | 函数注释                                    | koroFileHeader    |
-| CT + O + n                       | 运行代码                                    | Run Code          |
-| O + .                            | 跳转到当前可见屏幕上的字符之后              | MetaGo            |
-| O + ,                            | 跳转到当前可见屏幕上的字符之前              | MetaGo            |
-| O + /                            | 跳转到当前可见屏幕上的字符                  | MetaGo            |
-| O + S + /                        | 从光标选择到当前可见屏幕上的字符            | MetaGo            |
-| O + '                            | 在光标位置设置书签                          | MetaGo            |
-| O + [                            | 转到上一个书签                              | MetaGo            |
-| O + ]                            | 转到下一个书签                              | MetaGo            |
-| O + \                            | 列出书签并显示管理菜单                      | MetaGo            |
-| O + m                            | 将当前行滚动到屏幕中心                      | MetaGo            |
-| O + t                            | 将当前行滚动到屏幕顶部                      | MetaGo            |
-| O + b                            | 将当前行滚动到屏幕底部                      | MetaGo            |
-| C + i                            | 选择上一行                                  | MetaGo            |
-| C + l                            | 选择下一行                                  | MetaGo            |
-| A + H                            | 将光标移动到上面的空白行                    | MetaGo            |
-| A + Ed                           | 将光标移动到下面的空白行                    | MetaGo            |
-| A + S + H                        | 从光标处选择到上面的空白行                  | MetaGo            |
-| A + S + Ed                       | 从光标处选择到下面的空白行                  | MetaGo            |
-| C + '                            | 在引号之间进行切换                          | Toggle Quotes     |
+| 快捷键                           | 作用                                               | 插件名           |
+| -------------------------------- | -------------------------------------------------- | ---------------- |
+| C + k f                          | mac 在 Finder 中打开当前文件夹                     | Open in Finder   |
+| C + k C + f                      | mac 在 Finder 中打开当前项目根目录                 | Open in Finder   |
+| C + k i                          | mac 在 iTerm 中打开当前文件夹                      | Open in Terminal |
+| C + k r                          | mac 在 iTerm 中打开当前项目根目录                  | Open in Terminal |
+| win: CT + O + i, mac: CT + C + i | 文件头部注释                                       | koroFileHeader   |
+| win: CT + O + t, mac: CT + C + t | 函数注释                                           | koroFileHeader   |
+| CT + O + n                       | 运行代码                                           | Run Code         |
+| O + .                            | 跳转到当前可见屏幕上的字符之后                     | MetaGo           |
+| O + ,                            | 跳转到当前可见屏幕上的字符之前                     | MetaGo           |
+| O + /                            | 跳转到当前可见屏幕上的字符                         | MetaGo           |
+| O + S + /                        | 从光标选择到当前可见屏幕上的字符                   | MetaGo           |
+| O + '                            | 在光标位置设置书签                                 | MetaGo           |
+| O + [                            | 转到上一个书签                                     | MetaGo           |
+| O + ]                            | 转到下一个书签                                     | MetaGo           |
+| O + \                            | 列出书签并显示管理菜单                             | MetaGo           |
+| O + m                            | 将当前行滚动到屏幕中心                             | MetaGo           |
+| O + t                            | 将当前行滚动到屏幕顶部                             | MetaGo           |
+| O + b                            | 将当前行滚动到屏幕底部                             | MetaGo           |
+| C + i                            | 选择上一行                                         | MetaGo           |
+| C + l                            | 选择下一行                                         | MetaGo           |
+| A + H                            | 将光标移动到上面的空白行                           | MetaGo           |
+| A + Ed                           | 将光标移动到下面的空白行                           | MetaGo           |
+| A + S + H                        | 从光标处选择到上面的空白行                         | MetaGo           |
+| A + S + Ed                       | 从光标处选择到下面的空白行                         | MetaGo           |
+| C + '                            | 在引号之间进行切换                                 | Toggle Quotes    |
+| O + S + E                        | 对象键值优化: 自动换行并且在上一个键值对末尾加逗号 | vue-helper       |
+| O + x                            | 快速选中 attrs 或 代码块                           | vue-helper       |
 
 ```json
 // 将键绑定放入此文件中以覆盖默认值
