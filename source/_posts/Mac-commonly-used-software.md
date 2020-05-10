@@ -72,7 +72,7 @@ Install: `$ brew cask install karabiner-elements`
 
 ![Alfred](https://cdn.sspai.com/2018/04/09/16acd6a52ca0fe53661d8223adc3525a.png?imageView2/2/w/1120/q/90/interlace/1/ignore-error/1)
 
-[Alfred 上手指南](https://tsz.now.sh/2018/06/01/alfred/)
+[Alfred 上手指南](https://tsz.now.sh/2018/06/01/Alfred/)
 
 Install: `$ brew cask install alfred`
 
