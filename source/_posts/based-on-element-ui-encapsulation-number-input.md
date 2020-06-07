@@ -272,7 +272,9 @@ data() {
 },
 watch: {
   value(n) {
+    // 这里要同时修改这两个值, 防止 temporary 的 n 和 o 与实际不符
     this.model = n
+    this.temporary = n
   },
   temporary(n, o) {
     // 注:
@@ -313,7 +315,15 @@ methods: {
 
 如果初始值就是一个不合法的字符串, 会进入无限循环中
 
-可以在 `created` 对 `value` 判断一下, 如果不合法就给临时变量赋值为空.
+可以在 `created` 对 `value` 判断一下, 如果不合法就给 `temporary` 和 `model` 赋值为空.
+
+``` JS
+if (!this.reg.test(this.value)) {
+  // 这里要同时修改这两个值, 防止 temporary 的 n 和 o 与实际不符
+  this.model = ''
+  this.temporary = ''
+}
+```
 
 这种虽然会改变输入值, 但你传入的就是一个非法值, 总比陷入无限循环而卡死页面强吧
 

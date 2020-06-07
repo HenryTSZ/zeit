@@ -466,6 +466,92 @@ selectAll(selection) {
 
 而且我还发现一个现象: 使用 `console.log` 输出 `selectAll` 的 `selection` 一开始为所有根级, 但点击以后发现是全部数据, 那么就可以使用 `$nextTick` 来 `emit` 正确数据了. 但 `select` 的 `selection` 不会变, 所以这个在选中父级后, 仍然只能 `emit` 父级, 想要将子级也全部 `emit` 出去, 那就还需要递归将所有子级全部加到 `selection` 中去. 鉴于目前没有使用到这个数据, 就暂时不做处理了, 等以后需要或者想到更好办法了再解决吧.
 
+## emit select 的 selection
+
+以前没有使用过 `select` 这个方法, 最近在实际工作中用到了 `select`, 发现自己理解错这个方法了.
+
+`select` 是用户手动勾选数据行后, `emit` 出去表格全部选中的数据和当前行的数据. 所以每勾选一条数据, 就要 `emit` 一次
+
+那如果我们切换父级选中状态后, 应该 `emit` 一次, 然后我们通过代码控制子级的选中状态, 这时候也应该 `emit`
+
+关于递归遍历子级本人想到两种方法
+
+方法一: 从根级开始遍历, 先遍历根级的所有子级, 再遍历子级的子级, 以此类推
+
+``` JS
+select(selection, row) {
+  if (!this.checkStrictly) {
+    const selected = selection.includes(row)
+    this.$emit('select', selection, row)
+    this.selectChildren(row, selected, selection)
+    return
+  }
+  this.$emit('select', selection, row)
+},
+/**
+ * @description: 设置子元素是否选中
+ * @param {row: Object} 父元素
+ * @param {selected: Boolean} 是否选中
+ * @param {selection: Array} 是否 emit selection
+ */
+selectChildren(row, selected, selection) {
+  if (row[this.children] && Array.isArray(row[this.children])) {
+    let children = []
+    row[this.children].forEach(item => {
+      this.toggleSelection(item, selected)
+      if (selection) {
+        // 需要查重. 如果查到了, 就不 emit
+        if (selected && !selection.includes(item)) {
+          selection = selection.concat(item)
+          this.$emit('select', selection, item)
+        }
+        // 需要查重. 如果查到了, 才 emit
+        if (!selected && selection.includes(item)) {
+          selection = selection.filter(ele => ele !== item)
+          this.$emit('select', selection, item)
+        }
+      }
+      children.push(item)
+    })
+    children.forEach(item => {
+      this.selectChildren(item, selected, selection)
+    })
+  }
+}
+```
+
+方法二: 从根级开始遍历, 先从根级的一叉树遍历到叶子节点, 再遍历与叶子节点的父级同级的节点, 依次回到根级
+
+``` JS
+selectChildren(row, selected, selection) {
+  if (row[this.children] && Array.isArray(row[this.children])) {
+    row[this.children].forEach(item => {
+      this.toggleSelection(item, selected)
+      if (selection) {
+        // 需要查重. 如果查到了, 就不 emit
+        if (selected && !selection.includes(item)) {
+          selection = selection.concat(item)
+          this.$emit('select', selection, item)
+        }
+        // 需要查重. 如果查到了, 才 emit
+        if (!selected && selection.includes(item)) {
+          selection = selection.filter(ele => ele !== item)
+          this.$emit('select', selection, item)
+        }
+        // 接收当前所有选中的数据
+        const result = this.selectChildren(item, selected, selection)
+        // result 有值
+        if (result) selection = result
+      } else {
+        this.selectChildren(item, selected, selection)
+      }
+    })
+    // 返回当前所有选中的数据
+    if (selection) return selection
+  }
+}
+```
+
 ## 实际工作中发现的问题
 
 ### data 变化后无法展开层级
@@ -517,6 +603,110 @@ methods: {
       return Promise.resolve()
     })
   }
+}
+```
+
+### data 数据源变化, level 不变无法展开到 level 级
+
+`data` 变化后(重新请求数据, 而不是只修改某一条数据), 我们只是处理了数据, `emit max-level`, 并没有处理展开层级, 并且 `level` 没有变化, 所以无法展开
+
+但我们不能在 `watch data` 中展开层级. 因为有可能用户已经手动展开 / 折叠了一部分数据, 修改某一条数据后, `data` 变化了, 如果我们处理展开层级, 那用户手动操作的展开 / 折叠就没了, 用户体验就不好了
+
+那有人说了, `data` 变化前后让 `level` 变化一下不就可以了吗? 也是一种办法, 不过如果界面中有显示 `level` 的话, 会闪烁一下, 也不是太好
+
+那就加一个 `prop` 吧, 变化后就处理展开层级逻辑
+
+``` JS
+props: {
+  refreshLevel: {
+    type: [String, Number],
+    default: ''
+  }
+},
+watch: {
+  refreshLevel: {
+    handler: 'expandToLevel'
+  }
+}
+```
+
+这样 `data` 变化而 `level` 没有变时, 只要让 `refreshLevel` 变化即可
+
+### 设置高度后, 初始化 table 高度超过设置的高度时, 没有竖向滚动条
+
+最近在做项目时要默认全部展开, 那就用 `default-expand-all` 这个属性了, 但出问题了: 切换 `data` 源的时候没有问题, 默认全部展开; 但如果修改某一条数据, 也默认全部展开了(应该是 `el-table` 检测到 `data` 变化后, 执行了 `default-expand-all`), 用户之前手动展开 / 折叠的都没有保留
+
+那这个问题上面已经解决了: 不用 `default-expand-all`, 加了一个 `refreshLevel` 参数, 切换 `data` 源的时候改变 `refreshLevel` 值, 修改某一条的时候不做处理
+
+但由于没有了 `default-expand-all`, `el-table` 计算高度的时候默认是按照全部折叠计算的(全部折叠确实没有超出规定高度, 没有滚动条), 而我们手动操作全部展开了, 这个操作应该是在计算高度之后, 所以没有滚动条了
+
+为什么这么说呢? 因为我发现有滚动条的时候, `el-table` 多了一个 `class`: `el-table--scrollable-y`. 而查看源码后发现这个 `class` 就是动态计算出来的:
+
+> node_modules/element-ui/packages/table/src/table.vue:
+
+``` html
+<div class="el-table"
+  :class="[{
+    'el-table--fit': fit,
+    'el-table--striped': stripe,
+    'el-table--border': border || isGroup,
+    'el-table--hidden': isHidden,
+    'el-table--group': isGroup,
+    'el-table--fluid-height': maxHeight,
+    'el-table--scrollable-x': layout.scrollX,
+    'el-table--scrollable-y': layout.scrollY,
+    'el-table--enable-row-hover': !store.states.isComplex,
+    'el-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
+  }, tableSize ? `el-table--${ tableSize }` : '']"
+  @mouseleave="handleMouseLeave($event)">
+```
+
+> node_modules/element-ui/packages/table/src/table-layout.js
+
+``` JS
+updateScrollY() {
+  const height = this.height;
+  if (height === null) return false;
+  const bodyWrapper = this.table.bodyWrapper;
+  if (this.table.$el && bodyWrapper) {
+    const body = bodyWrapper.querySelector('.el-table__body');
+    const prevScrollY = this.scrollY;
+    const scrollY = body.offsetHeight > this.bodyHeight;
+    this.scrollY = scrollY;
+    return prevScrollY !== scrollY;
+  }
+  return false;
+}
+```
+
+由于我们是拿到数据后手动来改变展开折叠的, 错过了 `el-table` 计算高度判断是否需要出滚动条的时机, 所以需要再让计算一次
+
+那这就好办了呀, 自己使用 `ref` 调用这个函数不就可以了吗?
+
+可以是可以了, 但由于官方文档并没有写这个方法, 还是不建议这么做, 而且人家不是已经提供了一个方法吗: `doLayout`, 咱直接调这个方法不香吗
+
+注: 需要在 `$nextTick` 中使用该方法
+
+``` JS
+async expandToLevel() {
+  if (!this.$refs[this.ref]) return
+  if (!this.maxLevel) {
+    await this.handleData()
+  }
+  let level = 0
+  if (this.level <= 0) {
+    level = this.maxLevel - 2
+  } else {
+    level = this.level - 2
+  }
+  for (const key in this.treeData) {
+    if (this.treeData.hasOwnProperty(key)) {
+      this.treeData[key].expanded = this.treeData[key].level <= level
+    }
+  }
+  this.$nextTick(() => {
+    this.$refs[this.ref].doLayout()
+  })
 }
 ```
 

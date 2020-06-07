@@ -221,3 +221,37 @@ mounted() {
   }
 }
 ```
+
+## 问题
+
+### 方法一 data 为空数组, 全选仍存在(已解决)
+
+由于全选标签只判断了 `showCheckAll && showCheckbox`, 所以没数据的时候也是会显示的, 所以还需要判断是否有数据: `v-if="showCheckAll && showCheckbox && data.length"`
+
+### 方法一 data 改变后, 显示有问题(已解决) 展开需验证一下
+
+目前 `data` 改变后, 没有重新处理全选的状态, 导致全选选中状态有问题.
+
+所以需要 `watch data`; 而且发现 `store._getAllNodes()` 会保留历史数据: 比如第一次 `data` 就一条数据, `_getAllNodes` 获取的数据为一条, `data` 改变为两条数据后, `_getAllNodes` 获取的数据为三条
+
+所以 `data` 改变后, 需要重新加载 `el-tree`:
+
+``` HTML
+<el-tree
+  :key="key"
+>
+```
+
+``` JS
+watch: {
+  data() {
+    this.key = Math.random()
+    this.handleCheckChange()
+    // this.expandToLevel(this.level)
+  }
+}
+```
+
+这样修改后, 全选状态确实可以正常显示了, 但绑定的 `el-tree` 方法又出现问题了: 绑定方法只在 `mounted` 中绑定了一次, 有一些方法需要用到 `store`, `data` 改变后, `store` 没有更新, 导致 `getCheckedNodes` 等方法仍获取的是第一次的值, 所以需要重新加载一下 `tree` 组件
+
+目前暂时在父组件中使用 `v-if` 控制, 以后看看有没有好方法, 这样上面的代码也不用加了
