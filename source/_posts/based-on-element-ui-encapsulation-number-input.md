@@ -272,8 +272,6 @@ data() {
 },
 watch: {
   value(n) {
-    // 这里要同时修改这两个值, 防止 temporary 的 n 和 o 与实际不符
-    this.model = n
     this.temporary = n
   },
   temporary(n, o) {
@@ -400,5 +398,38 @@ props: {
    type: [Number, String],
    default: '' // '' 或者 0 看需求吧
  }
+}
+```
+
+### 传入的 value 为 Number 类型时无法验证(已解决)
+
+复现路径: 不通过输入框修改 `value`, 而是通过代码将 `value` 值改变为 `Number` 类型
+
+以前都是通过输入框来验证组件是否可以控制输入, 这种方式会将 `Number` 转化为 `String`, 导致一直没有测出这个 `bug`
+
+由于 `Number` 没有 `length` 属性, 并且 `RegExp` 只能验证字符串(验证数值有问题), 所以 `n.length && !this.reg.test(n)` 这个判断就进不去了, 从而导致无法验证
+
+所以我们需要先转化为 `String` 再验证
+
+``` JS
+watch: {
+  temporary(n, o) {
+    n = n + ''
+    // 判断 n.length 和 n 是一样的效果, 这里就判断 n 了
+    if (n && !this.reg.test(n)) {
+      n = o
+      this.temporary = o
+      return
+    }
+    this.model = n
+    this.$emit('input', n)
+  }
+},
+created() {
+  const val = this.value + ''
+  if (val && !this.reg.test(val)) {
+    // 这里 temporary 改变后会触发 watch, 那里会给 model 赋值, 所以这里不用赋值了
+    this.temporary = ''
+  }
 }
 ```
