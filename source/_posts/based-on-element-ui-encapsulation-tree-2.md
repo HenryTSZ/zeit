@@ -255,3 +255,43 @@ watch: {
 这样修改后, 全选状态确实可以正常显示了, 但绑定的 `el-tree` 方法又出现问题了: 绑定方法只在 `mounted` 中绑定了一次, 有一些方法需要用到 `store`, `data` 改变后, `store` 没有更新, 导致 `getCheckedNodes` 等方法仍获取的是第一次的值, 所以需要重新加载一下 `tree` 组件
 
 目前暂时在父组件中使用 `v-if` 控制, 以后看看有没有好方法, 这样上面的代码也不用加了
+
+### defaultExpandAll defaultExpandedKeys 无效(已解决)
+
+由于目前在初始化的时候就执行了 `expandToLevel` 方法, 导致只展开到 `level` 级
+
+而如果用户没有传入 `level`, 只传入 `defaultExpandAll` 或 `defaultExpandedKeys`, 默认 `level` 为 `1`, 那只能展开到一级
+
+所以需要添加 `isFirst` 判断: 默认为 `true`, 调用 `expandToLevel` 时判断是否是第一次调用, 第一次调用的时候判断 `defaultExpandAll` 或 `defaultExpandedKeys` 是否有值, 有值的话就不执行后面的代码, 并且把 `isFirst` 置为 `false`
+
+``` JS
+props: {
+  defaultExpandAll: {
+    type: Boolean,
+    default: false
+  },
+  defaultExpandedKeys: {
+    type: Array,
+    default() {
+      return []
+    }
+  }
+},
+data() {
+  return {
+    isFirst: true
+  }
+},
+methods: {
+  expandToLevel(level) {
+    if (this.isFirst && (this.defaultExpandAll || this.defaultExpandedKeys.length)) {
+      this.isFirst = false
+      return
+    }
+    this.isFirst = false
+    // do something
+  }
+}
+```
+
+### 提取出 handlerData 方法
