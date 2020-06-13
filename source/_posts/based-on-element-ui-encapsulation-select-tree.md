@@ -569,6 +569,8 @@ treeBind() {
 
 ## 实际工作中发现的问题
 
+### tree 为 undefined(已解决)
+
 由于本人后面封装了 `tree`, 就想着使用 `tree` 代替这里的 `el-tree`, 并且通过懒加载方式引入组件
 
 ``` JS
@@ -580,3 +582,64 @@ components: {
 结果杯具了, `this.$refs.tree` 初始化永远是 `undefined`, 只有手动点击下拉框后才能正常获取.
 
 一开始以为加一个 `$nextTick` 就好了, 最后发现没用. 然后就想到是不是懒加载影响的, 替换成 `import Tree from 'plugins/Tree'` 一下就好了. 看来什么东西也不能太绝对了, 太追求性能也不行
+
+### EditableElements 使用 select-tree 时, placeholder 不会自动生成(已解决)
+
+如果不知道 `EditableElements`, 可以看看这篇文章: [基于 ElementUI 封装的基础 table 和 form | Henry](https://tsz.now.sh/2020/05/16/based-on-element-ui-encapsulation-table-form/#%E5%B0%81%E8%A3%85%E5%8F%AF%E7%BC%96%E8%BE%91%E7%BB%84%E4%BB%B6)
+
+原因是现在只能通过 `selectProps` 来传入 `placeholder`, 直接传入的话是不认的
+
+其实这里设计的有点问题, `tree` 的 `props` 必须通过 `treeProps` 传入, `select` 的 `props` 应该是直接传入即可, 就和 `el-select` 一样
+
+那就兼容一下吧:
+
+``` HTML
+<el-select
+  v-bind="{ ...$attrs, ...selectProps }"
+>
+```
+
+这样就可以
+
+由于本组件已经在项目中使用了, 去掉 `selectProps` 改动有点大, 只能这样兼容一下
+
+如果是新项目, 可以去掉 `selectProps` 了:
+
+``` HTML
+<el-select
+  v-bind="$attrs"
+>
+```
+
+### 单选时只能选择叶子节点, 但会选择父级(已解决)
+
+目前只是通过 `node.isLeaf` 来判断是否是叶子节点, 但有时候只有一个父级, 那么这个父级既是父节点, 又是叶子节点, 我们有时候是不能选择这个节点的. 当然如果你们的需求就是可以选择这个节点, 那就不用往下看了, 目前完全可以胜任你们的需求
+
+而且判断是不是叶子节点, 不同的数据源会有不同的判断方式, 所以需要放出一个方法, 让使用者自己判断是否是叶子节点
+
+添加一个 `props`:
+
+``` JS
+props: {
+  /**
+    * @description: 自定义单选时只能选择子节点方法; 优先级高于 currentIsLeaf
+    * @param {data: Object}: 当前节点数据
+    * @param {node: Object}: 当前节点 Node 对象
+    * @return: Boolean
+    */
+  isLeafFun: {
+    type: Function
+  }
+},
+methods: {
+  // 单选, 节点被点击时的回调, 返回被点击的节点数据
+  handleCurrentChange() {
+    // do something
+    // 判断叶子节点
+    if (this.isLeafFun ? this.isLeafFun(currentNode, node) : !node.isLeaf && this.currentIsLeaf) {
+      return
+    }
+    // do something
+  }
+}
+```
