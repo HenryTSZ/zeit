@@ -16,7 +16,7 @@ tags: [Js, Location]
 
 | 属性     | 描述                                                                                          | 例子                                                   | 返回值                                   |
 | -------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
-| href     | 设置或返回完整的 URL.                                                                         | `http://example.com:1234/test.htm#part2`               | `http://example.com:1234/test.htm#part2` |
+| <div style="width: 77px">href</div>     | 设置或返回完整的 URL.                                                                         | `http://example.com:1234/test.htm#part2`               | `http://example.com:1234/test.htm#part2` |
 | host     | 设置或返回主机名和当前 URL 的端口号. 相当于 hostname + port, 当端口为 80 时, 和 hostname 一样 | `http://example.com:1234/test.htm#part2`               | `example.com:1234`                       |
 | hostname | 设置或返回当前 URL 的主机名.                                                                  | `http://example.com:1234/test.htm#part2`               | `example.com`                            |
 | port     | 设置或返回当前 URL 的端口号.                                                                  | `http://example.com:1234/test.htm#part2`               | `1234`                                   |
