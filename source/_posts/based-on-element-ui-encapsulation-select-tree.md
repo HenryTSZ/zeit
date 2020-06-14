@@ -599,6 +599,34 @@ components: {
 >
 ```
 
+``` JS
+props: {
+  multiple: {
+    type: Boolean,
+    default: false
+  }
+},
+computed: {
+  treeBind() {
+    return {
+      showCheckbox: this.isMultiple,
+      highlightCurrent: !this.isMultiple,
+      expandOnClickNode: this.expandOnClickNode,
+      nodeKey: 'id',
+      ...this.treeProps,
+      defaultCheckedKeys: this.isMultiple ? this.value : [],
+      currentNodeKey: this.isMultiple ? '' : this.value
+    }
+  },
+  isMultiple() {
+    return this.selectProps.multiple || this.multiple
+  },
+  expandOnClickNode() {
+    return this.multiple ? true : this.currentIsLeaf
+  }
+}
+```
+
 这样就可以
 
 由于本组件已经在项目中使用了, 去掉 `selectProps` 改动有点大, 只能这样兼容一下
