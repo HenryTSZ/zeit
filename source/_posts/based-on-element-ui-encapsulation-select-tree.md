@@ -622,10 +622,12 @@ computed: {
     return this.selectProps.multiple || this.multiple
   },
   expandOnClickNode() {
-    return this.multiple ? true : this.currentIsLeaf
+    return this.isMultiple ? true : this.currentIsLeaf
   }
 }
 ```
+
+`this.multiple` 修改为 `this.isMultiple` 即可
 
 这样就可以
 
