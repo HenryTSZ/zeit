@@ -166,12 +166,31 @@ data() {
     checkAllId: '__rootId__'
   }
 },
+watch: {
+  data: {
+    handler: 'handleData',
+    immediate: true
+  }
+}
 computed: {
   isCheckAll() {
     return this.showCheckAll && this.showCheckbox
   }
 },
 methods: {
+  handleData() {
+    if (this.isCheckAll && this.data.length) {
+      this.treeData = [
+        {
+          [this.$refs[this.ref].props.label]: '全选',
+          [this.nodeKey]: this.checkAllId,
+          [this.$refs[this.ref].props.children]: this.data
+        }
+      ]
+    } else {
+      this.treeData = this.data
+    }
+  },
   getCheckedNodes(leafOnly, includeHalfChecked) {
     if (this.isCheckAll) {
       return this.$refs[this.ref]
@@ -202,17 +221,6 @@ methods: {
   }
 },
 mounted() {
-  if (this.isCheckAll) {
-    this.treeData = [
-      {
-        [this.$refs[this.ref].props.label]: '全选',
-        [this.nodeKey]: this.checkAllId,
-        [this.$refs[this.ref].props.children]: this.data
-      }
-    ]
-  } else {
-    this.treeData = this.data
-  }
   // 绑定 el-tree 方法
   for (let key in this.$refs[this.ref]) {
     if (!(key in this) && typeof this.$refs[this.ref][key] === 'function') {
@@ -228,11 +236,13 @@ mounted() {
 
 由于全选标签只判断了 `showCheckAll && showCheckbox`, 所以没数据的时候也是会显示的, 所以还需要判断是否有数据: `v-if="showCheckAll && showCheckbox && data.length"`
 
-### 方法一 data 改变后, 显示有问题(已解决) 展开需验证一下
+### 方法一 data 改变后, 显示有问题(已解决)
 
 目前 `data` 改变后, 没有重新处理全选的状态, 导致全选选中状态有问题.
 
 所以需要 `watch data`; 而且发现 `store._getAllNodes()` 会保留历史数据: 比如第一次 `data` 就一条数据, `_getAllNodes` 获取的数据为一条, `data` 改变为两条数据后, `_getAllNodes` 获取的数据为三条
+
+通过查看源码发现 `nodesMap` 保存所有数据, 只要注册节点并且该节点不在 `nodesMap` 中, 就添加, `_getAllNodes` 获取的就是这里的所有数据
 
 所以 `data` 改变后, 需要重新加载 `el-tree`:
 
@@ -247,14 +257,88 @@ watch: {
   data() {
     this.key = Math.random()
     this.handleCheckChange()
-    // this.expandToLevel(this.level)
   }
 }
 ```
 
-这样修改后, 全选状态确实可以正常显示了, 但绑定的 `el-tree` 方法又出现问题了: 绑定方法只在 `mounted` 中绑定了一次, 有一些方法需要用到 `store`, `data` 改变后, `store` 没有更新, 导致 `getCheckedNodes` 等方法仍获取的是第一次的值, 所以需要重新加载一下 `tree` 组件
+这样修改后, 全选状态确实可以正常显示了, 但绑定的 `el-tree` 方法又出现问题了: 绑定方法只在 `mounted` 中绑定了一次, 通过修改 `key` 重新加载 `el-tree` 后, 绑定的方法仍然是重新加载前的, 而且重新绑定也不行; 有一些方法需要用到 `store`, `data` 改变后, `store` 没有更新, 导致 `getCheckedNodes` 等方法仍获取的是第一次的值, 所以需要重新加载一下 `tree` 组件
 
-目前暂时在父组件中使用 `v-if` 控制, 以后看看有没有好方法, 这样上面的代码也不用加了
+**所以不能在封装组件中通过修改 `key` 来重新加载组件, 会导致绑定的方法有问题**
+
+~~目前暂时在父组件中使用 `v-if` 控制, 以后看看有没有好方法, 这样上面的代码也不用加了~~
+
+对比 `data` 改变前后通过 `_getAllNodes` 获取的数据发现, 改变前选中的数据, 改变后 `checked` 仍为 `true`, 但通过 `getCheckedKeys` 获取的数据只有改变后选中的数据, 是不是可以查看源码看看这部分是如何实现的?
+
+> node_modules/element-ui/packages/tree/src/model/tree-store.js
+
+``` JS
+getCheckedNodes(leafOnly = false, includeHalfChecked = false) {
+  const checkedNodes = [];
+  const traverse = function(node) {
+    const childNodes = node.root ? node.root.childNodes : node.childNodes;
+
+    childNodes.forEach((child) => {
+      if ((child.checked || (includeHalfChecked && child.indeterminate)) && (!leafOnly || (leafOnly && child.isLeaf))) {
+        checkedNodes.push(child.data);
+      }
+
+      traverse(child);
+    });
+  };
+
+  traverse(this);
+
+  return checkedNodes;
+}
+
+getCheckedKeys(leafOnly = false) {
+  return this.getCheckedNodes(leafOnly).map((data) => (data || {})[this.key]);
+}
+```
+
+原来人家并没有用 `_getAllNodes` 获取全部数据, 而是通过 `root` 拿到所有根节点数据, 再依次遍历子节点来拿到所有选中的数据
+
+那咱们也用 `root` 不就行了吗?
+
+``` JS
+watch: {
+  data: {
+    handler: 'handleData',
+    immediate: true,
+    deep: true
+  }
+},
+methods: {
+  handleData() {
+    this.$nextTick(() => {
+      this.allNodes = this.getAllNodes(this.$refs[this.ref].root[childNodes])
+      this.allNodes.length &&
+        (this.maxLevel = Math.max.apply(
+          null,
+          this.allNodes.map(({ level }) => level)
+        ))
+      this.$emit('max-level', this.maxLevel)
+      this.handleCheckChange()
+      return Promise.resolve()
+    })
+  },
+  getAllNodes() {
+    let allNodes = []
+    const traverse = function(node) {
+      const childNodes = node.root ? node.root.childNodes : node.childNodes
+      childNodes.forEach(child => {
+        allNodes.push(child)
+        traverse(child)
+      })
+    }
+    traverse(this.$refs[this.ref])
+    return allNodes
+  }
+}
+```
+
+这次把 `allNodes` 缓存起来了, 避免每次都要获取一下, 由于是引用地址, 所以状态变化后会跟着改变的; 并且还 `emit` 出去了 `max-level`, 省的还要在通过 `getTreeMaxLevel` 获取
+
 
 ### defaultExpandAll defaultExpandedKeys 无效(已解决)
 
@@ -293,5 +377,3 @@ methods: {
   }
 }
 ```
-
-### 提取出 handlerData 方法
