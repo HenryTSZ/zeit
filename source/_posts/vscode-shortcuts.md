@@ -178,8 +178,8 @@ thumbnail: /img/vscode/thumbnail.png
 | O + m                            | 将当前行滚动到屏幕中心                             | MetaGo           |
 | O + t                            | 将当前行滚动到屏幕顶部                             | MetaGo           |
 | O + b                            | 将当前行滚动到屏幕底部                             | MetaGo           |
-| C + i                            | 选择上一行                                         | MetaGo           |
-| C + l                            | 选择下一行                                         | MetaGo           |
+| CT + o                           | 选择上一行                                         | MetaGo           |
+| CT/C + l                         | 选择下一行                                         | MetaGo           |
 | A + H                            | 将光标移动到上面的空白行                           | MetaGo           |
 | A + Ed                           | 将光标移动到下面的空白行                           | MetaGo           |
 | A + S + H                        | 从光标处选择到上面的空白行                         | MetaGo           |
