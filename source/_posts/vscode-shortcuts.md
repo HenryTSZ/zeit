@@ -187,6 +187,8 @@ thumbnail: /img/vscode/thumbnail.png
 | O + S + E                        | 对象键值优化: 自动换行并且在上一个键值对末尾加逗号 | [vue-helper](https://marketplace.visualstudio.com/items?itemName=shenjiaolong.vue-helper)                       |
 | O + x                            | 快速选中 attrs 或 代码块                           | vue-helper                                                                                                      |
 
+## 设置
+
 ```json
 // 将键绑定放入此文件中以覆盖默认值
 [

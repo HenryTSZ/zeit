@@ -28,7 +28,6 @@ tags: [Mac]
 [iTerm2 用法与技巧](https://tsz.now.sh/2018/04/25/iterm2-usage-and-skills/)
 
 Install: `$ brew cask install iterm2`
-
 下载地址: [iTerm2](https://www.iterm2.com/downloads.html)
 
 ## VS Code: 编辑器
@@ -40,7 +39,6 @@ Install: `$ brew cask install iterm2`
 [VSCode 初始化配置](https://tsz.now.sh/2018/09/05/vscode-complete-config/)
 
 Install: `$ brew cask install visual-studio-code`
-
 下载地址: [VS Code](https://code.visualstudio.com/)
 
 ## Karabiner-Elements: 改键神器
@@ -52,10 +50,9 @@ Install: `$ brew cask install visual-studio-code`
 [Karabiner-Elements 使用介绍](https://tsz.now.sh/2018/06/23/karabiner-elements/)
 
 Install: `$ brew cask install karabiner-elements`
-
 下载地址: [Karabiner-Elements](https://pqrs.org/osx/karabiner/)
 
-## Alfred 3: 启动器
+## Alfred: 启动器
 
 但凡初入 `Mac` 的新用户, 在建立起自己的工作流前, 大抵都会经历一段被疯狂安利  [Alfred](http://www.alfredapp.com/)  的时光. 这种长期口碑积累所达到的效果, 也使得 `Alfred` 经常出现在各自 `Mac` 「装机必备」清单中.
 
@@ -75,7 +72,6 @@ Install: `$ brew cask install karabiner-elements`
 [Alfred 上手指南](https://tsz.now.sh/2018/06/01/Alfred/)
 
 Install: `$ brew cask install alfred`
-
 下载地址: [Alfred](http://www.alfredapp.com/)
 
 ## PopClip: 选中小工具
@@ -87,7 +83,6 @@ Install: `$ brew cask install alfred`
 [少数派 PopClip 专栏](https://sspai.com/search/article?q=popclip)
 
 Install: `$ brew cask install popclip`
-
 下载地址: [PopClip](https://itunes.apple.com/cn/app/popclip/id445189367?mt=12)
 
 ## BetterTouchTool: Mac 触摸板增强神器
@@ -99,7 +94,6 @@ Install: `$ brew cask install popclip`
 [少数派 BetterTouchTool 专栏](https://sspai.com/search/article?q=BetterTouchTool)
 
 Install: `$ brew cask install bettertouchtool`
-
 下载地址: [BetterTouchTool](http://www.boastr.de/)
 
 ## CheatSheet: 快捷键提示
@@ -109,7 +103,6 @@ Install: `$ brew cask install bettertouchtool`
 ![CheatSheet](/img/mac/030.jpg)
 
 Install: `$ brew cask install cheatsheet`
-
 下载地址:[CheatSheet](https://www.mediaatelier.com/CheatSheet/)
 
 ## BetterAndBetter: Mac 手势神器, 不仅仅是手势
@@ -119,12 +112,21 @@ Install: `$ brew cask install cheatsheet`
 ![BetterAndBetter](/img/mac/031.png)
 
 `BetterAndBetter` 的功能基本涵盖了上面 `PopClip` / `BetterTouchTool` / `CheatSheet` , 只是相对于 `PopClip` 没有那么多的功能, 但可以满足日常轻度使用; 快捷键提示和 `CheatSheet` 平分秋色; 在触摸板方面是强于 `BetterTouchTool` 的. 如果不是重度使用以上三款产品的话, 完全可以考虑只安装 `BetterAndBetter`
-
 注: 目前版本是 `1.6.07` , 如果同时使用 `BetterAndBetter` 和 `PopClip` , 会在部分软件中出现选中即复制的效果, 如果不想要这个效果, 可以在 `自动跳窗` 的 `黑名单` 中添加软件
 
 [BetterAndBetter - 使用文档](http://www.qijishow.com/helpbab.html)
 
 下载地址: [BetterAndBetter - 奇迹秀](http://www.qijishow.com/bab.html)
+
+## 超级右键-iRightMouse: 增强访达右键
+
+访达一直被人诟病的就是没有新建文件和剪切功能, 今天终于解决了
+
+![new file](/img/mac/056.png)
+
+![cut](/img/mac/057.png)
+
+下载地址: [‎ 超级右键-iRightMouse](https://apps.apple.com/cn/app/%E8%B6%85%E7%BA%A7%E5%8F%B3%E9%94%AE-irightmouse/id1497428978?mt=12)
 
 ## BitBar: Mac 菜单栏「万能」工具箱
 
@@ -132,7 +134,7 @@ Install: `$ brew cask install cheatsheet`
 
 ![BitBar](https://cdn.sspai.com/editor/u_spencerwoo/15807227036967.png?imageMogr2/quality/95/thumbnail/!1420x708r/gravity/Center/crop/1420x708/interlace/1)
 
-[监控疫情、看天气、查汇率…… Mac 菜单栏「万能」工具箱：BitBar - 少数派](https://sspai.com/post/58683)
+[监控疫情、看天气、查汇率…… Mac 菜单栏「万能」工具箱: BitBar - 少数派](https://sspai.com/post/58683)
 
 Install: `$ brew cask install bitbar`
 
@@ -143,7 +145,6 @@ Install: `$ brew cask install bitbar`
 ![The Unarchive](/img/mac/032.jpg)
 
 Install: `$ brew cask install the-unarchiver`
-
 下载地址:[The Unarchiver](https://itunes.apple.com/cn/app/the-unarchiver/id425424353?mt=12)
 
 ## eZip: 专为 macOS 而设计的压缩软件!
@@ -161,7 +162,6 @@ Install: `$ brew cask install the-unarchiver`
 ![IINA](/img/mac/034.jpg)
 
 Install: `$ brew cask install iina`
-
 下载地址:[IINA](https://lhc70000.github.io/iina/)
 
 ## AppCleaner: 卸载工具
@@ -171,7 +171,6 @@ Install: `$ brew cask install iina`
 ![AppCleaner](/img/mac/035.jpg)
 
 Install: `$ brew cask install appcleaner`
-
 下载地址:[AppCleaner](https://freemacsoft.net/appcleaner/)
 
 ## Jietu: 截图工具
@@ -183,8 +182,15 @@ Install: `$ brew cask install appcleaner`
 关联阅读:[圈点之后, 试试腾讯出品的免费 Mac 截图软件: 截图 Jietu](https://sspai.com/post/33021)
 
 Install: `$ brew cask install jietu`
-
 下载地址:[Jietu](https://itunes.apple.com/cn/app/jie-tu-jietu/id1059334054?mt=12)
+
+## ImageOptim: 无损图片压缩
+
+`ImageOptim` 是 `mac` 电脑上一款简单好用的图片优化软件, 它可以对图片的大小进行轻松优化, 只要拖动图片到软件界面就可以了, 软件绿色安全, 使用方便而且占用空间非常的小哦.
+
+图片文件中往往包含一些注释、颜色 `Profile` 等多余信息, 移除后图像质量不变, 体积更小载入更快. `ImageOptim` 以此方式压缩图片, 先分析图片, 找到最优压缩参数, 去除无关信息减小体积, 实行无损压缩.
+
+下载地址: [ImageOptim — better Save for Web](https://imageoptim.com/mac)
 
 ## Dash: API 文档查询
 
@@ -200,7 +206,6 @@ Install: `$ brew cask install jietu`
 [程序员的 API 文档查询利器: Dash - 少数派](https://sspai.com/post/45786)
 
 Install: `$ brew cask install dash`
-
 下载地址: [Dash for macOS - API Documentation Browser, Snippet Manager - Kapeli](https://kapeli.com/dash)
 
 `Dash` 本身可以免费使用, 但免费版本在查找一个新文档的时候(不是每次查询)会有 10 秒的延迟时间. 如果不想等待, 请[下载此文件](https://github.com/HenryTSZ/files/blob/master/licenses.dash-license)
@@ -209,22 +214,15 @@ Install: `$ brew cask install dash`
 
 作为一个对工具有绝对掌控欲的强迫症程序员来说, 无法得心应手的切换中英文输入法一直让我耿耿于怀. 我想实现的是**不用看通知栏就能知道当前输入法的状态, 一键切换到自己需要的输入法, 做到对输入法的绝对掌控.**
 
-目前的输入模式是:
-
-- 中文: 百度输入法
-- 英文: 系统自带
-
 本来一开始打算中英文全部使用百度的, 无奈系统自带的英文无法删除, 而且就算你使用 `shift` 切换百度的中英文, 系统有时候莫名其妙会切换到系统的英文; 每次输入都需要查看顶部状态栏, 而且有的软件全屏后会隐藏顶部状态栏, 这时要不先随便输入一下查看输入源, 要不鼠标滑到顶部查看输入源, 极其影响效率
 
 解决方法:
 
-1. 放弃百度的英文输入, 在百度输入法设置中将 `中/英文切换` 设置为 `无` (也可以防止误触 Shift), 并将初始模式设置为中文
-2. 英文还是使用系统自带
-3. 利用 `Karabiner-Elements` 将 `caps_lock` 映射为 `f13` , 在系统设置/键盘/快捷键/输入法中将 `切换上一个输入法` 映射为 `f13`
-4. 如果是外置键盘, 右面的 `Ctrl` 一般没用, 可以映射为 `caps_lock`
-5. 使用 ShowyEdge 给输入源添加不同颜色
+1. 放弃百度输入法, 均使用系统自带的(不是说百度不好, 只是觉得自带的也可以)
+2. 切换输入法仍使用 `Caps Lock`
+3. 使用 `ShowyEdge` 给输入源添加不同颜色
 
-注: `ShowyEdge` 推荐是在顶部状态栏, 但我们一般输入位置是在屏幕中下部的, 这样查看当前输入源还是不方便, 所以本人将 `ShowyEdge` 放置在屏幕左侧靠下位置 
+注: `ShowyEdge` 推荐是在顶部状态栏, 但我们一般输入位置是在屏幕中下部的, 这样查看当前输入源还是不方便, 所以本人将 `ShowyEdge` 放置在屏幕左侧靠下位置
 
 具体配置看下图:
 
@@ -236,8 +234,9 @@ Install: `$ brew cask install dash`
 
 注: 这个图主要是调整 `ShowyEdge` 的位置(好像直接输入位置无效, 只能点击右面的按钮一点一点移动)
 
-Install: `$ brew cask install showyedge`
+这样只需要看一下屏幕左下角, 就可以知道当前输入法状态了, 完美!
 
+Install: `$ brew cask install showyedge`
 下载地址: [ShowyEdge - Software for macOS](https://pqrs.org/osx/ShowyEdge/)
 
 ## Aria2GUI: 下载工具
@@ -247,7 +246,6 @@ Install: `$ brew cask install showyedge`
 ![Aria2GUI](/img/mac/039.jpg)
 
 Install: `$ brew cask install aria2gui`
-
 下载地址:[Aria2GUI](https://github.com/yangshun1029/aria2gui)
 
 ## stretchly: 提醒工作狂按时休息
@@ -273,7 +271,6 @@ Install: `$ brew cask install aria2gui`
 ![youdaodict](/img/mac/041.jpg)
 
 Install: `$ brew cask install youdaodict`
-
 下载地址: [有道词典](https://itunes.apple.com/cn/app/you-dao-ci-dian/id491854842?mt=12)
 
 ## Bob
@@ -285,7 +282,6 @@ Install: `$ brew cask install youdaodict`
 与欧路词典、有道词典等老牌词典应用相比较, `Bob` 的单词查询结果不够详尽, 界面也极简得甚至可以用简陋来形容, 不过其对多个翻译源的整合、切换以及独特的截图翻译功能还是给 `macOS` 平台的词典应用带来了一丝新风, 期待开发者对 `Bob` 的后续功能优化与完善.
 
 Install: `$ brew cask install bob`
-
 下载地址: [Bob](https://github.com/ripperhe/Bob/releases)
 
 ## 网易云音乐
@@ -295,7 +291,6 @@ Install: `$ brew cask install bob`
 ![neteasemusic](/img/mac/042.png)
 
 Install: `$ brew cask install neteasemusic`
-
 下载地址: [网易云音乐](http://music.163.com/#/download)
 
 ## Chrome: 浏览器
@@ -311,7 +306,6 @@ Install: `$ brew cask install neteasemusic`
 不好意思, 我也是前端!!! [捂脸]
 
 Install: `$ brew cask install google-chrome`
-
 下载地址: [Chrome](https://www.google.com/chrome/)
 
 ## Fantastical: 日程管理
@@ -329,7 +323,6 @@ Install: `$ brew cask install google-chrome`
 [如原生般, 却更好用: 最好的 Mac 日历应用 Fantastical 2 for Mac 评测](https://sspai.com/post/30287)
 
 Install: `$ brew cask install fantastical`
-
 下载地址: [Fantastical](https://flexibits.com/fantastical)
 
 ## TaskTab: Simple To Do List
@@ -371,7 +364,6 @@ Install: `$ brew cask install fantastical`
 另外, 腾讯柠檬清理也在 `Mac App Store` 上线了 `Lite` 版本, 不过功能受限, 最好还是在官网下载比较好
 
 Install: `$ brew cask install tencent-lemon`
-
 下载地址: [tencent-lemon](https://lemon.qq.com/)
 
 ## PinTab: 资源神器
@@ -386,19 +378,22 @@ Install: `$ brew cask install tencent-lemon`
 
 ## 博主必备
 
-  * [ScreenFlow](http://screenflow.en.softonic.com/mac) 这或许是mac上最好用的屏幕录制应用.
-  * [Snipaste](https://zh.snipaste.com/)或许是最好的截图软件
-  * [Annotate](http://www.waitsun.com/annotate-2-0-5.html) 屏幕截图批注应用, 令人惊喜的是, 支持划区域gif制作, 教程以及动图制作者必备.
-  * [Licecap](http://www.cockos.com/licecap/) mac上超强大的且极简的gif录制应用, 使用免费, 支持FPS帧率调整且无录制时间限制(笔者用它录制了很多gif动图).
-  * [KeyCastr](http://mac.softpedia.com/get/Utilities/KeyCastr.shtml) 将mac按键显示在屏幕上, 分享演示、录制视频或动图时超赞.
+- [ScreenFlow](http://screenflow.en.softonic.com/mac)  这或许是 mac 上最好用的屏幕录制应用.
+- [Snipaste](https://zh.snipaste.com/)或许是最好的截图软件
+- [Annotate](http://www.waitsun.com/annotate-2-0-5.html)  屏幕截图批注应用, 令人惊喜的是, 支持划区域 gif 制作, 教程以及动图制作者必备.
+- [Licecap](http://www.cockos.com/licecap/) mac 上超强大的且极简的 gif 录制应用, 使用免费, 支持 FPS 帧率调整且无录制时间限制(笔者用它录制了很多 gif 动图).
+- [KeyCastr](http://mac.softpedia.com/get/Utilities/KeyCastr.shtml)  将 mac 按键显示在屏幕上, 分享演示、录制视频或动图时超赞.
 
 ## 一些暂时没用但可能有用的
 
 - [坚果云官网-网盘/云盘/云服务/团队协作软件/同步共享文件夹](https://www.jianguoyun.com/)
 
-具体下载链接(附带破解版地址)已经在此制作成表格[下载地址](https://github.com/itgoyo/MacApp), 有需要的朋友可以看.
+## 下载链接
 
-[waitsun](https://www.waitsun.com/)
+- [MacWk](https://www.macwk.com/)
+- [麦氪搜](https://www.imacso.com/)
+- [Xclient](https://github.com/itgoyo/MacApp)
+- [waitsun](https://www.waitsun.com/)
 
 ## 参考资料
 
