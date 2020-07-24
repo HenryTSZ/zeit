@@ -47,8 +47,8 @@ tags: [Karabiner-Elements]
 
 1. 点击左下角的 `Add rule` 来添加组合键
 2. 软件自带的 `Vim` 风格的方向键为 `right_command + hjkl` 来代替方向键, 在 `Examples` 中可以找到, 点击右侧的 `Enable` 即可加入到组合键位中, 但实际使用起来有点费劲
-3. 在 [官网的 complex_modifications](https://pqrs.org/osx/karabiner/complex_modifications/#emulation-modes) 找到 `Vi Mode (rev 5)` , 展开后有详细的组合键位说明. 点击右侧的 `import` 来下载下来, 并导入到软件中.
-4. 重复第一步和第二步, 你可以选择 `s` 作为触发键, 也可以选择 `d` 作为触发键, 或者两者都作为触发键
+3. 在 [官网的 complex_modifications](https://ke-complex-modifications.pqrs.org/#spacefn) 找到 `SpaceFN` , 展开后有详细的组合键位说明. 点击右侧的 `import` 来下载下来, 并导入到软件中.
+4. 重复第一步和第二步, 将刚才添加的 `SpaceFN` 中的组合键添加进去
 5. 无法正常使用? 其实官网展开后的键位使用说明最后有这么一句话: Please change your  `simultaneous_threshold_milliseconds`  setting in Karabiner-Elements → Complex Modifications → Parameters; A value between 150 and 500 is recommended for this mode. 说白了就是两个按键之间的等待值, 默认是 `50ms` , 但一般人没法做到组合键这么小的间隔, 就只能调高等待值, 我一般设置为 `300` , 既不影响打字, 也不影响组合键
 6. 如果不想要某一个组合键, 点击右侧的 `Remove` 即可移除. 下面的 `Up` 和 `Down` 可以排序
 7. 当然官网还有很多组合键, 可以找到自己需要的
