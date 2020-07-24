@@ -159,22 +159,12 @@ VS Code 完整版配置
   "files.trimFinalNewlines": true,
   // 启用后，将在保存文件时剪裁尾随空格。
   "files.trimTrailingWhitespace": true,
-  // eslint 保存自动格式化 插件名: ESLint
-  // enables auto fix on save. Please note auto fix on save is only available if VS Code's
-  // files.autoSave is either off, onFocusChange or onWindowChange. It will not work with afterDelay.
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    {
-      "language": "html",
-      "autoFix": true
-    },
-    {
-      "language": "vue",
-      "autoFix": true
-    }
-  ],
+  // 在保存时运行的代码操作类型
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  // 定义非必要分号的处理方式: 删除不必要的分号
+  "javascript.format.semicolons": "remove",
   // 是否在每行末尾加一个分号
   "prettier.semi": false,
   // 使用单引号
@@ -196,16 +186,18 @@ VS Code 完整版配置
   },
   // 各个类型文件的默认格式化工具
   "[javascript]": {
-    // [Font feature settings](https://code.visualstudio.com/updates/v1_40#_font-feature-settings)
-    "editor.fontLigatures": "'ss02', 'ss19'",
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
-    "editor.fontLigatures": "'ss02', 'ss19'",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[markdown]": {
-    "editor.defaultFormatter": "mervin.markdown-formatter" // 插件: markdown-formatter
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // 控制折行的方式: 在视区宽度处折行
+    "editor.wordWrap": "on",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -213,6 +205,7 @@ VS Code 完整版配置
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
   // markdown 格式化配置 插件名: markdown-formatter
   // js 代码格式化
   "markdownFormatter.formatOpt": {
@@ -223,6 +216,9 @@ VS Code 完整版配置
   },
   // 自动将以下全角字符转换为半角字符
   "markdownFormatter.fullWidthTurnHalfWidth": "，：；！“”‘’（）？。",
+  // 是否按照以下顺序: `* > + > -` 格式化无序列表的符号
+  "markdownFormatter.formatULSymbol": false,
+
   // 控制编辑器是否自动格式化粘贴的内容。格式化程序必须可用，并且能针对文档中的某一范围进行格式化。
   "editor.formatOnPaste": true,
 
@@ -236,8 +232,14 @@ VS Code 完整版配置
   // 控制编辑器是否显示控制字符。
   // [Mac 上的 VSCode 编写 Markdown 总是出现隐藏字符？ - 知乎](https://www.zhihu.com/question/61638859/answer/277721225)
   "editor.renderControlCharacters": true,
+  // 控制是否在编辑器中输入时自动重命名
+  "editor.renameOnType": true,
   // 控制是否绘制已修改 (存在更新) 的编辑器选项卡的顶部边框。
   "workbench.editor.highlightModifiedTabs": true,
+  // 限制打开编辑器的数量, VS Code 将关闭最近最少使用的编辑器
+  // [limit-the-number-of-open-editors](https://code.visualstudio.com/updates/v1_42#_limit-the-number-of-open-editors)
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 8,
   // 控制键入时是否应自动显示建议
   "editor.quickSuggestions": {
     "other": true,
@@ -250,43 +252,43 @@ VS Code 完整版配置
   // 在导航路径视图中仅显示当前符号
   "breadcrumbs.symbolPath": "last",
   // 当存在多个目标位置时, 跳转到主要位置(不显示预览视图)
-  "editor.gotoLocation.multiple": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+
   // 控制资源管理器是否在把文件删除到废纸篓时进行确认。
   "explorer.confirmDelete": false,
-  // 小地图始终显示滑块
-  "editor.minimap.showSlider": "always",
   // 小地图最大宽度
   "editor.minimap.maxColumn": 80,
+  // 小地图的高度始终是编辑器的高度
+  "editor.minimap.size": "fill",
   // 小地图每行用色块显示
   "editor.minimap.renderCharacters": false,
+  // 在状态栏显示代码错误信息
+  "problems.showCurrentInStatus": true,
 
   // 若窗口在处于全屏模式时退出，控制其在恢复时是否还原到全屏模式。
   "window.restoreFullscreen": true,
 
-  // ------------------------ 插件相关 ------------------------
-  // 文件头部注释 插件名：vscode-fileheader 快捷键：control + option + i
-  // 文件作者
-  "fileheader.Author": "henry",
-  // 最后修改者
-  "fileheader.LastModifiedBy": "henry",
-  // 最后生成样式
-  "fileheader.tpl": "/*\r\n * @Author: {author}\r\n * @File: 文件描述\r\n * @Date: {createTime}\r\n * @Last Modified by: {lastModifiedBy}\r\n * @Last Modified time: {updateTime}\r\n */\r\n",
+  // 启用后, 差异编辑器将忽略前导空格或尾随空格中的更改
+  "diffEditor.ignoreTrimWhitespace": false,
 
+  // ------------------------ 插件相关 ------------------------
   // 生成文件头部注释和函数注释 插件名: koroFileHeader
-  // 自动添加文件头部注释
+  // 头部注释
+  "fileheader.customMade": {
+    "Author": "HenryTSZ", // 文件作者
+    "Date": "Do not edit", // 文件创建时间(不变)
+    "Description": "", // 说明
+    "LastEditors": "HenryTSZ", // 文件最后编辑者
+    "LastEditTime": "Do not edit", // 文件最后编辑时间
+  },
+  // 配置
   "fileheader.configObj": {
-    "autoAdd": false // 默认开启
+    "prohibitAutoAdd": [ "json", "md" ], // 禁止 .json .md 文件自动添加头部注释
+    "checkFileChange": true // 每次保存之后, 会进行一次 diff 检查, 如果文件只变更了 LastEditors/LastEditTime, 该文件将会回滚到本地仓库的最新版本.
   },
 
-  // 为函数生成注释 插件名：Document This 快捷键：control + option + d 两遍
-  // 注释添加描述
-  "docthis.includeDescriptionTag": true,
-  // 注释添加作者
-  "docthis.includeAuthorTag": true,
-  "docthis.authorName": "henry",
-
   // element-helper 版本 插件名: vscode-element-helper
-  "element-helper.version": "2.4",
+  "element-helper.version": "2.5",
 
   // 在默认不支持 Emmet 的语言中启用 Emmet 缩写功能。在此添加该语言与受支持的语言间的映射。
   "emmet.includeLanguages": {
@@ -295,8 +297,8 @@ VS Code 完整版配置
 
   // vim 插件名: Vim
   // Override VSCode's copy command with our own copy command, which works better with VSCodeVim. Turn this off if copying is not working.
-  "vim.overrideCopy": false,
-  "vim.startInInsertMode": true,
+  // "vim.overrideCopy": false,
+  // "vim.startInInsertMode": true,
   // Enable some vim ctrl key commands that override otherwise common operations, like ctrl+c
   // If your operating system is Windows, please set to false
   // "vim.useCtrlKeys": false,
@@ -315,11 +317,7 @@ VS Code 完整版配置
   "metaGo.decoration.height": 22,
   "metaGo.decoration.width": 13,
   "metaGo.decoration.y": 15,
-  "metaGo.decoration.backgroundColor": "white,yellow",
   "metaGo.decoration.backgroundOpacity": "0.9",
-
-  // markdown 兼容 GitHub 插件名: Markdown All in One
-  "markdown.extension.toc.githubCompatibility": true,
 
   // 在 Terminal 打开当前路径 插件名: Open in Terminal
   // The name of your terminal app
@@ -332,24 +330,25 @@ VS Code 完整版配置
   // 自动检测项目 插件名: Project Manager
   // 在如下目录检测 vscode 项目
   "projectManager.vscode.baseFolders": [
-    "/Users/henry/Documents/workspace/"
+    "/Users/liheng/Documents/workspace/",
+    "F:/basis-facility-web"
   ],
 
   // 路径别名跳转 插件名: path-alias
-  // 配置路径别名
-  "pathAlias.aliasMap": {
-    "@": "${cwd}/src"
-  },
   // 是否补全文件扩展名
   "pathAlias.needExtension": false,
-
-  // 自动填充路径 插件名: Path Intellisense
-  // 路径别名
-  "path-intellisense.mappings": {
-    "@": "${cwd}/src",
-  },
   // 在引号之间进行切换 插件名: Toggle Quotes
-  "togglequotes.chars": ["\"","'","`"]
+  "togglequotes.chars": [
+    "\"",
+    "'",
+    "`"
+  ],
+  "dirconfgen.exclude": [
+    "*.*",
+    "node_modules"
+  ],
+  "dirconfgen.maxDepth": 2,
+  "tabnine.experimentalAutoImports": true
 }
 ```
 

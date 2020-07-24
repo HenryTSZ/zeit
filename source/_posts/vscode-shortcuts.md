@@ -36,25 +36,24 @@ thumbnail: /img/vscode/thumbnail.png
 | C + O + r (Mac) / O + S + r (win) | 打开所在文件夹                               |
 | C + S + t                         | 重新打开已关闭的文件并编辑                   |
 | C + k f                           | 关闭文件夹                                   |
-| C + k p                           | 复制文件路径                                 |
+| C + k p / C + O + 字母 c          | 复制文件路径                                 |
+| C + O + S + 字母 c                | 复制文件相对路径                             |
 | CT + q                            | 快速打开视图                                 |
 
 ### 移动光标
 
-| 快捷键         | 作用                                      |
-| -------------- | ----------------------------------------- |
-| C + ←          | 将光标定位到当前行的最左侧                |
-| C + →          | 将光标定位到当前行的最右侧                |
-| O + ←          | 将光标定位到当前单词的左侧单词            |
-| O + →          | 将光标定位到当前单词的右侧单词            |
-| C + S + \\     | 在代码块之间移动光标                      |
-| CT + g         | 转到行                                    |
-| C + u          | 将光标的移动回退到上一个位置              |
-| C + S + 字母 O | 转到文件中的符号                          |
-| CT + S + [     | 转到括号                                  |
-| CT + S + ]     | 选中括号中到内容                          |
-| C + t          | 转到工作区的符号                          |
-| C + S + o      | 文件中符号跳转, 可以通过冒号来进行分组:@: |
+| 快捷键         | 作用                                         |
+| -------------- | -------------------------------------------- |
+| C + ←          | 将光标定位到当前行的最左侧                   |
+| C + →          | 将光标定位到当前行的最右侧                   |
+| O + ←          | 将光标定位到当前单词的左侧单词               |
+| O + →          | 将光标定位到当前单词的右侧单词               |
+| CT + g         | 转到行                                       |
+| C + u          | 将光标的移动回退到上一个位置                 |
+| C + S + 字母 O | 转到文件中的符号, 可以通过冒号来进行分组 :@: |
+| CT + S + [     | 转到括号                                     |
+| CT + S + ]     | 选中括号中到内容                             |
+| C + t          | 转到工作区的符号                             |
 
 ### 删除
 
@@ -151,42 +150,42 @@ thumbnail: /img/vscode/thumbnail.png
 | C + S + p or F1               | 打开命令面板                                                                                                                                                 |
 | C + p                         | [快速打开文件](https://code.visualstudio.com/updates/vJanuary#_file-picker), [快速打开重写](https://code.visualstudio.com/updates/v1_44#_quick-open-rewrite) |
 | C + S + t                     | 重新打开关闭的编辑页面                                                                                                                                       |
-| C + A + D                     | Windows 打开该任务管理器                                                                                                                                     |
 | C + k v                       | 打开侧边预览                                                                                                                                                 |
 | C + b                         | 切换侧栏可见性                                                                                                                                               |
 | C + j / CT + ` | 切换终端面板 |
 
 ### 插件
 
-| 快捷键                           | 作用                                               | 插件名           |
-| -------------------------------- | -------------------------------------------------- | ---------------- |
-| C + k f                          | mac 在 Finder 中打开当前文件夹                     | Open in Finder   |
-| C + k C + f                      | mac 在 Finder 中打开当前项目根目录                 | Open in Finder   |
-| C + k i                          | mac 在 iTerm 中打开当前文件夹                      | Open in Terminal |
-| C + k r                          | mac 在 iTerm 中打开当前项目根目录                  | Open in Terminal |
-| win: CT + O + i, mac: CT + C + i | 文件头部注释                                       | koroFileHeader   |
-| win: CT + O + t, mac: CT + C + t | 函数注释                                           | koroFileHeader   |
-| CT + O + n                       | 运行代码                                           | Run Code         |
-| O + .                            | 跳转到当前可见屏幕上的字符之后                     | MetaGo           |
-| O + ,                            | 跳转到当前可见屏幕上的字符之前                     | MetaGo           |
-| O + /                            | 跳转到当前可见屏幕上的字符                         | MetaGo           |
-| O + S + /                        | 从光标选择到当前可见屏幕上的字符                   | MetaGo           |
-| O + '                            | 在光标位置设置书签                                 | MetaGo           |
-| O + [                            | 转到上一个书签                                     | MetaGo           |
-| O + ]                            | 转到下一个书签                                     | MetaGo           |
-| O + \                            | 列出书签并显示管理菜单                             | MetaGo           |
-| O + m                            | 将当前行滚动到屏幕中心                             | MetaGo           |
-| O + t                            | 将当前行滚动到屏幕顶部                             | MetaGo           |
-| O + b                            | 将当前行滚动到屏幕底部                             | MetaGo           |
-| CT + o                           | 选择上一行                                         | MetaGo           |
-| CT/C + l                         | 选择下一行                                         | MetaGo           |
-| A + H                            | 将光标移动到上面的空白行                           | MetaGo           |
-| A + Ed                           | 将光标移动到下面的空白行                           | MetaGo           |
-| A + S + H                        | 从光标处选择到上面的空白行                         | MetaGo           |
-| A + S + Ed                       | 从光标处选择到下面的空白行                         | MetaGo           |
-| C + '                            | 在引号之间进行切换                                 | Toggle Quotes    |
-| O + S + E                        | 对象键值优化: 自动换行并且在上一个键值对末尾加逗号 | vue-helper       |
-| O + x                            | 快速选中 attrs 或 代码块                           | vue-helper       |
+| 快捷键                           | 作用                                               | 插件名                                                                                                          |
+| -------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| C + k f                          | mac 在 Finder 中打开当前文件夹                     | [Open in Finder](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-finder)     |
+| C + k C + f                      | mac 在 Finder 中打开当前项目根目录                 | Open in Finder                                                                                                  |
+| C + k i                          | mac 在 iTerm 中打开当前文件夹                      | [Open in Terminal](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-terminal) |
+| C + k r                          | mac 在 iTerm 中打开当前项目根目录                  | Open in Terminal                                                                                                |
+| win: CT + O + i, mac: CT + C + i | 文件头部注释                                       | [koroFileHeader](https://marketplace.visualstudio.com/items?itemName=OBKoro1.korofileheader)                    |
+| win: CT + O + t, mac: CT + C + t | 函数注释                                           | koroFileHeader                                                                                                  |
+| CT + O + n                       | 运行代码                                           | [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)                    |
+| O + .                            | 跳转到当前可见屏幕上的字符之后                     | [MetaGo](https://marketplace.visualstudio.com/items?itemName=metaseed.metago)                                   |
+| O + ,                            | 跳转到当前可见屏幕上的字符之前                     | MetaGo                                                                                                          |
+| O + /                            | 跳转到当前可见屏幕上的字符                         | MetaGo                                                                                                          |
+| O + S + /                        | 从光标选择到当前可见屏幕上的字符                   | MetaGo                                                                                                          |
+| O + '                            | 在光标位置设置书签                                 | MetaGo                                                                                                          |
+| O + [                            | 转到上一个书签                                     | MetaGo                                                                                                          |
+| O + ]                            | 转到下一个书签                                     | MetaGo                                                                                                          |
+| O + \                            | 列出书签并显示管理菜单                             | MetaGo                                                                                                          |
+| O + m                            | 将当前行滚动到屏幕中心                             | MetaGo                                                                                                          |
+| O + t                            | 将当前行滚动到屏幕顶部                             | MetaGo                                                                                                          |
+| O + b                            | 将当前行滚动到屏幕底部                             | MetaGo                                                                                                          |
+| CT + 字母 o                      | 选择上一行                                         | MetaGo                                                                                                          |
+| CT/C + l                         | 选择下一行                                         | MetaGo                                                                                                          |
+| C + S + \\                       | 在代码块之间移动光标                               | MetaGo                                                                                                          |
+| O + H                            | 将光标移动到上面的空白行                           | MetaGo                                                                                                          |
+| O + Ed                           | 将光标移动到下面的空白行                           | MetaGo                                                                                                          |
+| O + S + H                        | 从光标处选择到上面的空白行                         | MetaGo                                                                                                          |
+| O + S + Ed                       | 从光标处选择到下面的空白行                         | MetaGo                                                                                                          |
+| C + '                            | 在引号之间进行切换                                 | [Toggle Quotes](https://marketplace.visualstudio.com/items?itemName=BriteSnow.vscode-toggle-quotes)             |
+| O + S + E                        | 对象键值优化: 自动换行并且在上一个键值对末尾加逗号 | [vue-helper](https://marketplace.visualstudio.com/items?itemName=shenjiaolong.vue-helper)                       |
+| O + x                            | 快速选中 attrs 或 代码块                           | vue-helper                                                                                                      |
 
 ```json
 // 将键绑定放入此文件中以覆盖默认值
@@ -479,23 +478,23 @@ thumbnail: /img/vscode/thumbnail.png
     "when": "isMac && editorTextFocus"
   },
   // 替换 vim 快捷键
-  {
-    "key": "ctrl+shift+j",
-    "command": "extension.vim_ctrl+j",
-    "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "-extension.vim_ctrl+j",
-    "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
-  },
+  // {
+  //   "key": "ctrl+shift+j",
+  //   "command": "extension.vim_ctrl+j",
+  //   "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+  // },
+  // {
+  //   "key": "ctrl+j",
+  //   "command": "-extension.vim_ctrl+j",
+  //   "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+  // },
   // 插件 Turbo Console Log 增加 Mac 快捷键, 方便和 Windows 一样
   {
     "key": "alt+cmd+l",
     "command": "turboConsoleLog.displayLogMessage",
     "when": "isMac && editorTextFocus"
   },
-  // ctrl/cmd + j 合并行
+  // ctrl/cmd+j 合并行
   {
     "key": "ctrl+j",
     "command": "editor.action.joinLines",
@@ -510,6 +509,17 @@ thumbnail: /img/vscode/thumbnail.png
     "key": "ctrl+j",
     "command": "-editor.action.joinLines",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  // 去掉 ctrl+o 新建下一行
+  {
+    "key": "",
+    "command": "lineBreakInsert",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-lineBreakInsert",
+    "when": "textInputFocus && !editorReadonly"
   }
 ]
 ```

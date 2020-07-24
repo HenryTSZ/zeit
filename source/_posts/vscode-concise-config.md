@@ -22,74 +22,65 @@ VS Code 简明版配置
 
 ```json
 "html5": {
-  "prefix": "html5",
-  "body": [
-    "<!DOCTYPE html>",
-    "<html lang=\"en\">",
-    "  <head>",
-    "    <meta charset=\"UTF-8\">",
-    "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
-    "    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">",
-    "    <title>${1:Document}</title>",
-    "    <style type=\"text/css\">",
-    "      ",
-    "    </style>",
-    "  </head>",
-    "  <body>",
-    "    $2",
-    "  </body>",
-    "</html>"
-  ],
-  "description": "HTML5"
+	"prefix": "html5",
+	"body": [
+		"<!DOCTYPE html>",
+		"<html lang=\"en\">",
+		"  <head>",
+		"    <meta charset=\"UTF-8\">",
+		"    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+		"    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">",
+		"    <title>${1:Document}</title>",
+		"    <style type=\"text/css\">",
+		"      ",
+		"    </style>",
+		"  </head>",
+		"  <body>",
+		"    $2",
+		"  </body>",
+		"</html>"
+	],
+	"description": "HTML5"
 }
 ```
 
 ### vue 代码片段
 
 ```json
-"initVue": {
-	"prefix": "initVue",
-	"body": [
-		"<template>",
-		"  <div class=\"$1\">",
-		"    ",
-		"  </div>",
-		"</template>",
-		"",
-		"<script>",
-		"  ",
-		"  export default {",
-		"    name: '',",
-		"    components: {",
-		"      ",
-		"    },",
-		"    props: {",
-		"      ",
-		"    },",
-		"    data () {",
-		"      return {",
-		"        ",
-		"      }",
-		"    },",
-		"    computed: {},",
-		"    watch: {},",
-		"    methods: {",
-		"      ",
-		"    },",
-		"    created () {",
-		"      ",
-		"    },",
-		"    mounted () {",
-		"      ",
-		"    }",
-		"  }",
-		"</script>",
-		"",
-		"<style lang=\"less\">",
-		"  ",
-		"</style>"
-	],
-	"description": "initVue"
+"init Vue": {
+  "prefix": "ivue",
+  "body": [
+    "<template>",
+    "  <div class=\"$1\">$2</div>",
+    "</template>",
+    "",
+    "<script>",
+    "export default {",
+    "  name: '$TM_FILENAME_BASE',",
+    "  components: {},",
+    "  props: {},",
+    "  data() {",
+    "    return {}",
+    "  },",
+    "  computed: {},",
+    "  watch: {},",
+    "  methods: {",
+    "    init() {}",
+    "  },",
+    "  created() {",
+    "    this.init()",
+    "  },",
+    "  mounted() {}",
+    "}",
+    "</script>",
+    "",
+    "<style lang=\"less\">",
+    ".$1 {",
+    "}",
+    "</style>",
+    ""
+  ],
+  "description": "init Vue"
 }
 ```
 可以在这个网址生成代码片段: [snippet generator](https://snippet-generator.app/)
@@ -217,19 +208,9 @@ VS Code 简明版配置
   // eslint 保存自动格式化 插件名: ESLint
   // enables auto fix on save. Please note auto fix on save is only available if VS Code's
   // files.autoSave is either off, onFocusChange or onWindowChange. It will not work with afterDelay.
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    {
-      "language": "html",
-      "autoFix": true
-    },
-    {
-      "language": "vue",
-      "autoFix": true
-    }
-  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   // 是否在每行末尾加一个分号
   "prettier.semi": false,
   // 使用单引号
@@ -280,7 +261,7 @@ VS Code 简明版配置
 
   // ------------------------ 插件相关 ------------------------
   // element-helper 版本 插件名: vscode-element-helper
-  "element-helper.version": "2.4",
+  "element-helper.version": "2.5",
 
   // 在默认不支持 Emmet 的语言中启用 Emmet 缩写功能. 在此添加该语言与受支持的语言间的映射.
   "emmet.includeLanguages": {
