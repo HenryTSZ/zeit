@@ -2,6 +2,7 @@
 layout: post
 title: 开发效率提升之工具篇
 date: 2020-07-24
+categories: [Software]
 keywords: Productivity, Tools
 ---
 
@@ -25,7 +26,7 @@ keywords: Productivity, Tools
 
 ![ShowyEdge](https://showyedge.pqrs.org/images/menubar.png)
 
-** `Windows` 可以嵌入底部任务栏, 还是比较方便的**
+**`Windows` 可以嵌入底部任务栏, 还是比较方便的**
 
 ## 改键
 
