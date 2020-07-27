@@ -47,7 +47,7 @@ Install: `$ brew cask install visual-studio-code`
 
 ![Karabiner-Elements](/img/mac/028.png)
 
-[Karabiner-Elements 使用介绍](https://tsz.now.sh/2018/06/23/karabiner-elements/)
+[Karabiner-Elements 使用介绍](https://tsz.now.sh/2018/06/23/Karabiner-Elements/)
 
 Install: `$ brew cask install karabiner-elements`
 下载地址: [Karabiner-Elements](https://pqrs.org/osx/karabiner/)
@@ -232,7 +232,7 @@ Install: `$ brew cask install dash`
 
 ![ShowyEdge](/img/mac/038.png)
 
-注: 这个图主要是调整 `ShowyEdge` 的位置(好像直接输入位置无效, 只能点击右面的按钮一点一点移动)
+注: 这个图主要是调整 `ShowyEdge` 的位置
 
 这样只需要看一下屏幕左下角, 就可以知道当前输入法状态了, 完美!
 
