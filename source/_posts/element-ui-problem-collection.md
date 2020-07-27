@@ -11,6 +11,32 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 <!-- more -->
 
+## table 固定列不能拖动横向滚动条
+
+> element-ui: 2.13.2
+
+关于这个 `bug` 在 `issues` 中有好几条:
+
+- [[Bug Report] Table statistics, fixed columns cannot drag horizontal scrollbars (table statistics, fixed columns cannot drag horizontal scrollbars) · Issue #15471 · ElemeFE/element](https://github.com/ElemeFE/element/issues/15471)
+- [[Bug Report] table has lock table header, lock table column, and can not scroll when combined. · Issue #12666 · ElemeFE/element](https://github.com/ElemeFE/element/issues/12666)
+
+目前比较好的解决方法是这种:
+
+[@Eflet](https://github.com/ElemeFE/element/issues/12666#issuecomment-488988094)
+
+``` less
+.el-table {
+  .el-table__fixed {
+    pointer-events: none;
+    > * {
+      pointer-events: auto;
+    }
+  }
+}
+```
+
+用 `css` 禁用掉鼠标事件, 然后下一层再全部放开鼠标事件, 目前没发现副作用
+
 ## tabs + table
 
 如果使用 `tabs` 包裹 `table` 出现样式问题: 如切换 `tabs` 后, `table` 右侧出现一条滚动条滑槽, 但没有滚动条出现(实际上 `table` 确实不应该有滚动条) 等等, 可以尝试给 `table` 加一个 `v-if="activeName === 'currentName`. `activeName` 为 `tabs` 绑定值, `currentName` 为包裹该 `table` 的 `tab-pane` 的 `name`

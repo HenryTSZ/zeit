@@ -9,7 +9,7 @@ tags: [Alfred]
 
 ## 使用
 
-[少数派 Alfred 专栏](https://sspai.com/search/article?q=alfred)
+[少数派 Alfred 专栏](https://sspai.com/search/post/Alfred)
 
 建议先阅读这两篇: [从零开始学习 Alfred: 基础功能及设置](https://sspai.com/post/32979) 和 [总是在 Mac 「装机必备」看到的搜索利器 Alfred, 究竟是怎么用的?](https://sspai.com/post/43973), 其中关于 `Web Search（网页搜索）` 可以看看这个视频 [巧用 Alfred, 再长的网址也记得住](https://sspai.com/post/45591). 这篇 [Alfred 神器使用手册 | louis blog](http://louiszhai.github.io/2018/05/31/alfred/)
 有中文注解
