@@ -26,7 +26,7 @@ keywords: Productivity, Tools
 
 [ShowyEdge: 根据输入源切换不同颜色](https://tsz.now.sh/2018/06/30/Mac-commonly-used-software/#ShowyEdge-%E6%A0%B9%E6%8D%AE%E8%BE%93%E5%85%A5%E6%BA%90%E5%88%87%E6%8D%A2%E4%B8%8D%E5%90%8C%E9%A2%9C%E8%89%B2)
 
-![ShowyEdge](https://showyedge.pqrs.org/images/menubar.png)
+![ShowyEdge](https://www.waerfa.com/wp-content/uploads/2020/01/ShowyEdge-custom.jpg)
 
 **`Windows` 可以嵌入底部任务栏, 还是比较方便的**
 
