@@ -673,3 +673,40 @@ methods: {
   }
 }
 ```
+
+### v-model 绑定的值赋值为空后, 界面仍显示上次的值(已解决)
+
+主要问题出现在这里:
+
+``` JS
+// 单选, 节点被点击时的回调, 返回被点击的节点数据
+handleCurrentChange() {
+  // do something
+  const currentNode = this.$refs.tree.getCurrentNode()
+  // 初始值为空
+  if (!currentNode) return
+  // do something
+}
+```
+
+这里由于 `v-model` 传入的是一个空值, 在 `tree` 中无法找到(其实不只是空值, 只要是在 `tree` 中无法找到就有这个问题), 从而直接返回了, 并没有对 `selectData` 做清空操作, 导致仍显示上次的结果
+
+所以我们需要在这里清空一下 `selectData`
+
+``` JS
+// 单选, 节点被点击时的回调, 返回被点击的节点数据
+handleCurrentChange() {
+  // do something
+  const currentNode = this.$refs.tree.getCurrentNode()
+  // 当前传入的值在 tree 中无法找到, 需要清空 select 值
+  if (!currentNode) {
+    this.selectData = ''
+    return
+  }
+  // do something
+}
+```
+
+可能有小伙伴问了: 你下面也有清空操作, 这里也有, 那直接把清空操作提出来, 在这里清空不就好了吗? 下面就不用写了呀
+
+但这里不能将清空操作提出来, 因为下面还有一个判断叶子节点的逻辑. 如果在这里清空了, 下面进入判断叶子节点的逻辑后, 直接返回了: 这里正常逻辑是维持界面显示不变, 但由于上面清空了, 导致与实际情况不符, 所以不能提出来

@@ -8,6 +8,8 @@ keywords: Productivity, Tools
 
 工欲善其事必先利其器! 使用得心应手的工具必然会提高开发效率.
 
+<!-- more -->
+
 ## 输入法
 
 ### 痛点
@@ -89,3 +91,82 @@ keywords: Productivity, Tools
 ## VS Code
 
 ### 插件 & 快捷键
+
+- [AutoScssStruct4Vue](https://marketplace.visualstudio.com/items?itemName=KQ.autoscssstruct4vue)
+
+  - 根据 Vue 模板自动生成 Scss / Less 结构
+  - [解放双手-vscode 扩展之根据 Vue 模板自动生成 Scss 结构 - 掘金](https://juejin.im/post/5d4396856fb9a06b2442fcf9)
+  - [Install](vscode:extension/KQ.autoscssstruct4vue)
+
+- [change-case](https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case)
+
+  - 快速更改当前选择或当前单词的大小写(camelCase, CONSTANT_CASE, snake_case 等)
+  - [Install](vscode:extension/wmaurer.change-case)
+
+- [Date & Time](https://marketplace.visualstudio.com/items?itemName=rid9.datetime)
+
+  - 编辑器右下角显示时间, Mac 开发有用
+  - [Install](vscode:extension/rid9.datetime)
+
+- [File Utils](https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils)
+
+  - 创建, 复制, 移动, 重命名和删除文件和目录的便捷方式, 就是不用触摸板完成这些操作
+  - [Install](vscode:extension/sleistner.vscode-fileutils)
+
+- [MetaGo](https://marketplace.visualstudio.com/items?itemName=metaseed.metago#overview)
+
+  - 快速移动光标到指定位置
+  - [Install](vscode:extension/metaseed.metago)
+
+- [Open in Finder](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-finder)
+
+  - 使用 Finder 打开 VSCode 中的文件或文件夹
+  - [Install](vscode:extension/fabiospampinato.vscode-open-in-finder)
+  - [在 Finder 中使用 VSCode 打开文件或文件夹 | Henry](https://tsz.now.sh/2019/01/11/open-with-vs-code-in-finder/)
+
+- [Open in Terminal](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-terminal#overview)
+
+  - 使用 Terminal 打开 VSCode 中的文件夹路径
+  - [Install](vscode:extension/fabiospampinato.vscode-open-in-terminal)
+  - [在 Terminal 中使用 VSCode 打开文件或文件夹 | Henry](https://tsz.now.sh/2019/04/02/open-with-vs-code-in-terminal/)
+
+- [Turbo Console Log](https://marketplace.visualstudio.com/itemdetails?itemName=ChakrounAnas.turbo-console-log)
+
+  - 在当前选中的变量下面利用 console 输出该变量
+  - [Install](vscode:extension/ChakrounAnas.turbo-console-log)
+
+* [Toggle Quotes](https://marketplace.visualstudio.com/items?itemName=BriteSnow.vscode-toggle-quotes)
+
+  - 在引号之间进行切换, 解决将单引号切换为反引号的痛点
+  - [Install](vscode:extension/BriteSnow.vscode-toggle-quotes)
+
+| 快捷键      | 作用                               | 插件名                                                                                                          |
+| ----------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| C + k f     | mac 在 Finder 中打开当前文件夹     | [Open in Finder](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-finder)     |
+| C + k C + f | mac 在 Finder 中打开当前项目根目录 | Open in Finder                                                                                                  |
+| C + k i     | mac 在 iTerm 中打开当前文件夹      | [Open in Terminal](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-terminal) |
+| C + k r     | mac 在 iTerm 中打开当前项目根目录  | Open in Terminal                                                                                                |
+| O + .       | 跳转到当前可见屏幕上的字符之后     | [MetaGo](https://marketplace.visualstudio.com/items?itemName=metaseed.metago)                                   |
+| O + ,       | 跳转到当前可见屏幕上的字符之前     | MetaGo                                                                                                          |
+| O + /       | 跳转到当前可见屏幕上的字符         | MetaGo                                                                                                          |
+| O + S + /   | 从光标选择到当前可见屏幕上的字符   | MetaGo                                                                                                          |
+| O + '       | 在光标位置设置书签                 | MetaGo                                                                                                          |
+| O + [       | 转到上一个书签                     | MetaGo                                                                                                          |
+| O + ]       | 转到下一个书签                     | MetaGo                                                                                                          |
+| O + \       | 列出书签并显示管理菜单             | MetaGo                                                                                                          |
+| O + m       | 将当前行滚动到屏幕中心             | MetaGo                                                                                                          |
+| O + t       | 将当前行滚动到屏幕顶部             | MetaGo                                                                                                          |
+| O + b       | 将当前行滚动到屏幕底部             | MetaGo                                                                                                          |
+| CT + 字母 o | 选择上一行                         | MetaGo                                                                                                          |
+| CT/C + l    | 选择下一行                         | MetaGo                                                                                                          |
+| C + S + \\  | 在代码块之间移动光标               | MetaGo                                                                                                          |
+| O + H       | 将光标移动到上面的空白行           | MetaGo                                                                                                          |
+| O + Ed      | 将光标移动到下面的空白行           | MetaGo                                                                                                          |
+| O + S + H   | 从光标处选择到上面的空白行         | MetaGo                                                                                                          |
+| O + S + Ed  | 从光标处选择到下面的空白行         | MetaGo                                                                                                          |
+| C + '       | 在引号之间进行切换                 | [Toggle Quotes](https://marketplace.visualstudio.com/items?itemName=BriteSnow.vscode-toggle-quotes)             |
+
+详细介绍:
+
+- [VSCode 快捷键 | Henry](https://tsz.now.sh/2018/09/09/vscode-shortcuts/)
+- [VSCode 插件 | Henry](https://tsz.now.sh/2018/09/08/vscode-extension/)
