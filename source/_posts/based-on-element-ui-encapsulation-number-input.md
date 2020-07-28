@@ -433,3 +433,84 @@ created() {
   }
 }
 ```
+
+## 扩展
+
+既然现在是通过传入参数来生成正则表达式, 那何不封装一个接收正则表达式的组件, 这样不就可以让使用者自定义 `input` 值了吗?
+
+> RegInput.vue
+
+``` HTML
+<template>
+  <el-input v-model="model" v-bind="$attrs" @input="_input" v-on="$listeners">
+    <slot v-for="(value, key) in $slots" :name="key" :slot="key"></slot>
+  </el-input>
+</template>
+```
+
+``` JS
+<script>
+export default {
+  inheritAttrs: false,
+  name: 'RegInput',
+  props: {
+    value: {
+      type: [Number, String],
+      default: ''
+    },
+    reg: {
+      type: RegExp,
+      default: /./
+    }
+  },
+  data() {
+    return {
+      model: this.value,
+      temporary: this.value
+    }
+  },
+  watch: {
+    value(n) {
+      this.temporary = n
+    },
+    temporary(n, o) {
+      n = n + ''
+      if (this.test(n)) {
+        n = o
+        this.temporary = o
+        return
+      }
+      this.model = n
+      this.$emit('input', n)
+    }
+  },
+  methods: {
+    _input(val) {
+      this.temporary = val
+    },
+    test(val) {
+      return val && !this.reg.test(val)
+    }
+  },
+  created() {
+    const val = this.value + ''
+    if (this.test(val)) {
+      this.temporary = ''
+    }
+  }
+}
+</script>
+```
+
+验证发现中文(`/^[\u4E00-\u9FA5]*$/`)和数字(`/^-?(\d*|\d+(\.\d*)?)$/`)可以正常输入, 但手机号(`/^1[3456789]\d{9}$/`)等却无法输入
+
+原因是因为这一类有最少位数, 而我们输入只能一个一个输入, 第一次输入一个, 验证不通过, 返回上一个结果(空值), 如此反复, 永远也无法输入了
+
+对于这一类正则, 目前想到两种方法:
+
+1. 不让用户输入, 只能粘贴.
+2. 修改正则表达式, 一位也需要验证通过.
+
+两种办法其实都不算好办法, 但目前没有找到合适的解决方案, 等以后找到了再说吧
+
+先把[源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/RegInput.vue)奉上
