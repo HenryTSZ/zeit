@@ -49,6 +49,9 @@ keywords: Productivity, Tools
 - [快速参考 | AutoHotkey v2](https://wyagd001.github.io/v2/docs/AutoHotkey.htm)
 - [Win 下最爱效率神器: AutoHotKey | 晚晴幽草轩](https://www.jeffjade.com/2016/03/11/2016-03-11-autohotkey/)
 
+
+配置: [files/space-fn.ahk at master · HenryTSZ/files](https://github.com/HenryTSZ/files/blob/master/space-fn.ahk)
+
 ## 启动器
 
 快速查找文件、打开应用程序、快捷网页搜索、计算器、有道翻译...
@@ -170,3 +173,13 @@ keywords: Productivity, Tools
 
 - [VSCode 快捷键 | Henry](https://tsz.now.sh/2018/09/09/vscode-shortcuts/)
 - [VSCode 插件 | Henry](https://tsz.now.sh/2018/09/08/vscode-extension/)
+
+## Terminal
+
+### Mac
+
+[iTerm2 用法与技巧 | Henry](https://tsz.now.sh/2018/04/25/iTerm2-usage-and-skills/)
+
+### Windows
+
+[Git Bash 的配置 | Henry](https://tsz.now.sh/2019/05/05/git-bash-configuration/)
