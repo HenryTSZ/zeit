@@ -76,15 +76,23 @@ alert((12).toFixed(4))
 这里就推荐下面这种吧
 
 ```JS
-// toFixed 兼容方法
-function toFixed (number, digits) {
+/**
+ * @description: 解决 toFixed 精度问题
+ * @param {Number} number 待格式化的数字
+ * @param {Number} digits 小数位数
+ * @param {Boolean} flag 整数时是否用 0 补齐小数位数, 默认 true
+ * @return {Number} 格式化后的数字
+ */
+function toFixed (number, digits, flag = true) {
+  number = +number
+  digits = +digits
   if (digits > 20 || digits < 0) {
     throw new RangeError('toFixed() digits argument must be between 0 and 20')
   }
   if (isNaN(number) || number >= Math.pow(10, 21)) {
     return number.toString()
   }
-  if (typeof digits == 'undefined' || digits == 0) {
+  if (typeof digits === 'undefined' || digits === 0) {
     return Math.round(number).toString()
   }
 
@@ -93,19 +101,20 @@ function toFixed (number, digits) {
 
   // 整数的情况
   if (arr.length < 2) {
-    return result += `.${new Array(digits).fill(0).join('')}`
+    return `${result}${flag ? `.${new Array(digits).fill(0).join('')}` : ''}`
   }
 
   const [integer, decimal] = arr
-  if (decimal.length == digits) {
+  if (decimal.length === digits) {
     return result
   }
+
   if (decimal.length < digits) {
-    return result += new Array(digits - decimal.length).fill(0).join('')
+    return `${result}${flag ? `.${new Array(digits - decimal.length).fill(0).join('')}` : ''}`
   }
+
   result = integer + '.' + decimal.substr(0, digits)
   const last = decimal.substr(digits, 1)
-
   // 四舍五入，转换为整数再处理，避免浮点数精度的损失
   if (parseInt(last, 10) >= 5) {
     const x = Math.pow(10, digits)
