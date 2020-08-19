@@ -674,6 +674,23 @@ methods: {
 }
 ```
 
+### 单选时只能选择叶子节点, 但点击父节点后, 父节点会有选中状态
+
+比如当前选中一个叶子节点, 但需要选择另一个叶子节点, 当点击这个叶子节点的父节点时, 初始选中的叶子节点的选中状态消失了, 出现在父节点上了; 虽然不会改变选择框中的值, 但也算一个显示 `bug`
+
+![select bug](/img/element-ui/014.gif)
+
+所以我们需要在判断是否是叶子节点中做一些处理: 如果不是叶子节点, 需要设置当前选中为上一个已选中的叶子节点或 `null`(没有上一个已选中的叶子节点)
+
+``` JS
+// 判断叶子节点
+if (this.isLeafFun ? this.isLeafFun(currentNode, node) : !node.isLeaf && this.currentIsLeaf) {
+  // 如果不是叶子节点, 设置当前选中节点仍为上一个叶子节点
+  this.$refs.tree.setCurrentKey(this.selectData || null)
+  return
+}
+```
+
 ### v-model 绑定的值赋值为空后, 界面仍显示上次的值(已解决)
 
 主要问题出现在这里:
