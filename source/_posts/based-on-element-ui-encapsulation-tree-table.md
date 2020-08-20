@@ -737,3 +737,5 @@ computed: {
 ```
 
 目前只支持这两个字段, 以后有可能还需要扩展支持更多自定义字段, 需要的时候再加
+
+## [改变 `editable` 后页面没变化](https://tsz.now.sh/2020/05/16/based-on-element-ui-encapsulation-table-form/#%E6%94%B9%E5%8F%98-editable-%E5%90%8E%E9%A1%B5%E9%9D%A2%E6%B2%A1%E5%8F%98%E5%8C%96)
