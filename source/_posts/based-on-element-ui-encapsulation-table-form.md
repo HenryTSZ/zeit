@@ -206,7 +206,7 @@ data() {
 
 其余的表单就不写了, 都差不多的样子
 
-``` JS
+```JS
 name: 'BaseForm',
 props: {
   modle: {
@@ -224,14 +224,13 @@ props: {
 }
 ```
 
-
 调用:
 
-``` HTML
+```HTML
 <base-form ref="form" :model="form" :form-items="formItems" label-width="80px"></base-form>
 ```
 
-``` JS
+```JS
 data() {
   return {
     form: {
@@ -279,7 +278,7 @@ data() {
 
 我们完全可以去掉那些 `v-if` 判断, 而只使用 `component` 即可, 这样可扩展性问题也解决了:
 
-``` HTML
+```HTML
 <el-form v-bind="$attrs" :model="model">
   <el-form-item v-for="item in formItems" :key="item.prop">
     <component :is="item.type" v-model="model[item.prop]" v-bind="item">
@@ -308,7 +307,7 @@ data() {
 
 那 `form` 的改完了, `table` 是不是也可以使用这个呢?
 
-``` HTML
+```HTML
 <el-table v-bind="$attrs" v-on="$listeners">
   <template v-for="(column, index) in columns">
     <el-table-column v-if="column.editable" :key="column.prop" v-bind="column">
@@ -345,7 +344,7 @@ data() {
 
 这个就没啥好说的了, 就是把上面的拿下来即可
 
-``` HTML
+```HTML
 <component :is="item.type" v-model="model[item.prop]" v-bind="item">
   <el-option
     v-for="option in item.select"
@@ -364,7 +363,7 @@ data() {
 </component>
 ```
 
-``` JS
+```JS
 name: 'EditableElements',
 props: {
   item: {
@@ -394,7 +393,7 @@ props: {
 
 ### form
 
-``` HTML
+```HTML
 <el-form v-bind="$attrs" :model="model" ref="elForm" class="base-form">
   <slot name="prev"></slot>
   <el-form-item
@@ -416,7 +415,7 @@ props: {
 </el-form>
 ```
 
-``` JS
+```JS
 props: {
   keyProps: {
     type: Object,
@@ -458,7 +457,7 @@ computed: {
 
 ### table
 
-``` HTML
+```HTML
 <el-table ref="elTable" class="base-table" v-bind="$attrs" v-on="$listeners">
   <slot name="prev"></slot>
   <template v-for="(column, index) in cols">
@@ -476,7 +475,7 @@ computed: {
 </el-table>
 ```
 
-``` JS
+```JS
 props: {
   keyProps: {
     type: Object,
@@ -514,7 +513,7 @@ computed: {
 
 ### editable-elements
 
-``` HTML
+```HTML
 <component
   :is="item.component"
   v-model="model[item.prop]"
@@ -542,3 +541,51 @@ computed: {
   <slot v-for="(value, key) in item.slots" :name="key" :slot="key">{{ value }}</slot>
 </component>
 ```
+
+## 实际工作中发现的问题
+
+### 改变 `editable` 后页面没变化
+
+最近项目增加了权限控制, 一些可编辑的表格需要先判断权限, 有权限才可以编辑.
+
+所以需要动态修改 `editable` 的值, 初始为 `false`, 后续根据权限改变值.
+
+但发现明明有权限, 却还是不可编辑状态, 而且跟踪代码也发现值确实改变了, 但页面却没有改变
+
+只有触发页面重绘后才会变成可编辑状态, 就好像是状态其实已经改变了, 就差最后的绘制了
+
+这时候突然想到是不是表格复用了, 仍然用的是不可编辑状态的表格: [利用 v-if 动态渲染表格时, 在 el-table-column 中添加 key 属性防止表格复用](https://tsz.now.sh/2017/09/15/element-ui-problem-collection/#%E5%88%A9%E7%94%A8-v-if-%E5%8A%A8%E6%80%81%E6%B8%B2%E6%9F%93%E8%A1%A8%E6%A0%BC%E6%97%B6-%E5%9C%A8-el-table-column-%E4%B8%AD%E6%B7%BB%E5%8A%A0-key-%E5%B1%9E%E6%80%A7%E9%98%B2%E6%AD%A2%E8%A1%A8%E6%A0%BC%E5%A4%8D%E7%94%A8)
+
+查看代码发现果然是复用了: 可编辑和不可编辑用的相同的 `key`
+
+```HTML
+<el-table-column
+  v-if="column.editable"
+  :key="column.prop"
+  v-bind="column">
+</el-table-column>
+<el-table-column
+  v-else
+  :key="column.prop"
+  v-bind="column">
+</el-table-column>
+```
+
+当初封装组件的时候想着他俩肯定只能存在一个, 用相同的 `key` 应该没什么问题, 却忘了切换 `editable` 后, 相同的 `key` 会复用的问题了
+
+那稍微修改一下吧:
+
+```HTML
+<el-table-column
+  v-if="column.editable"
+  :key="`${column.prop}-edit`"
+  v-bind="column">
+</el-table-column>
+<el-table-column
+  v-else
+  :key="column.prop"
+  v-bind="column">
+</el-table-column>
+```
+
+**所以以后尽量还是用不同的 `key` 吧, 即使是 `if else`.**
