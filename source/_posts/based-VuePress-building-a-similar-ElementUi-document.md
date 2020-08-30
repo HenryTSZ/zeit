@@ -71,7 +71,7 @@ tags: [ElementUI]
 
 不过我想稍微修改一下样式, 就下载代码并本地引入了, 这样就可以随心所欲的修改啦
 
-首先下载 [src](https://github.com/calebman/vuepress-plugin-demo-container/tree/master/src)文件夹, 放到 `.vuepress/plugins/demo-block` 中, 在 `.vuepress/config.js` 中注册插件:
+首先下载 [src](https://github.com/calebman/vuepress-plugin-demo-container/tree/master/src) 文件夹, 放到 `.vuepress/plugins/demo-block` 中, 在 `.vuepress/config.js` 中注册插件:
 
 ``` JS
 const demoBlock = require('./plugins/demo-block')
