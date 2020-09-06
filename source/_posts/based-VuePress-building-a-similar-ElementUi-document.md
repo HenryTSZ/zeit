@@ -139,6 +139,13 @@ $codeBgColor = #fafafa
       color #000
 ```
 
+而且右上角显示代码类型的文字也消失了, 也需要处理一下:
+
+``` stylus
+div[class*="language-"]:before
+  color #999
+```
+
 这样很大部分就和 `ElementUI` 相似了, 但还不是高仿, 顶多算是一个贾玲, 咱们要的可是刘亦菲小姐姐的效果呀, 那这样只能再修改样式了
 
 所以咱们需要在 `node_modules` 中找到这个文件, 放到本地并引入
