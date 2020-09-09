@@ -23,22 +23,50 @@ tags: [node, cli, Vue]
 
 整体的实现步骤是这样的:
 
-```flow
-st=>start: Start
-e=>end
-op=>operation: My Operation
-cond=>condition: Yes or No?
+### 创建脚手架执行文件
 
-st->op->cond
-cond(yes)->e
-cond(no)->op
+在终端执行下面命令:
+
+``` sh
+mkdir my-cli
+cd my-cli
+npm init -y
+touch index.js
 ```
 
-st=>start: Start
-e=>end
-op=>operation: My Operation
-cond=>condition: Yes or No?
+在 `index.js` 中输入如下内容:
 
-st->op->cond
-cond(yes)->e
-cond(no)->op
+``` sh
+#!/usr/bin/env node
+console.log('hello node')
+```
+
+**注意: 在使用 `Node` 开发命令行工具时, 所执行的入口 `js` 脚本中头部必须加入 `#!/usr/bin/env node` 声明**
+
+`#!/usr/bin/env node` 的意思就是找到对应的 `node` 脚本解释器来解释后面的内容.
+
+在 `my-cli` 根目录下执行 `node index.js` 就可以看到控制台输出 `hello node` .
+
+在 `package.json` 中增加 `bin` 字段:
+
+``` json
+"bin": {
+  "my-cli": "index.js"
+}
+```
+
+然后使用  `npm-link`  命令把这个文件映射到全局后, 就可以在任意目录下的命令行中输入  `my-cli`  执行我们的 `index.js` 脚本文件:
+
+![link](/img/node/002.png)
+
+输入 `npm list -g --depth=0` 可以查看已安装的全局模块
+
+![list](/img/node/003.png)
+
+到这里, 我们已经成功将一个脚本文件映射到全局, 也就是只要我们输入 `package.json` 中 `bin` 配置的 `key` 值也就是 `my-cli` 就可以执行我们 `my-cli` 文件夹下的 `index.js` 脚本了.
+
+似乎有点内味了, 接下来就用 `commander.js` 去为我们的 `my-cli` 指令添加参数并且解析, 然后完成一系列的操作.
+
+### 使用 commander.js 解析命令行指令参数
+
+> commander.js: 完整的 [node.js](http://nodejs.org/) 命令行解决方案, 灵感来自 Ruby 的 [commander](https://github.com/commander-rb/commander).

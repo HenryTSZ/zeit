@@ -230,6 +230,114 @@ mounted() {
 }
 ```
 
+## 文本溢出显示省略号
+
+刚好最近封装了一个[文本溢出显示省略号](https://tsz.now.sh/2020/09/03/based-on-element-ui-encapsulation-text-ellipsis/)的组件, 可以拿来一用
+
+``` HTML
+<slot slot-scope="{ node, data }" v-bind="{ node, data }">
+  <text-ellipsis :content="node.label"></text-ellipsis>
+</slot>
+```
+
+## 单选时增加 disabled
+
+`el-tree` 只对选择框处理了 `disabled`, 单选时却没有, 所以我们需要增加一下
+
+`disabled` 有两种方式:
+
+1. 通过 `props` 的 `disabled` 字段和在 `data` 中 `disabled` 对应字段来禁用
+2. 通过 `props` 的 `disabled` 方法来禁用
+
+我们保持这种方式不变, 通过源码可知 `disabled` 保存在 `node` 里, 所以我们只需要在这里取即可
+
+我们只需要做两件事:
+
+1. 设置 `disabled` 样式
+2. 当点击 `disabled` 节点后, 通过 `setCurrentKey` 来重置当前选中节点
+
+``` HTML
+<el-tree
+  v-on="{ ...$listeners, 'current-change': handleCurrentChange, 'node-click': handleNodeClick }"
+>
+  <slot slot-scope="{ node, data }" v-bind="{ node, data }">
+    <text-ellipsis
+      :class="{ 'custom-disabled': node.disabled }"
+      :content="node.label"
+    ></text-ellipsis>
+  </slot>
+</el-tree>
+```
+
+**这里使用 `v-on="{ ...$listeners, 'current-change': handleCurrentChange, 'node-click': handleNodeClick }"` 是防止 `emit` 两遍 `current-change` 和 `node-click` 方法**
+
+``` CSS
+.custom-disabled {
+  color: #94969a;
+  cursor: not-allowed;
+}
+```
+
+``` JS
+// 处理单选的 disabled
+handleCurrentChange(data, node) {
+  const { key, disabled } = node
+  if (disabled) {
+    this.$refs[this.ref].setCurrentKey(this.currentKey)
+    return
+  }
+  this.currentKey = key
+  this.$emit('current-change', data, node)
+},
+handleNodeClick(data, node, self) {
+  const { disabled } = node
+  if (disabled) return
+  this.$emit('node-click', data, node, self)
+}
+// setCurrentKey 这两个方法中有一个调用就够了
+```
+
+`el-tree` 节点还有右键事件和拖拽事件, 目前项目中没有用到, 就不处理 `disabled` 了, 如果有用到的话就需要处理一下
+
+## 过滤时加载对应子节点
+
+`el-tree` 不会返回过滤节点的子节点, 具体看这里: [el-tree 节点过滤加载对应子节点 | Henry](https://tsz.now.sh/2020/01/12/el-tree-node-filter-loads-corresponding-child-nodes/)
+
+所以我们需要自定义一下过滤方法
+
+``` HTML
+<el-tree
+  :filter-node-method="filterNodeMethod"
+>
+</el-tree>
+```
+
+``` JS
+props: {
+  filterNodeMethod: {
+    type: Function,
+    default(value, data, node) {
+      if (!value) return true
+      let parentNode = node.parent,
+        labels = [node.label],
+        level = 1
+      while (level < node.level) {
+        labels = [...labels, parentNode.label]
+        parentNode = parentNode.parent
+        level++
+      }
+      return labels.some(label => label.indexOf(value) !== -1)
+    }
+  }
+},
+methods: {
+  // 过滤
+  filter(value) {
+    this.$refs[this.ref].filter(value)
+  }
+}
+```
+
 ## 问题
 
 ### 方法一 data 为空数组, 全选仍存在(已解决)
