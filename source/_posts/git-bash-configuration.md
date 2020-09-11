@@ -13,7 +13,7 @@ tags: [Git]
 * **Git-Bash 命令行基础**
 * **Git-Bash 快捷键**
 
-可以在这里 [files/git-bash at master · HenryTSZ/files](https://github.com/HenryTSZ/files/tree/master/git-bash) 获取设置文件
+可以在这里 [files/git-bash at master · HenryTSZ/files](https://github.com/HenryTSZ/files/tree/master/git-bash) 获取设置文件, 下载后放到 `C:\Users\你电脑的用户名`
 
 ## Git-Bash 的优点
 
@@ -38,6 +38,12 @@ tags: [Git]
 `Git-Bash` 源自 `MinGW` , 是一个用于开发原生 `Window` 应用的开发环境, 提供了针对 `Win32` 应用的 `GCC、GNUbinutils` 等工具.
 
 我们可以根据自己的需求, 进行选择, 这里我选择 `Git-Bash` 的原因, 是我的开发需求主要为启动前端服务及提交代码, 因此选择 `Git-Bash` 较为方便、简单.
+
+## Git-Bash 下载安装
+
+可以在 [Git 官网](https://git-scm.com/downloads)下载, 不过国内比较慢; 推荐从[淘宝镜像](https://npm.taobao.org/mirrors/git-for-windows/)下载
+
+安装比较简单, 基本上就是傻瓜式安装: [Windows Git 2.27.0的快速下载与安装 - 知乎](https://zhuanlan.zhihu.com/p/157582051)
 
 ## Git-Bash 的主题配置
 
