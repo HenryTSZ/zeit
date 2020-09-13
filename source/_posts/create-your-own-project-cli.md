@@ -9,19 +9,23 @@ tags: [node, cli, Vue]
 
 <!-- more -->
 
+[源码](https://github.com/HenryTSZ/my-cli)在此
+
 ## 项目现状
 
 目前是有三个大项目: `BridgeProduction`, `BaseProduction`, `EnterpriseProduction`; 每个项目都有各自的文件夹, 比如 `BridgeProduction` 的 `Demo` 页面路径为(别问项目层级问题, 历史遗留):
 
+```
 bridge-business-web/
-├─ source-web/ ..............................├─ web 源码
-│ ├─ BridgeProduction/ ...................... ├─ BridgeProduction
-│ │ ├─ Demo/ ................................. ├─ Demo
+├─ source-web/ .................├─ web 源码
+│ ├─ BridgeProduction/ .......... ├─ BridgeProduction
+│ │ ├─ Demo/ ...................... ├─ Demo
+```
 
 每新开发一个页面, 就需要在 `Demo` 同级创建一个 `Vue` 项目
 
 1. 新建项目如果用 `vue-cli` 创建, 创建以后还需要加入自己的配置和下载第三方组件
-2. 如果复制粘贴旧项目再 `CRUD` , 可能会有遗漏, 导致出现无用的代码; 又或者忘记改打包输出地址, 导致覆盖掉旧项目的打包文件; 而且大家一般不敢删 `package.json` 中的文件, 不知道这个依赖哪里使用了, 导致最后就像老太太的裹脚布--又臭又长
+2. 如果复制粘贴旧项目再 `CRUD`, 可能会有遗漏, 导致出现无用的代码; 又或者忘记改打包输出地址, 导致覆盖掉旧项目的打包文件; 而且大家一般不敢删 `package.json` 中的文件, 不知道这个依赖哪里使用了, 导致最后就像老太太的裹脚布--又臭又长
 3. 提取出一个基础模版项目, 把一些公共配置和第三方组件都配置好, 大家每次新建项目都拷贝这个项目.
 
 目前来看确实是第三种最优, 而且我们以前也都是这么干的, 但还是有一点瑕疵: 虽然将公共配置都配置好了, 但每个项目肯定有个性化设置, 最简单的例子就是打包地址, 这个肯定都不一样, 总会有人拷贝模版项目后忘记修改打包路径, 导致编译以后找不到文件, 最后才发现这个问题, 还要修改后再打包
@@ -113,7 +117,7 @@ program.version(`my-cli ${require('./package').version}`) // 输出版对应的�
 
 ```JS
 program
-  .version( `my-cli ${require('./package').version}` )
+  .version(`my-cli ${require('./package').version}`)
   .command('create <app-name>')
   .description('create a new project powered by my-cli')
   .option('-T, --template [template]', 'Enter a name of template')
@@ -189,7 +193,7 @@ npm i inquirer
 
 引入
 
-```sh
+```js
 const inquirer = require('inquirer')
 ```
 
@@ -199,7 +203,7 @@ const inquirer = require('inquirer')
 
 ```JS
 program
-  .version( `my-cli ${require('./package').version}` )
+  .version(`my-cli ${require('./package').version}`)
   .command('create <app-name>')
   .description('create a new project powered by my-cli')
   .action(async name => {
@@ -208,7 +212,7 @@ program
     } = await inquirer.prompt([{
       name: 'template',
       type: 'rawlist',
-      message: `Please choose a template:` ,
+      message: 'Please choose a template:' ,
       default: 'BridgeProduction',
       choices: [{
           name: 'BridgeProduction(桥梁)',
@@ -312,27 +316,36 @@ program
   .command('create <app-name>')
   .description('create a new project powered by my-cli')
   .action(async name => {
-    const { template } = await inquirer.prompt([
-      {
-        name: 'template',
-        type: 'rawlist',
-        message: `Please choose a template:`,
-        default: 'BridgeProduction',
-        choices: [
-          { name: 'BridgeProduction(桥梁)', value: 'BridgeProduction' },
-          { name: 'BaseProduction(基建项目)', value: 'BaseProduction' },
-          { name: 'EnterpriseProduction(基建企业)', value: 'EnterpriseProduction' }
-        ]
-      }
-    ])
+    const {
+      template
+    } = await inquirer.prompt([{
+      name: 'template',
+      type: 'rawlist',
+      message: 'Please choose a template:' ,
+      default: 'BridgeProduction',
+      choices: [
+        {
+          name: 'BridgeProduction(桥梁)',
+          value: 'BridgeProduction'
+        },
+        {
+          name: 'BaseProduction(基建项目)',
+          value: 'BaseProduction'
+        },
+        {
+          name: 'EnterpriseProduction(基建企业)',
+          value: 'EnterpriseProduction'
+        }
+      ]
+    }])
     // 下载 GitHub 仓库时可以省略前面的 github:
     download('username/base-template', name, error => {
       if (error) {
         console.log(`创建 ${name} 项目失败`)
         console.log('失败原因: ', error)
       } else {
-        console.log( `成功创建项目: ${name}` )
-        console.log( `所使用的模板: ${template}` )
+        console.log(`成功创建项目: ${name}`)
+        console.log(`所使用的模板: ${template}`)
       }
     })
   })
@@ -359,7 +372,7 @@ program.parse(process.argv)
 
 所以我们可以定义一个 `map` 来映射正确目录:
 
-创建一个放置常量的文件 `constant.js`:
+创建一个放置常量的文件 `constant.js` :
 
 ```JS
 exports.PATH_MAP = {
@@ -385,9 +398,11 @@ exports.PATH_MAP = {
 
 ```JS
 const path = require('path')
-const { PATH_MAP } = require('./constant')
+const {
+  PATH_MAP
+} = require('./constant')
 
-module.exports = function checkPath(name, type) {
+module.exports = function checkPath (name, type) {
   const basename = path.basename(process.cwd())
   const joinPath = PATH_MAP[type][basename]
   if (joinPath !== undefined) {
@@ -409,27 +424,36 @@ program
   .command('create <app-name>')
   .description('create a new project powered by my-cli')
   .action(async name => {
-    const { template } = await inquirer.prompt([
-      {
-        name: 'template',
-        type: 'rawlist',
-        message: `Please choose a template:`,
-        default: 'BridgeProduction',
-        choices: [
-          { name: 'BridgeProduction(桥梁)', value: 'BridgeProduction' },
-          { name: 'BaseProduction(基建项目)', value: 'BaseProduction' },
-          { name: 'EnterpriseProduction(基建企业)', value: 'EnterpriseProduction' }
-        ]
-      }
-    ])
+    const {
+      template
+    } = await inquirer.prompt([{
+      name: 'template',
+      type: 'rawlist',
+      message: 'Please choose a template:' ,
+      default: 'BridgeProduction',
+      choices: [
+        {
+          name: 'BridgeProduction(桥梁)',
+          value: 'BridgeProduction'
+        },
+        {
+          name: 'BaseProduction(基建项目)',
+          value: 'BaseProduction'
+        },
+        {
+          name: 'EnterpriseProduction(基建企业)',
+          value: 'EnterpriseProduction'
+        }
+      ]
+    }])
     const dirPath = checkPath(name, template)
     download('username/base-template', dirPath, error => {
       if (error) {
         console.log(`创建 ${name} 项目失败`)
         console.log('失败原因: ', error)
       } else {
-        console.log( `成功创建项目: ${name}` )
-        console.log( `所使用的模板: ${template}` )
+        console.log(`成功创建项目: ${name}`)
+        console.log(`所使用的模板: ${template}`)
       }
     })
   })
@@ -459,13 +483,13 @@ const replace = require('replace-in-file')
 
 ### 使用
 
-> 注意: 它不支持全局文件夹匹配，如果要把文件夹里的所有文件都替换，那你需要在 options 全部列举出来，虽然它支持通配符，但是层级还是固定的，如果哪天我们的目录层级变了，就很僵了
+> 注意: 它不支持全局文件夹匹配, 如果要把文件夹里的所有文件都替换, 那你需要在 options 全部列举出来, 虽然它支持通配符, 但是层级还是固定的, 如果哪天我们的目录层级变了, 就很僵了
 
 ![file](/img/node/010.png)
 
 所以我们需要一个方法来获取全部文件(当然如果你能确定需要替换哪些文件并且路径以后都不变的话, 也可以写死)
 
-安装 `fs-extra`:
+安装 `fs-extra` :
 
 ```sh
 npm i fs-extra
@@ -506,26 +530,37 @@ exports.loadAllFiles = filePath => {
 ```JS
 const path = require('path')
 const replace = require('replace-in-file')
-const { loadAllFiles } = require('./file')
+const {
+  loadAllFiles
+} = require('./file')
 
 program
   .version(`my-cli ${require('./package').version}`)
   .command('create <app-name>')
   .description('create a new project powered by my-cli')
   .action(async name => {
-    const { template } = await inquirer.prompt([
-      {
-        name: 'template',
-        type: 'rawlist',
-        message: `Please choose a template:`,
-        default: 'BridgeProduction',
-        choices: [
-          { name: 'BridgeProduction(桥梁)', value: 'BridgeProduction' },
-          { name: 'BaseProduction(基建项目)', value: 'BaseProduction' },
-          { name: 'EnterpriseProduction(基建企业)', value: 'EnterpriseProduction' }
-        ]
-      }
-    ])
+    const {
+      template
+    } = await inquirer.prompt([{
+      name: 'template',
+      type: 'rawlist',
+      message: 'Please choose a template:' ,
+      default: 'BridgeProduction',
+      choices: [
+        {
+          name: 'BridgeProduction(桥梁)',
+          value: 'BridgeProduction'
+        },
+        {
+          name: 'BaseProduction(基建项目)',
+          value: 'BaseProduction'
+        },
+        {
+          name: 'EnterpriseProduction(基建企业)',
+          value: 'EnterpriseProduction'
+        }
+      ]
+    }])
     const dirPath = checkPath(name, template)
     download('username/base-template', dirPath, error => {
       if (error) {
@@ -539,8 +574,8 @@ program
           to: path.join(template, name)
         }
         replace.sync(options)
-        console.log( `成功创建项目: ${name}` )
-        console.log( `所使用的模板: ${template}` )
+        console.log(`成功创建项目: ${name}`)
+        console.log(`所使用的模板: ${template}`)
       }
     })
   })
@@ -548,7 +583,7 @@ program
 program.parse(process.argv)
 ```
 
-至此就完成了. 等等, 我们好像还没有校验聪明
+至此就完成了. 等等, 我们好像还没有校验重名
 
 在 `file.js` 中增加方法:
 
@@ -557,18 +592,24 @@ const inquirer = require('inquirer')
 
 exports.existsSync = async name => {
   if (fs.existsSync(name)) {
-    const { action } = await inquirer.prompt([
-      {
-        name: 'action',
-        type: 'list',
-        message: `Target directory ${name} already exists. Pick an action:`,
-        default: false,
-        choices: [
-          { name: 'Overwrite', value: true },
-          { name: 'Cancel', value: false }
-        ]
-      }
-    ])
+    const {
+      action
+    } = await inquirer.prompt([{
+      name: 'action',
+      type: 'list',
+      message: `Target directory ${name} already exists. Pick an action:` ,
+      default: false,
+      choices: [
+        {
+          name: 'Overwrite',
+          value: true
+        },
+        {
+          name: 'Cancel',
+          value: false
+        }
+      ]
+    }])
     if (action) {
       console.log(`Removing ${name} ...`)
       await fs.remove(name)
@@ -583,25 +624,37 @@ exports.existsSync = async name => {
 在 `index.js` 中引入
 
 ```JS
-const { loadAllFiles, existsSync } = require('./file')
+const {
+  loadAllFiles,
+  existsSync
+} = require('./file')
 program
   .version(`my-cli ${require('./package').version}`)
   .command('create <app-name>')
   .description('create a new project powered by my-cli')
   .action(async name => {
-    const { template } = await inquirer.prompt([
-      {
-        name: 'template',
-        type: 'rawlist',
-        message: `Please choose a template:`,
-        default: 'BridgeProduction',
-        choices: [
-          { name: 'BridgeProduction(桥梁)', value: 'BridgeProduction' },
-          { name: 'BaseProduction(基建项目)', value: 'BaseProduction' },
-          { name: 'EnterpriseProduction(基建企业)', value: 'EnterpriseProduction' }
-        ]
-      }
-    ])
+    const {
+      template
+    } = await inquirer.prompt([{
+      name: 'template',
+      type: 'rawlist',
+      message: 'Please choose a template:' ,
+      default: 'BridgeProduction',
+      choices: [
+        {
+          name: 'BridgeProduction(桥梁)',
+          value: 'BridgeProduction'
+        },
+        {
+          name: 'BaseProduction(基建项目)',
+          value: 'BaseProduction'
+        },
+        {
+          name: 'EnterpriseProduction(基建企业)',
+          value: 'EnterpriseProduction'
+        }
+      ]
+    }])
     const dirPath = checkPath(name, template)
     // 判断目录是否已存在
     await existsSync(dirPath)
@@ -617,8 +670,8 @@ program
           to: path.join(template, name)
         }
         replace.sync(options)
-        console.log( `成功创建项目: ${name}` )
-        console.log( `所使用的模板: ${template}` )
+        console.log(`成功创建项目: ${name}`)
+        console.log(`所使用的模板: ${template}`)
       }
     })
   })
@@ -630,13 +683,13 @@ program.parse(process.argv)
 
 至此就完成了从命令行到创建自己定制化的初始工程项目的完整功能
 
-功能上是没问题了，但是好像还有一个问题：这些命令行是不是长得太平平无奇有点单调了？并且这个下载的过程有点呆头呆脑，能不能整个骚气一点的？
+功能上是没问题了, 但是好像还有一个问题: 这些命令行是不是长得太平平无奇有点单调了? 并且这个下载的过程有点呆头呆脑, 能不能整个骚气一点的?
 
-下面就让我们用`ora`和`chalk`这两个库去美化我们的命令行输出~
+下面就让我们用 `ora` 和 `chalk` 这两个库去美化我们的命令行输出~
 
 ## 使用 ora 和 chalk 美化命令行
 
-### 使用 ora 增加 loading 效果：
+### 使用 ora 增加 loading 效果:
 
 #### 安装
 
@@ -652,7 +705,7 @@ const ora = require('ora')
 
 #### 使用
 
-`index.js`中：
+`index.js` 中:
 
 ```JS
 program
@@ -660,19 +713,28 @@ program
   .command('create <app-name>')
   .description('create a new project powered by my-cli')
   .action(async name => {
-    const { template } = await inquirer.prompt([
-      {
-        name: 'template',
-        type: 'rawlist',
-        message: `Please choose a template:`,
-        default: 'BridgeProduction',
-        choices: [
-          { name: 'BridgeProduction(桥梁)', value: 'BridgeProduction' },
-          { name: 'BaseProduction(基建项目)', value: 'BaseProduction' },
-          { name: 'EnterpriseProduction(基建企业)', value: 'EnterpriseProduction' }
-        ]
-      }
-    ])
+    const {
+      template
+    } = await inquirer.prompt([{
+      name: 'template',
+      type: 'rawlist',
+      message: 'Please choose a template:' ,
+      default: 'BridgeProduction',
+      choices: [
+        {
+          name: 'BridgeProduction(桥梁)',
+          value: 'BridgeProduction'
+        },
+        {
+          name: 'BaseProduction(基建项目)',
+          value: 'BaseProduction'
+        },
+        {
+          name: 'EnterpriseProduction(基建企业)',
+          value: 'EnterpriseProduction'
+        }
+      ]
+    }])
     const dirPath = checkPath(name, template)
     // 判断目录是否已存在
     await existsSync(dirPath)
@@ -728,20 +790,52 @@ const chalk = require('chalk')
 console.log(chalk.red('hello my-cli'))
 ```
 
-Finally~来到最后一步了：把自己一手一脚创建的脚手架工具发布到`npm`上吧~
+Finally, 来到最后一步了: 把自己一手一脚创建的脚手架工具发布到 `npm` 上吧~
 
 ## 发布到 npm
 
-1.  在 npm 官网注册一个自己的账号（已有的请忽略）
+### 发布新包
 
-2.  在 npm 上搜一下看看自己即将发布的包是否已存在同名的包（自己的包名在`package.json`文件中可以查看修改）
+1. 使用 `npm init` 创建初始项目(我们已经完成)
+2. 在 [npm](https://www.npmjs.com/) 官网注册一个自己的账号(已有的请忽略)
+3. 在 `npm` 上搜一下看看自己即将发布的包是否已存在同名的包(自己的包名在 `package.json` 文件中可以查看修改)
+4. 如果 `npm` 源为淘宝镜像, 需要切换为 `npm` 源: `npm config set registry=http://registry.npmjs.org`
+5. 输入 `npm login` 进行登录
+6. 登录成功后, 在 `my-cli` 项目文件夹路径下的控制台中输入 `npm publish` 命令进行发布
+7. 发布成功后可以在 `npm` 官网查看
+8. 将源切换为淘宝镜像: `npm config set registry "https://registry.npm.taobao.org"`
 
-3.  万事俱备后打开控制台，输入`npm login`进行登录
+### 更新已发布的包
 
-4.  登录成功后，在 `channing2-cli`项目文件夹路径下的控制台中输入`npm publish`命令进行发布：
+`npm` 包的每次迭代都要涉及到两个方面:
+
+- 内容的变更
+- 版本的变更
+
+内容的变更就不说了, 要不就是修改了 `bug` , 要不就是增加新功能, 反正肯定是修改文件了
+
+主要说一下版本的变更:
+
+npm 采用[语义化版本](https://docs.npmjs.com/about-semantic-versioning), 共三位, 以 `.` 隔开, 从左至右依次代表: 主版本(major)、次要版本(minor)、补丁版本(patch).
+
+例如: `1.0.0` => `major.minor.patch`
+
+关于版本变更规范:
+
+![version](/img/node/012.png)
+
+变更版本号的命令: `npm version <major | minor | patch>`
+
+比如当前版本为 `1.0.0`, 我们修改了一个小 `bug`, 那我们执行 `npm version patch` 即可, 版本就变为 `1.0.1`, `package.json` 中的 `version` 也已变为`1.0.1`
+
+其实 `npm version` 就是将 `package.json` 中的 `version` 版本 `+1`, 我们也可以手动修改, 不过得保证每次更新版本只能 `+1`
+
+接下来发布就简单了: 由于我们发布新包的时候已经登陆, 所以只需要 切换源 -> `npm publish` -> 切换回淘宝镜像源, 搞定
 
 ## 参考资料
 
 - [⚡【有手就行】轻松打造属于自己的 Vue 工程化脚手架工具 - 掘金](https://juejin.im/post/6867331101552181262#heading-32)
 - [NodeJS: 从零开始做一个简单的脚手架 - 知乎](https://zhuanlan.zhihu.com/p/51570265)
 - [打造属于自己的项目脚手架工具----Vue CLI - 知乎](https://zhuanlan.zhihu.com/p/119258965)
+- [npm 发布包教程(二): 发布包 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000017463371)
+- [手把手教你用 npm 发布包\_taoerchun 的专栏-CSDN 博客](https://blog.csdn.net/taoerchun/article/details/82531549)
