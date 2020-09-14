@@ -39,6 +39,8 @@ tags: [ElementUI]
 - [VuePress](https://vuepress.vuejs.org/zh/)
 - [一步步带你用VuePress来搭建个人网站 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000021756692?utm_source=sf-related)
 - [VuePress 手摸手教你搭建一个类Vue文档风格的技术文档/博客 - OBKoro1分享 - SegmentFault 思否](https://segmentfault.com/a/1190000016333850)
+- [VuePress博客搭建笔记（二）个性化配置 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000017953711)
+- [手把手教你用 vuepress 搭建博客 | itclanCoder](https://coder.itclan.cn/fontend/tools/vuepress-build-blog/)
 
 **注: 将 `VuePress` 安装为本地依赖, 官方已经不再推荐全局安装 `VuePress`**
 

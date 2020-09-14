@@ -70,6 +70,11 @@ thumbnail: /img/vscode/thumbnail.png
   - 各种 HTML 标签片段, 如果你 [Emmet](https://tsz.now.sh/2018/09/05/vscode-complete-config/#toc-heading-21) 玩的熟, 完全可以忽略这个
   - [Install](vscode:extension/abusaidm.html-snippets)
 
+- [Icon Fonts](https://marketplace.visualstudio.com/items?itemName=idleberg.icon-fonts)
+
+  - 流行图标字体的代码片段
+  - [Install](vscode:extension/idleberg.icon-fonts)
+
 ### 自动补全
 
 - [TabNine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
@@ -281,6 +286,11 @@ thumbnail: /img/vscode/thumbnail.png
   - Markdown 格式化插件
   - [Install](vscode:extension/mervin.markdown-formatter)
 
+- [Markdown Emoji - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
+
+  - 显示 Markdown 表情
+  - [Install](vscode:extension/bierner.markdown-emoji)
+
 - [Nest Comments](https://marketplace.visualstudio.com/items?itemName=philsinatra.nested-comments)
 
   - 完美解决需要注释的代码里已有注释代码
@@ -302,6 +312,11 @@ thumbnail: /img/vscode/thumbnail.png
   - 给变量或函数命名
   - [中国程序员开发的神奇网站: 变量命名神器! - AI 科技大本营 - CSDN 博客](https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/85219501)
   - [Install](vscode:extension/unbug.codelf)
+
+- [Debug Visualizer](https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer)
+
+  - 用于在调试时可视化数据结构。类似于VS Code的监视视图，但是具有监视值的丰富可视化。
+  - [Install](vscode:extension/hediet.debug-visualizer)
 
 ### 其他插件
 
@@ -327,20 +342,16 @@ thumbnail: /img/vscode/thumbnail.png
   - 图床神器
   - [Install](vscode:extension/Spades.vs-picgo)
 
-- [Vue Peek](https://marketplace.visualstudio.com/items?itemName=dariofuzinato.vue-peek)
-
-  - 跳转到定义, 支持点击 template 里的组件名称, 但只能使用 ../ 引入才能识别跳转
-  - [Install](vscode:extension/dariofuzinato.vue-peek)
 
 - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
 
   - import 一个东西的时候, 可以计算该引入模块的大小
   - [Install](vscode:extension/wix.vscode-import-cost)
 
-- [Polacode](https://marketplace.visualstudio.com/items?itemName=pnp.polacode)
+- [CodeSnap - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=adpyke.codesnap)
 
   - 带有定制字体和主题的代码截屏
-  - [Install](vscode:extension/pnp.polacode)
+  - [Install](vscode:extension/adpyke.codesnap)
 
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.liveServer)
 

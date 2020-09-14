@@ -165,6 +165,8 @@ VS Code 完整版配置
   },
   // 定义非必要分号的处理方式: 删除不必要的分号
   "javascript.format.semicolons": "remove",
+  // 自动更新路径
+  "javascript.updateImportsOnFileMove.enabled": "always",
   // 是否在每行末尾加一个分号
   "prettier.semi": false,
   // 使用单引号
@@ -173,6 +175,10 @@ VS Code 完整版配置
   "prettier.printWidth": 100,
   // JSX 有多个属性时，将 `>` 放在最后一行的末尾，而不是单独放在下一行（不适用于自闭元素）
   "prettier.jsxBracketSameLine": true,
+  // 当箭头函数仅有一个参数时是否加上括号
+  "prettier.arrowParens": "avoid",
+  // 控制尾随逗号的输出
+  "prettier.trailingComma": "none",
   // 格式化 vue 插件名: Vetur
   "vetur.format.defaultFormatter.html": "prettier",
   "vetur.format.defaultFormatterOptions": {
@@ -283,8 +289,9 @@ VS Code 完整版配置
   },
   // 配置
   "fileheader.configObj": {
-    "prohibitAutoAdd": [ "json", "md" ], // 禁止 .json .md 文件自动添加头部注释
-    "checkFileChange": true // 每次保存之后, 会进行一次 diff 检查, 如果文件只变更了 LastEditors/LastEditTime, 该文件将会回滚到本地仓库的最新版本.
+    "autoAdd": false,
+    // "prohibitAutoAdd": [ "json", "md" ], // 禁止 .json .md 文件自动添加头部注释
+    // "checkFileChange": true // 每次保存之后, 会进行一次 diff 检查, 如果文件只变更了 LastEditors/LastEditTime, 该文件将会回滚到本地仓库的最新版本.
   },
 
   // element-helper 版本 插件名: vscode-element-helper
@@ -343,12 +350,20 @@ VS Code 完整版配置
     "'",
     "`"
   ],
+  // 目录树 插件名: Directory-tree generator
+  // 排除的文件和文件夹
   "dirconfgen.exclude": [
     "*.*",
     "node_modules"
   ],
+  // 深度
   "dirconfgen.maxDepth": 2,
-  "tabnine.experimentalAutoImports": true
+  // 智能代码提示 插件名: TabNine
+  "tabnine.experimentalAutoImports": true,
+  // 代码截图 插件名: CodeSnap
+  // 背景透明
+  "codesnap.transparentBackground": true,
+  "editor.columnSelection": false
 }
 ```
 

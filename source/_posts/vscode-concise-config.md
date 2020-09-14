@@ -131,10 +131,10 @@ VS Code 简明版配置
 
 ### 自动补全
 
-- [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
+- [TabNine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
 
-  - 微软官方出品的基于人工智能的代码补全提示
-  - [Install](vscode:extension/VisualStudioExptTeam.vscodeintellicode)
+  - 代码补全. 不少使用过的网友说: TabNine 是他们用过的最好的代码补全工具, 这是属于程序员的杀手级应用
+  - [Install](vscode:extension/TabNine.tabnine-vscode)
 
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
 
