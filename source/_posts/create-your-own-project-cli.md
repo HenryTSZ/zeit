@@ -42,7 +42,7 @@ bridge-business-web/
 
 在终端执行下面命令:
 
-```sh
+```bash
 mkdir my-cli
 cd my-cli
 npm init -y
@@ -89,7 +89,7 @@ console.log('hello my-cli')
 
 ### 安装
 
-```sh
+```bash
 npm i commander
 ```
 
@@ -141,13 +141,13 @@ program.parse(process.argv)
 
 在命令行中输入:
 
-```sh
+```bash
 my-cli create Demo -T BridgeProduction
 ```
 
 或者
 
-```sh
+```bash
 my-cli create Demo --template BridgeProduction
 ```
 
@@ -187,7 +187,7 @@ program
 
 ### 安装
 
-```sh
+```bash
 npm i inquirer
 ```
 
@@ -281,7 +281,7 @@ outputDir: '../resources/replaceOutputDir'
 > 替换第二条命令中的 `username/base-template` 为 `自己的用户名/仓库名称`
 > 下面还会出现多次, 请留意替换
 
-```sh
+```bash
 git init
 git add .
 git commit -m "first commit"
@@ -298,7 +298,7 @@ git push -u origin master
 
 ### 安装
 
-```sh
+```bash
 npm i download-git-repo
 ```
 
@@ -471,7 +471,7 @@ program.parse(process.argv)
 
 ### 安装
 
-```sh
+```bash
 npm i replace-in-file
 ```
 
@@ -491,7 +491,7 @@ const replace = require('replace-in-file')
 
 安装 `fs-extra` :
 
-```sh
+```bash
 npm i fs-extra
 ```
 
@@ -693,8 +693,8 @@ program.parse(process.argv)
 
 #### 安装
 
-```sh
-npm install ora
+```bash
+npm i ora
 ```
 
 #### 引入
@@ -771,7 +771,7 @@ program.parse(process.argv)
 
 #### 安装
 
-```sh
+```bash
 npm i chalk
 ```
 

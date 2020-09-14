@@ -5,9 +5,9 @@ categories: [Software]
 tags: [Markdown]
 ---
 
-## Markdown 学习
+`Markdown` 是一种轻量级的「标记语言」, 它的优点很多, 目前也被越来越多的写作爱好者, 撰稿者广泛使用. 看到这里请不要被「标记」、「语言」所迷惑, `Markdown` 的语法十分简单. 常用的标记符号也不超过十个, 这种相对于更为复杂的 `HTML` 标记语言来说, `Markdown` 可谓是十分轻量的, 学习成本也不需要太多, 且一旦熟悉这种语法规则, 会有一劳永逸的效果.
 
-Markdown 是一种轻量级的「标记语言」, 它的优点很多, 目前也被越来越多的写作爱好者, 撰稿者广泛使用. 看到这里请不要被「标记」、「语言」所迷惑, Markdown 的语法十分简单. 常用的标记符号也不超过十个, 这种相对于更为复杂的 HTML 标记语言来说, Markdown 可谓是十分轻量的, 学习成本也不需要太多, 且一旦熟悉这种语法规则, 会有一劳永逸的效果.
+<!-- more -->
 
 ## 使用 Markdown 的优点
 
@@ -20,28 +20,12 @@ Markdown 是一种轻量级的「标记语言」, 它的优点很多, 目前也�
 
 工具茫茫多
 
-- windows
-  - [markdownPad2](http://markdownpad.com/)
-  - [MarkPad](http://code52.org/DownmarkerWPF/)
-- Linux
-  - [ReText](http://sourceforge.net/p/retext/home/ReText/)
-- Mac
-  - [Mou](http://mouapp.com/)
+- 桌面
+  - [Typora](https://typora.io/)
+  - [Visual Studio Code](https://code.visualstudio.com/)
 - 在线
   - [Dillinger.io](http://dillinger.io/)
   - [Markable.in](http://markable.in/)
-- 浏览器插件
-  - [MaDe](https://chrome.google.com/webstore/detail/oknndfeeopgpibecfjljjfanledpbkog) (chrome)
-
-## MarkdownPad2.5 注册码
-
-邮箱:
-
-Soar360@live.com
-
-授权秘钥:
-
-`GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5/sQytXJUQl/QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb/ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8/eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ==`
 
 ## 语法
 
@@ -49,9 +33,9 @@ Soar360@live.com
 
 标题有六级
 
-由 # 组成
+由 `#` 组成
 
-类比于 h1 ~ h6
+类比于 `h1 ~ h6`
 
 例如:
 
@@ -89,11 +73,11 @@ Soar360@live.com
 
 ### 首行缩进
 
-&emsp; &emsp; 写文章时, 我们常常希望能够首行缩进, 这时可以在段首加入 `&ensp;` 或 `&nbsp` 来输入一个空格. 加入 `&emsp;` 来输入两个空格. 这里的空格是英文状态的空格, 英文状态的两个空格相当于中文状态的一个空格
+&emsp; &emsp; 写文章时, 我们常常希望能够首行缩进, 这时可以在段首加入 `&ensp;` 或 `&nbsp;` 来输入一个空格. 加入 `&emsp;` 来输入两个空格. 这里的空格是英文状态的空格, 英文状态的两个空格相当于中文状态的一个空格
 
 ### 添加空行
 
-添加空行可以结束先前的格式状态. 个人建议在改变格式时, 均添加一个空行
+添加空行可以结束先前的格式状态. 个人建议在改变格式时均添加一个空行
 
 例如:
 
@@ -173,14 +157,14 @@ Soar360@live.com
 
 ### 强调
 
-- 斜体: 使用 两个 `*` 或 `_` 中间夹杂的就是 斜体, 例如: `*斜体* _斜体_` _斜体_ _斜体_
-- 粗体: 使用 四个 `*` 或 `_` 中间夹杂的就是 粗体, 例如: `**粗体** __粗体__` **粗体** **粗体**
-- 粗斜体文本: 使用 八个 `*` 或 `_` 中间夹杂的就是 粗斜体文本, 例如: `****粗斜体**** ____粗斜体____` \***\*粗斜体\*\*** \_**\_粗斜体\_\_**
+- 斜体: 使用 两个 `*` 或 `_` 中间夹杂的就是 斜体, 例如: `*斜体* _斜体_` *斜体* _斜体_
+- 粗体: 使用 四个 `*` 或 `_` 中间夹杂的就是 粗体, 例如: `**粗体** __粗体__` **粗体** __粗体__
+- 粗斜体文本: 使用 八个 `*` 或 `_` 中间夹杂的就是 粗斜体文本, 例如: `****粗斜体**** ____粗斜体____` ****粗斜体**** ____粗斜体____
 - 删除线: 使用 两个波浪线 `~` 中间夹杂的就是 删除线, 例如: `~~删除线~~` ~~删除线~~
 
 但是, 如果你的 `*` 、 `_` 和 `~` 两边都有空白的话, 它们就只会被当成普通的符号: 这是一段* 文本强调 *的说明示例.
 
-`\*如果要在文字前后直接插入普通的星号或底线，你可以用反斜线（转义符）\*` :\*如果要在文字前后直接插入普通的星号或底线, 你可以用反斜线(转义符)\*
+`\*如果要在文字前后直接插入普通的星号或底线，你可以用反斜线（转义符）\*` : \*如果要在文字前后直接插入普通的星号或底线, 你可以用反斜线(转义符)\*
 
 ### 无序列表
 
@@ -193,38 +177,38 @@ Soar360@live.com
 ```
 
 * 使用 - 号
-  + 吃饭
-  + 睡觉
-  + 打豆豆
-  + 再打豆豆
+  - 吃饭
+  - 睡觉
+  - 打豆豆
+  - 再打豆豆
     - 接着打豆豆
 * 使用 + 号
   + 吃饭
   + 睡觉
   + 打豆豆
 * 使用 * 号
-  + 吃饭
-  + 睡觉
-  + 打豆豆
+  * 吃饭
+  * 睡觉
+  * 打豆豆
 
 ```
 
 效果:
 
-- 使用 - 号
+* 使用 - 号
   - 吃饭
   - 睡觉
   - 打豆豆
   - 再打豆豆
     - 接着打豆豆
-- 使用 + 号
-  - 吃饭
-  - 睡觉
-  - 打豆豆
-- 使用 \* 号
-  - 吃饭
-  - 睡觉
-  - 打豆豆
+* 使用 + 号
+  + 吃饭
+  + 睡觉
+  + 打豆豆
+* 使用 \* 号
+  * 吃饭
+  * 睡觉
+  * 打豆豆
 
 ### 有序列表
 
@@ -366,6 +350,10 @@ Soar360@live.com
 |--|--|--|:--:|
 | 上午 | 北京 | 我 | 吃面 |
 
+| <div style="width: 65px;">可以在表头设置固定宽度</div> | 默认宽度 |
+| -- | -- |
+| 我的宽度为 65px | 我的宽度是默认的 |
+
 ```
 
 效果：
@@ -388,6 +376,10 @@ Soar360@live.com
 | ---- | ---- | ---- | :--------------------------: |
 | 上午 | 北京 | 我   |             吃面             |
 
+| <div style="width: 265px;">可以在表头设置固定宽度</div> | 默认宽度 |
+| -- | -- |
+| 我的宽度为 265px | 我的宽度是默认的 |
+
 **注：表格开始与结尾都需要一行空行**
 
 ### 插入代码
@@ -395,7 +387,7 @@ Soar360@live.com
 插入代码的方式有两种
 
 1. 在每行代码前加入 4 个空格或者添加一个制表符（TAB 键）. 制表符长度为 4
-2. 在代码两侧添加三个反引号 "```"。
+2. 在代码两侧添加三个反引号 \`\`\`。
 
 #### 方式一
 
@@ -417,16 +409,16 @@ Soar360@live.com
 
 效果：
 
-- 列表项
-- 列表项
+* 列表项
+* 列表项
 
-      		console.log('hello world!')
+      console.log('hello world!')
 
 #### 方式 2
 
 如果你只想高亮语句中的某个函数名或关键字，可以使用这个符号 \` 中间夹着代码 \` function_name() `function_name()` 实现
 
-通常编辑器根据代码片段适配合适的高亮方法，但你也可以用 \` \` \` 包裹一段代码，并指定一种语言
+通常编辑器根据代码片段适配合适的高亮方法，但你也可以用 \`\`\` 包裹一段代码，并指定一种语言
 
 \`\`\`js
 
@@ -476,7 +468,7 @@ nohighlight
 
 \$(document).ready(function () {
 
-alert('hello world');
+  alert('hello world');
 
 });
 
@@ -485,7 +477,7 @@ alert('hello world');
 ```nohighlight
 // js
 $(document).ready(function () {
-    alert('hello world');
+  alert('hello world');
 });
 ```
 
@@ -595,7 +587,7 @@ Git 中的 Markdown 语法扩展中包括了一些表情包.
 
 `\*\* 取消 Markdown 关键字`
 
-效果:\*\* 取消 Markdown 关键字
+效果: \*\* 取消 Markdown 关键字
 
 ### 实践
 
