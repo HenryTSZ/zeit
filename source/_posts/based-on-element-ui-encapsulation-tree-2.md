@@ -16,7 +16,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 通过 `node` 设置后, 全选并没有显示为半选状态
 
-## 方法一
+## 方法一(推荐, 以后只维护这个)
 
 [源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/Tree2.vue)在这里
 
