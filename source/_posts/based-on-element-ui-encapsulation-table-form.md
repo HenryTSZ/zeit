@@ -381,6 +381,125 @@ props: {
 }
 ```
 
+优化一下:
+
+上面只有 `radio`, 其实 `checkbox` 也是类似的, 所以对于这类组件应该也使用 `component` 处理, 而且 `value` 和 `label` 也需要做一下映射:
+
+``` HTML
+<template>
+  <component
+    :is="item.component"
+    v-model="model[item.prop]"
+    :key="item.prop"
+    v-bind="item"
+    v-focus="item.focus"
+    :placeholder="item.placeholder || `${handlePlaceholder(item.type)}${item.label}`"
+    v-on="{ ...$listeners, ...item.events }"
+  >
+    <!-- 只展示 -->
+    <text-ellipsis v-if="item.type === 'info'" :content="model[item.prop]"></text-ellipsis>
+    <!-- 这里由于当初设计的时候以为 el-select 和 el-radio 等会同时存在当前组件中,
+    所以规定 el-select 的下拉数据放在 select 中, el-radio 的放在 radio 中,
+    其实 el-select 和 el-radio 等不会同时存在,
+    为了 兼容以前写法 和 统一数据结构
+    现在增加一个参数: options, 存放供选择的数据, 所有通用
+    当然如果是新项目, 可以去掉 || 后面的代码, 统一使用 options -->
+    <el-option
+      v-for="option in item.options || item.select"
+      :key="option[listProps.value]"
+      :value="option[listProps.value]"
+      :label="option[listProps.label]"
+      :disabled="option.disabled"
+    ></el-option>
+    <!-- radio / checkbox 等 -->
+    <template v-if="list.includes(item.type)">
+      <component
+        :is="`el-${item.type}`"
+        v-for="ele in item.option || item[item.type]"
+        :key="ele[listProps.value]"
+        :label="ele[listProps.value]"
+        :disabled="ele.disabled"
+      >
+        {{ ele[listProps.label] }}
+      </component>
+    </template>
+    <slot v-for="(value, key) in item.slots" :name="key" :slot="key">{{ value }}</slot>
+  </component>
+</template>
+
+<script>
+import { handlePlaceholder } from 'utils'
+
+export default {
+  name: 'EditableElements',
+  inheritAttrs: false,
+  props: {
+    item: {
+      type: Object,
+      default() {
+        return {}
+      }
+    },
+    model: {
+      type: Object,
+      default() {
+        return {}
+      }
+    }
+  },
+  data() {
+    return {
+      list: ['radio', 'checkbox']
+    }
+  },
+  computed: {
+    listProps() {
+      // 这里的 props 和上面的 options 是相同的原因
+      const props = this.item.props || this.item[`${this.item.type}Props`]
+      if (!props) return { label: 'label', value: 'value' }
+      const { label = 'label', value = 'value', ...rest } = props
+      return {
+        label,
+        value,
+        ...rest
+      }
+    }
+  },
+  methods: {
+    handlePlaceholder
+  },
+  directives: {
+    focus: {
+      // [vue v-focus v-show控制input的显示聚焦，第二次不生效问题_JavaScript_宣城-CSDN博客](https://blog.csdn.net/qq_37361812/article/details/93782340)
+      // [页面一刷新让文本框自动获取焦点-- 和自定义v-focus指令 - 明月人倚楼 - 博客园](https://www.cnblogs.com/IwishIcould/p/12006378.html)
+      update(el, { value, oldValue }) {
+        if (value && value !== oldValue) {
+          // 重点注意这里 当前元素是 div  所以要查到子元素中的 input
+          const dom = el.querySelector('input') || el.querySelector('textarea')
+          dom && dom.focus()
+        }
+      },
+      inserted(el, { value }) {
+        if (value) {
+          // 重点注意这里 当前元素是 div  所以要查到子元素中的 input
+          const dom = el.querySelector('input') || el.querySelector('textarea')
+          dom && dom.focus()
+        }
+      }
+    }
+  }
+}
+</script>
+
+<style lang="less" scoped>
+.editable-elements {
+  .el-select {
+    width: 100%;
+  }
+}
+</style>
+```
+
 ## 终稿
 
 到这里本次封装之旅差不多就结束了, 想想还有点小激动呢!
@@ -514,32 +633,40 @@ computed: {
 ### editable-elements
 
 ```HTML
-<component
-  :is="item.component"
-  v-model="model[item.prop]"
-  :key="item.prop"
-  v-bind="item"
-  v-focus="item.focus"
-  :placeholder="item.placeholder || `${handlePlaceholder(item.type)}${item.label}`"
-  v-on="{ ...$listeners, ...item.events }"
->
-  {{ item.type === 'info' ? model[item.prop] : '' }}
-  <el-option
-    v-for="option in item.select"
-    :key="option[item.selectProps ? item.selectProps.value : 'value']"
-    :value="option[item.selectProps ? item.selectProps.value : 'value']"
-    :label="option[item.selectProps ? item.selectProps.label : 'label']"
-  ></el-option>
-  <el-radio
-    v-for="radio in item.radio"
-    :key="radio[item.radioProps ? item.radioProps.value : 'value']"
-    :label="radio[item.radioProps ? item.radioProps.value : 'value']"
+<template>
+  <component
+    :is="item.component"
+    v-model="model[item.prop]"
+    :key="item.prop"
+    v-bind="item"
+    v-focus="item.focus"
+    :placeholder="item.placeholder || `${handlePlaceholder(item.type)}${item.label}`"
+    v-on="{ ...$listeners, ...item.events }"
   >
-    {{ radio[item.radioProps ? item.radioProps.label : 'label'] }}
-  </el-radio>
-  <el-checkbox v-for="checkbox in item.checkbox" :key="checkbox" :label="checkbox"></el-checkbox>
-  <slot v-for="(value, key) in item.slots" :name="key" :slot="key">{{ value }}</slot>
-</component>
+    <!-- 只展示 -->
+    <text-ellipsis v-if="item.type === 'info'" :content="model[item.prop]"></text-ellipsis>
+    <el-option
+      v-for="option in item.options || item.select"
+      :key="option[listProps.value]"
+      :value="option[listProps.value]"
+      :label="option[listProps.label]"
+      :disabled="option.disabled"
+    ></el-option>
+    <!-- radio / checkbox 等 -->
+    <template v-if="list.includes(item.type)">
+      <component
+        :is="`el-${item.type}`"
+        v-for="ele in item.option || item[item.type]"
+        :key="ele[listProps.value]"
+        :label="ele[listProps.value]"
+        :disabled="ele.disabled"
+      >
+        {{ ele[listProps.label] }}
+      </component>
+    </template>
+    <slot v-for="(value, key) in item.slots" :name="key" :slot="key">{{ value }}</slot>
+  </component>
+</template>
 ```
 
 ## 实际工作中发现的问题
