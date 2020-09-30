@@ -385,7 +385,7 @@ props: {
 
 上面只有 `radio`, 其实 `checkbox` 也是类似的, 所以对于这类组件应该也使用 `component` 处理, 而且 `value` 和 `label` 也需要做一下映射:
 
-``` HTML
+```HTML
 <template>
   <component
     :is="item.component"
@@ -667,6 +667,85 @@ computed: {
     <slot v-for="(value, key) in item.slots" :name="key" :slot="key">{{ value }}</slot>
   </component>
 </template>
+```
+
+## 增加功能
+
+### BaseTable 增加 defaultCheckedKeys 和 currentNodeKey
+
+最近做项目的时候遇到 `table` 初始化的时候要有默认选中和默认高亮行的需求, 那就参照 `el-tree` 的方式做一下
+
+本以为和 `el-tree` 一样, 传入 `key` 后, `el-table` 内部会自己处理, 结果 `el-table` 只能通过传入的 `row` 来实现默认选中和默认高亮行, 这也不能理解, 毕竟 `el-table` 中很少用到 `row-key`
+
+那咱们就通过传入的 `key` 遍历找到对应的 `row`, 当然这种方式就必须传入 `row-key` 啦:
+
+```JS
+props: {
+  data: {
+    type: Array,
+    default() {
+      return []
+    }
+  },
+  defaultCheckedKeys: {
+    type: Array,
+    default() {
+      return []
+    }
+  },
+  currentNodeKey: {
+    type: [String, Number],
+    default: ''
+  }
+},
+watch: {
+  data: {
+    handler() {
+      this.setDefaultCheckedKeys()
+      this.setCurrentNodeKey()
+    },
+    immediate: true
+  },
+  rowKey: {
+    type: [String, Function],
+    default: 'id'
+  },
+  defaultCheckedKeys: {
+    handler: 'setDefaultCheckedKeys',
+    immediate: true
+  },
+  currentNodeKey: {
+    handler: 'setCurrentNodeKey',
+    immediate: true
+  }
+},
+methods: {
+  // 设置默认选中
+  setDefaultCheckedKeys() {
+    this.$nextTick(() => {
+      if (this.defaultCheckedKeys.length) {
+        const rows = this.data.filter(item => this.defaultCheckedKeys.includes(item[this.rowKey]))
+        rows.forEach(row => {
+          this.$refs.elTable.toggleRowSelection(row, true)
+        })
+      } else {
+        this.$refs.elTable.clearSelection()
+      }
+    })
+  },
+  setCurrentNodeKey() {
+    this.$nextTick(() => {
+      if (this.currentNodeKey) {
+        const row = this.data.find(item => this.currentNodeKey === item[this.rowKey])
+        if (row) {
+          this.$refs.elTable.setCurrentRow(row)
+        }
+      } else {
+        this.$refs.elTable.setCurrentRow(null)
+      }
+    })
+  }
+}
 ```
 
 ## 实际工作中发现的问题
