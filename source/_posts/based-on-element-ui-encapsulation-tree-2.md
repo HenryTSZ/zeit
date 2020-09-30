@@ -283,6 +283,7 @@ mounted() {
 handleCurrentChange(data, node) {
   const { key, disabled } = node
   if (disabled) {
+    // setCurrentKey 传入 null 或 undefined 时会清空选中节点
     this.$refs[this.ref].setCurrentKey(this.currentKey)
     return
   }
