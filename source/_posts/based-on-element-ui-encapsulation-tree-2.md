@@ -234,7 +234,7 @@ mounted() {
 
 刚好最近封装了一个[文本溢出显示省略号](https://tsz.now.sh/2020/09/03/based-on-element-ui-encapsulation-text-ellipsis/)的组件, 可以拿来一用
 
-``` HTML
+```HTML
 <slot slot-scope="{ node, data }" v-bind="{ node, data }">
   <text-ellipsis :content="node.label"></text-ellipsis>
 </slot>
@@ -256,7 +256,7 @@ mounted() {
 1. 设置 `disabled` 样式
 2. 当点击 `disabled` 节点后, 通过 `setCurrentKey` 来重置当前选中节点
 
-``` HTML
+```HTML
 <el-tree
   v-on="{ ...$listeners, 'current-change': handleCurrentChange, 'node-click': handleNodeClick }"
 >
@@ -271,14 +271,14 @@ mounted() {
 
 **这里使用 `v-on="{ ...$listeners, 'current-change': handleCurrentChange, 'node-click': handleNodeClick }"` 是防止 `emit` 两遍 `current-change` 和 `node-click` 方法**
 
-``` CSS
+```CSS
 .custom-disabled {
   color: #94969a;
   cursor: not-allowed;
 }
 ```
 
-``` JS
+```JS
 // 处理单选的 disabled
 handleCurrentChange(data, node) {
   const { key, disabled } = node
@@ -305,14 +305,14 @@ handleNodeClick(data, node, self) {
 
 所以我们需要自定义一下过滤方法
 
-``` HTML
+```HTML
 <el-tree
   :filter-node-method="filterNodeMethod"
 >
 </el-tree>
 ```
 
-``` JS
+```JS
 props: {
   filterNodeMethod: {
     type: Function,
@@ -338,6 +338,48 @@ methods: {
 }
 ```
 
+## 单选只能选择叶子节点
+
+最近在工作中经常遇到只能单选叶子节点的功能, 所以我们就需要封装一下.
+
+以前在 `SelectTree` 中做过这个功能, 但其实应该是 `Tree` 的功能, 所以就搬到这里啦
+
+由以前经验可知需要分两种情况:
+
+1. 使用 `el-tree` 自带的 `node.isLeaf` 判断是否是叶子节点
+2. 传入 `isLeafMethod` 函数来自定义叶子节点
+
+而且处理逻辑与 `disabled` 类似, 就提取一个函数处理即可:
+
+```js
+// 处理单选的 disabled 和 isLeaf
+handleCurrentChange(data, node) {
+  const { key, disabled } = node
+  if (this.handleDisabled(disabled, data, node)) {
+    return
+  }
+  this.currentKey = key
+  this.$emit('current-change', data, node)
+},
+handleNodeClick(data, node, self) {
+  const { disabled } = node
+  if (this.handleDisabled(disabled, data, node)) {
+    return
+  }
+  this.$emit('node-click', data, node, self)
+},
+handleDisabled(disabled, data, node) {
+  if (
+    disabled ||
+    (this.isLeafMethod ? !this.isLeafMethod(data, node) : this.currentIsLeaf && !node.isLeaf)
+  ) {
+    this.$refs[this.ref].setCurrentKey(this.currentKey)
+    return true
+  }
+}
+// setCurrentKey 这两个方法中有一个调用就够了
+```
+
 ## 问题
 
 ### 方法一 data 为空数组, 全选仍存在(已解决)
@@ -354,13 +396,13 @@ methods: {
 
 所以 `data` 改变后, 需要重新加载 `el-tree`:
 
-``` HTML
+```HTML
 <el-tree
   :key="key"
 >
 ```
 
-``` JS
+```JS
 watch: {
   data() {
     this.key = Math.random()
@@ -379,7 +421,7 @@ watch: {
 
 > node_modules/element-ui/packages/tree/src/model/tree-store.js
 
-``` JS
+```JS
 getCheckedNodes(leafOnly = false, includeHalfChecked = false) {
   const checkedNodes = [];
   const traverse = function(node) {
@@ -408,7 +450,7 @@ getCheckedKeys(leafOnly = false) {
 
 那咱们也用 `root` 不就行了吗?
 
-``` JS
+```JS
 watch: {
   data: {
     handler: 'handleData',
@@ -447,7 +489,6 @@ methods: {
 
 这次把 `allNodes` 缓存起来了, 避免每次都要获取一下, 由于是引用地址, 所以状态变化后会跟着改变的; 并且还 `emit` 出去了 `max-level`, 省的还要在通过 `getTreeMaxLevel` 获取
 
-
 ### defaultExpandAll defaultExpandedKeys 无效(已解决)
 
 由于目前在初始化的时候就执行了 `expandToLevel` 方法, 导致只展开到 `level` 级
@@ -456,7 +497,7 @@ methods: {
 
 所以需要添加 `isFirst` 判断: 默认为 `true`, 调用 `expandToLevel` 时判断是否是第一次调用, 第一次调用的时候判断 `defaultExpandAll` 或 `defaultExpandedKeys` 是否有值, 有值的话就不执行后面的代码, 并且把 `isFirst` 置为 `false`
 
-``` JS
+```JS
 props: {
   defaultExpandAll: {
     type: Boolean,
