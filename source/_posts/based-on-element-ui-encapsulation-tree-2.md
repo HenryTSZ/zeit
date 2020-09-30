@@ -344,6 +344,8 @@ methods: {
 
 以前在 `SelectTree` 中做过这个功能, 但其实应该是 `Tree` 的功能, 所以就搬到这里啦
 
+[基于 ElementUI 封装的 SelectTree | Henry](https://tsz.now.sh/2019/11/29/based-on-element-ui-encapsulation-select-tree/#%E5%8D%95%E9%80%89%E6%97%B6%E5%8F%AA%E8%83%BD%E9%80%89%E6%8B%A9%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9-%E4%BD%86%E4%BC%9A%E9%80%89%E6%8B%A9%E7%88%B6%E7%BA%A7-%E5%B7%B2%E8%A7%A3%E5%86%B3-%E6%94%B9%E4%B8%BA-Tree-%E8%A7%A3%E5%86%B3)
+
 由以前经验可知需要分两种情况:
 
 1. 使用 `el-tree` 自带的 `node.isLeaf` 判断是否是叶子节点
