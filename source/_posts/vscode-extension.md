@@ -316,6 +316,7 @@ thumbnail: /img/vscode/thumbnail.png
 - [Debug Visualizer](https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer)
 
   - 用于在调试时可视化数据结构。类似于VS Code的监视视图，但是具有监视值的丰富可视化。
+  - [AddyOsmani.com - Visualize Data Structures in VSCode](https://addyosmani.com/blog/visualize-data-structures-vscode/)
   - [Install](vscode:extension/hediet.debug-visualizer)
 
 ### 其他插件
