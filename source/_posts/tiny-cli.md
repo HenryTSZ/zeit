@@ -1,0 +1,34 @@
+---
+title: 手搓一个 TinyPng 压缩图片的脚手架
+date: 2020-10-06
+categories: [FrontEnd, Js]
+tags: [node, cli, Vue]
+---
+
+最近做项目的时候, `UI` 妹子遇到需要使用 `TinyJpg/TinyPng` 压缩大量图片的需求, 但使用 `TinyJpg/TinyPng` 有一些问题:
+
+<!-- more -->
+
+1. 上传下载全靠手动
+2. 每次只能压缩 20 张
+
+压缩一两张还可以接受, 但一次要压缩上百张, 就需要操作上传下载至少 `5` 次, 而且上传需要记住上次选择的位置, 下载后还是压缩包, 还需要解压, 再删除压缩包,
+
+人生大部分时间就被这些重复且毫无技术含量的事情消耗完了
+
+那咱作为程序员, 不就是解决这些重复且无技术含量的事情吗?
+
+好, 说干就干!
+
+正好记得以前看过一个大佬封装过的 `webpack` 插件: [JowayYoung/tinyimg-webpack-plugin: A webpack plugin for compressing image](https://github.com/JowayYoung/tinyimg-webpack-plugin), 封装思路: [嗯，手搓一个TinyPng压缩图片的WebpackPlugin也SoEasy啦_JowayYoung谈前端 - SegmentFault 思否](https://segmentfault.com/a/1190000023564439?utm_source=tag-newest)
+
+但由于咱对 `webpack` 不太熟悉, 而最近刚写了一个脚手架: [打造属于自己的项目脚手架工具 | Henry](https://tsz.now.sh/2020/08/14/create-your-own-project-cli/), 所以就想改造成一个压缩图片的脚手架
+
+基本思路:
+
+1. 在需要压缩图片的文件夹中执行压缩命令
+2. 获取该文件夹下所有图片文件(支持递归查找)
+3. 依次上传压缩图片并下载
+4. 输出信息
+
+[源码](https://github.com/HenryTSZ/my-cli/tree/tiny-pic) 在这里
