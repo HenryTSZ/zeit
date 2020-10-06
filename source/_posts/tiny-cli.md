@@ -31,4 +31,4 @@ tags: [node, cli, Vue]
 3. 依次上传压缩图片并下载
 4. 输出信息
 
-[源码](https://github.com/HenryTSZ/my-cli/tree/tiny-pic) 在这里
+[源码](https://github.com/HenryTSZ/my-cli/tree/tiny) 在这里
