@@ -404,21 +404,23 @@ props: {
     为了 兼容以前写法 和 统一数据结构
     现在增加一个参数: options, 存放供选择的数据, 所有通用
     当然如果是新项目, 可以去掉 || 后面的代码, 统一使用 options -->
-    <el-option
-      v-for="option in item.options || item.select"
-      :key="option[listProps.value]"
-      :value="option[listProps.value]"
-      :label="option[listProps.label]"
-      :disabled="option.disabled"
-    ></el-option>
+    <template v-if="item.type === 'select'">
+      <el-option
+        v-for="option in item.options || item.select"
+        :key="option[listProps.value]"
+        :value="option[listProps.value]"
+        :label="option[listProps.label]"
+        :disabled="option.disabled"
+      ></el-option>
+    </template>
     <!-- radio / checkbox 等 -->
     <template v-if="list.includes(item.type)">
       <component
         :is="`el-${item.type}`"
-        v-for="ele in item.option || item[item.type]"
-        :key="ele[listProps.value]"
-        :label="ele[listProps.value]"
-        :disabled="ele.disabled"
+        v-for="option in item.options || item[item.type]"
+        :key="option[listProps.value]"
+        :label="option[listProps.value]"
+        :disabled="option.disabled"
       >
         {{ ele[listProps.label] }}
       </component>
@@ -645,23 +647,25 @@ computed: {
   >
     <!-- 只展示 -->
     <text-ellipsis v-if="item.type === 'info'" :content="model[item.prop]"></text-ellipsis>
-    <el-option
-      v-for="option in item.options || item.select"
-      :key="option[listProps.value]"
-      :value="option[listProps.value]"
-      :label="option[listProps.label]"
-      :disabled="option.disabled"
-    ></el-option>
+    <template v-if="item.type === 'select'">
+      <el-option
+        v-for="option in item.options || item.select"
+        :key="option[listProps.value]"
+        :value="option[listProps.value]"
+        :label="option[listProps.label]"
+        :disabled="option.disabled"
+      ></el-option>
+    </template>
     <!-- radio / checkbox 等 -->
     <template v-if="list.includes(item.type)">
       <component
         :is="`el-${item.type}`"
-        v-for="ele in item.option || item[item.type]"
-        :key="ele[listProps.value]"
-        :label="ele[listProps.value]"
-        :disabled="ele.disabled"
+        v-for="option in item.options || item[item.type]"
+        :key="option[listProps.value]"
+        :label="option[listProps.value]"
+        :disabled="option.disabled"
       >
-        {{ ele[listProps.label] }}
+        {{ option[listProps.label] }}
       </component>
     </template>
     <slot v-for="(value, key) in item.slots" :name="key" :slot="key">{{ value }}</slot>
