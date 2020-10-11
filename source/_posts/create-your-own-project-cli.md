@@ -840,3 +840,4 @@ npm 采用[语义化版本](https://docs.npmjs.com/about-semantic-versioning), �
 - [npm 发布包教程(二): 发布包 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000017463371)
 - [手把手教你用 npm 发布包\_taoerchun 的专栏-CSDN 博客](https://blog.csdn.net/taoerchun/article/details/82531549)
 - [2020.5.21-全栈架构师必备技能-从0到1用Node完成一个CLI工具_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili](https://www.bilibili.com/video/av883337561/)
+- [前端CLI脚手架思路解析-从0到1搭建 | 掘金技术征文-双节特别篇](https://juejin.im/post/6879265583205089287#heading-0)
