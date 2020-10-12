@@ -44,11 +44,11 @@ thumbnail: /img/vscode/thumbnail.png
 
 从开始菜单打开 `设置` , 然后选择 `应用和功能` , 这里就有一个 `管理可选功能` 的选项.
 
-![image-20190319093941643](https://ws1.sinaimg.cn/large/006tKfTcgy1g17uv5tf19j30xb0puwm9.jpg)
+![application and function](/img/vscode/029.png)
 
 点击之后便可以看到一个可选功能, 选择 `OpenSSH` 服务器即可, 一般情况下是没有安装的. 如果没有安装的话它会提示一个安装按钮, 这里我已经安装好了, 就提示了一个卸载按钮.
 
-![image-20190319094113033](https://ws3.sinaimg.cn/large/006tKfTcgy1g17uwoakpij30x70pv0u6.jpg)
+![OpenSSH](/img/vscode/030.png)
 
 OK, 有了它, 直接点击安装即可完成 `OpenSSH` 服务器的安装.
 
@@ -56,7 +56,7 @@ OK, 有了它, 直接点击安装即可完成 `OpenSSH` 服务器的安装.
 
 首先需要用管理员身份启动 `PowerShell` (在开始菜单右键选择)
 
-![](/img/vscode/ad.png)
+![admin PowerShell](/img/vscode/031.png)
 
 使用如下命令看一下, 要确保 `OpenSSH` 可用于安装:
 
@@ -72,6 +72,14 @@ State : NotPresent
 Name  : OpenSSH.Server~~~~0.0.1.0
 State : NotPresent
 ```
+
+上面输出表示 `OpenSSH` 的客户端和服务端均不存在
+
+我们这里只需要服务端: 如果 `Server` 的状态为 `Installed`, 就表示已经安装完成
+
+观看下面的[配置 OpenSSH](https://tsz.now.sh/2020/10/11/mac-using-vscode-remote-development-connect-to-windows-remote-server/#%E9%85%8D%E7%BD%AE-OpenSSH) 即可
+
+如果状态为 `NotPresent` 就需要执行下面的命令来安装了
 
 然后使用 `PowerShell` 安装服务器即可:
 
@@ -147,6 +155,8 @@ Get-NetFirewallRule -Name *ssh*
 
 安装的插件是在云服务器的 `VS Code` 上, 对本机的 `VS Code` 没有影响, 插件在远端提供功能, 比如代码审查、自动补齐等等, 而这所有的一切就像在本地操作一样, 对文件的更改也是直接操作的云主机上的文件, 丝滑连接.
 
+![extension](/img/vscode/032.png)
+
 ## 配置 SSH 免密登录
 
 按照上面的配置步骤, 每次连接到远程服务器, 都需要输入服务器登录密码很麻烦, 可以配置 `SSH` 免密登录, 免去每次输入密码的烦恼, 具体操作步骤如下:
@@ -170,7 +180,9 @@ Get-NetFirewallRule -Name *ssh*
 还是以管理员身份运行 `PowerShell` 打开 `OpenSSH` 配置文件
 
 ```BASH
-vim C:\ProgramData\ssh\sshd_config
+cd C:\ProgramData\ssh\
+
+vim sshd_config
 ```
 
 注释相关行:
