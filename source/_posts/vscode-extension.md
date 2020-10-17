@@ -207,7 +207,7 @@ thumbnail: /img/vscode/thumbnail.png
 * [Highlight Matching Tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
 
   - 高亮匹配标签
-  - 并提供两个命令, 通过搜索命令名称在命令面板 (`F1` 或者 `C + S + p`) 中使用. 也可以绑定到快捷键
+  - 并提供两个命令, 通过搜索命令名称在命令面板 ( `F1` 或者 `C + S + p` ) 中使用. 也可以绑定到快捷键
   - 跳转到匹配标签: Jump to matching tag
   - 选中标签内容: Select contents of matching tag pair
   - [Install](vscode:extension/vincaslt.highlight-matching-tag)
@@ -224,7 +224,7 @@ thumbnail: /img/vscode/thumbnail.png
 
 * [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 
-  - 将注释变为彩色, 使注释更加明显. 注释符后面要加特定字符: `! * ? // todo`, 如: // ! 这是一个注释
+  - 将注释变为彩色, 使注释更加明显. 注释符后面要加特定字符: `! * ? // todo` , 如: // ! 这是一个注释
   - [Install](vscode:extension/aaron-bond.better-comments)
 
 - [Date & Time](https://marketplace.visualstudio.com/items?itemName=rid9.datetime)
@@ -307,6 +307,11 @@ thumbnail: /img/vscode/thumbnail.png
   - 在引号之间进行切换, 解决将单引号切换为反引号的痛点
   - [Install](vscode:extension/BriteSnow.vscode-toggle-quotes)
 
+- [Template String Converter](https://marketplace.visualstudio.com/items?itemName=meganrogge.template-string-converter)
+
+  - 当输入 \${ 时自动将引号切换为反引号
+  - [Install](vscode:extension/meganrogge.template-string-converter)
+
 - [Codelf](https://marketplace.visualstudio.com/items?itemName=unbug.codelf)
 
   - 给变量或函数命名
@@ -315,7 +320,7 @@ thumbnail: /img/vscode/thumbnail.png
 
 - [Debug Visualizer](https://marketplace.visualstudio.com/items?itemName=hediet.debug-visualizer)
 
-  - 用于在调试时可视化数据结构。类似于VS Code的监视视图，但是具有监视值的丰富可视化。
+  - 用于在调试时可视化数据结构. 类似于 VS Code 的监视视图, 但是具有监视值的丰富可视化.
   - [AddyOsmani.com - Visualize Data Structures in VSCode](https://addyosmani.com/blog/visualize-data-structures-vscode/)
   - [Install](vscode:extension/hediet.debug-visualizer)
 
@@ -342,7 +347,6 @@ thumbnail: /img/vscode/thumbnail.png
 
   - 图床神器
   - [Install](vscode:extension/Spades.vs-picgo)
-
 
 - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
 
