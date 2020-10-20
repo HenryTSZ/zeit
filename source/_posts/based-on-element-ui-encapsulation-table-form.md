@@ -799,3 +799,46 @@ methods: {
 ```
 
 **所以以后尽量还是用不同的 `key` 吧, 即使是 `if else`.**
+
+### 可编辑 table 有时候没有滚动条
+
+引起这个问题主要有两个条件:
+
+1. `table` 中有可编辑组件
+2. 内容高度刚好超出设置高度一点点
+
+当有可编辑组件时, `tr` 的高度比不可编辑时高了一点, 而 `el-table` 还是按不可编辑状态计算高度, 从而认为当前内容并没有超出设置高度, 所以没有出现滚动条
+
+所以解决方法有两种:
+
+要么将 `tr` 的高度设死, 这样可编辑和不可编辑高度一样, 就可以了; 不过样式可能不算美观
+
+要么让 `el-table` 重新计算一下高度:
+
+``` JS
+computed: {
+  isEditable() {
+    return this.columns.some(item => item.editable || item.editableMethod)
+  }
+},
+watch: {
+  data: {
+    handler() {
+      this.setDefaultCheckedKeys()
+      this.setCurrentNodeKey()
+      this.refreshLayout()
+    },
+    immediate: true
+  }
+},
+methods: {
+  refreshLayout() {
+    if (!this.isEditable) return
+    this.$nextTick(() => {
+      setTimeout(() => {
+        this.$refs.elTable.doLayout()
+      }, 200)
+    })
+  }
+}
+```
