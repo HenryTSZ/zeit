@@ -10,7 +10,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 <!-- more -->
 
-这里是[源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/TextEllipsis.vue)
+这里是[源码](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/TextEllipsis.vue)
 
 这里我们主要使用 `el-tooltip` 这个组件来实现这个功能
 

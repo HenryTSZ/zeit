@@ -17,7 +17,7 @@ thumbnail: /img/vue/thumbnail.png
 
 ![different](/img/vue/013.png)
 
-[这里是源码, 当然已经修改好了](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/UploadFile.vue)
+[这里是源码, 当然已经修改好了](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/UploadFile.vue)
 
 封装组件修改前的简略代码:
 

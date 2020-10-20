@@ -15,7 +15,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 <!--more -->
 
-国际惯例, 先奉上[源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/TreeTable.vue)
+国际惯例, 先奉上[源码](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/TreeTable.vue)
 
 ## 展开到 level 级
 

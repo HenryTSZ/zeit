@@ -10,7 +10,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 <!-- more -->
 
-国际惯例: [源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/NumberInput.vue)奉上
+国际惯例: [源码](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/NumberInput.vue)奉上
 
 ## 同事封装的组件
 
@@ -513,4 +513,4 @@ export default {
 
 两种办法其实都不算好办法, 但目前没有找到合适的解决方案, 等以后找到了再说吧
 
-先把[源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/RegInput.vue)奉上
+先把[源码](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/RegInput.vue)奉上

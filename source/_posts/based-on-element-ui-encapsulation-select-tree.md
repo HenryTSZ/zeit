@@ -8,7 +8,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 最近重构项目, 遇到一个需要 `SelectTree` 的组件, 就在网上找了一圈, 发现 [Element-UI二次封装实现TreeSelect 树形下拉选择组件 - sleepwalker_1992的专栏 - CSDN博客](https://blog.csdn.net/sleepwalker_1992/article/details/87894588)这个还不错, 但奈何作者不更新了, 而且现在样式有点问题, 就想着参考大佬的思路自己也封装一下
 
-话不多说, 先将[本人源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/SelectTree.vue)奉上. 好了, 开干!
+话不多说, 先将[本人源码](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/SelectTree.vue)奉上. 好了, 开干!
 
 <!-- more -->
 

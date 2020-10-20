@@ -508,7 +508,7 @@ export default {
 
 闲话不多说, 加了亿点点小细节, `enjoy`
 
-这里是源码: [BaseForm](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/BaseForm.vue), [BaseTable](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/BaseTable.vue), [EditableElements](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/EditableElements.vue)
+这里是源码: [BaseForm](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/BaseForm.vue), [BaseTable](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/BaseTable.vue), [EditableElements](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/EditableElements.vue)
 
 以下为简略代码:
 

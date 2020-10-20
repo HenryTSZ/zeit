@@ -10,7 +10,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 <!--more -->
 
-[源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/Tree1.vue)在这里
+[源码](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/Tree1.vue)在这里
 
 ## 展开 level 级
 

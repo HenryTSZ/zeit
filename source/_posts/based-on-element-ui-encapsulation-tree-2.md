@@ -18,7 +18,7 @@ thumbnail: /img/element-ui/thumbnail.svg
 
 ## 方法一(推荐, 以后只维护这个)
 
-[源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/Tree2.vue)在这里
+[源码](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/Tree2.vue)在这里
 
 需要用到 `check-change` 这个 `Event`
 
@@ -104,7 +104,7 @@ methods: {
 
 ## 方法二
 
-[源码](https://github.com/HenryTSZ/vue-element-extend/blob/master/src/plugins/Tree3.vue)在这里
+[源码](https://github.com/HenryTSZ/vuepress-element-extend/blob/master/docs/.vuepress/components/Tree3.vue)在这里
 
 处理一下传入 `el-tree` 的 `data` 数据, 加上一个 `全选` 的根节点
 
